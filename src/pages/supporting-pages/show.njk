@@ -1,0 +1,36 @@
+---
+layout: layouts/content.njk
+dataSource: policies
+dataView: show
+pagination:
+  data: policies.items
+  size: 1
+  alias: pageContent
+  addAllPagesToCollections: true
+permalink: '{{ pageContent.url }}'
+tags:
+  - contentPage
+policy: true
+eleventyComputed:
+  title: '{{ pageContent.title | safe }}'
+  description: '{{ pageContent.description | safe }}'
+  breadcrumbs: []
+---
+
+{# Policy sections: one consistent view for the draft policy records. #}
+{% for section in pageContent.sections %}
+  <section class="content-section" aria-labelledby="section-{{ loop.index }}">
+    <div class="content-inner">
+      <div class="section-introduction">
+        <div class="section-copy">
+          <h2 id="section-{{ loop.index }}">{{ section.headings[0] }}</h2>
+          {% for paragraph in section.paragraphs %}
+            <p>
+              {{ paragraph }}
+            </p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}

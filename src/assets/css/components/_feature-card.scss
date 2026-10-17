@@ -1,0 +1,28 @@
+// Keep reusable feature cards equal-height in their parent row.
+.feature-card {
+  @extend .h-100;
+  // Keep the card-wide link helper in its component stylesheet.
+  .feature-link {
+    @extend .stretched-link;
+  }
+
+  // Give the feature marker a consistent size and separation.
+  .feature-icon {
+    @extend .fs-2, .mb-2;
+  }
+
+  // Use the shared card heading scale.
+  .feature-title {
+    @extend .h5;
+  }
+
+  // Keep feature text secondary without trailing card spacing.
+  .feature-description {
+    @extend .text-body-secondary, .mb-0;
+  }
+
+  // Give a stretched card link a descriptive accessible name.
+  .feature-link-label {
+    @extend .visually-hidden;
+  }
+}

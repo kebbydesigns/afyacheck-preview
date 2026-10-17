@@ -1,0 +1,30 @@
+---
+layout: layouts/content.njk
+dataSource: whatWeDo.projects.index
+dataView: page
+permalink: /what-we-do/projects/
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ whatWeDo.projects.index.title | safe }}'
+  description: '{{ whatWeDo.projects.index.description | safe }}'
+  breadcrumbs:
+    - url: /what-we-do/
+      title: '{{ (whatWeDo.overview).title | safe }}'
+---
+
+{% set pageContent = whatWeDo.projects.index %}
+
+{# Field project directory: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.sections[0].paragraphs[0] }}</p>
+      </div>
+    </div>
+    {% set cards = whatWeDo.projects.items | pageCards %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

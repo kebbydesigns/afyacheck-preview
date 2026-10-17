@@ -1,0 +1,312 @@
+{
+  "overview": {
+    "title": "From prevention to a pathway of care",
+    "description": "Focus areas, ongoing programmes and time-bound projects connect our community health model.",
+    "url": "/what-we-do/",
+    "sections": [
+      {
+        "cards": [
+          {
+            "source": "whatWeDo.focusAreas",
+            "title": "Focus areas",
+            "text": "The public health priorities behind our work.",
+            "label": "Explore"
+          },
+          {
+            "source": "whatWeDo.programs.index",
+            "text": "Sustained streams of community health activity.",
+            "label": "Explore"
+          },
+          {
+            "source": "whatWeDo.projects.index",
+            "title": "Projects & interventions",
+            "text": "Field activity in specific places and periods.",
+            "label": "Explore"
+          }
+        ],
+        "headings": ["Explore our work"],
+        "paragraphs": ["Choose the level of detail you need."]
+      }
+    ]
+  },
+  "focusAreas": {
+    "title": "Five priorities for healthier communities",
+    "description": "A connected approach to prevention, access and community capacity.",
+    "url": "/what-we-do/focus-areas/",
+    "action": {
+      "url": "/what-we-do/programs/",
+      "label": "Explore core programmes"
+    },
+    "sections": [
+      {
+        "cards": [
+          {
+            "title": "Non-communicable diseases",
+            "text": "Community screening and pathways to ongoing care for chronic conditions.",
+            "label": "Explore"
+          },
+          {
+            "title": "Maternal & child health",
+            "text": "Outreach that connects families with appropriate local care.",
+            "label": "Explore"
+          },
+          {
+            "title": "Youth health & wellbeing",
+            "text": "Accessible conversations and health education for young people.",
+            "label": "Explore"
+          },
+          {
+            "title": "Inclusive & rehabilitative care",
+            "text": "Reduce barriers to assessment, mobility support and follow-up.",
+            "label": "Explore"
+          },
+          {
+            "title": "Community health capacity",
+            "text": "Support local teams with education, training and collaboration.",
+            "label": "Explore"
+          }
+        ],
+        "headings": ["Our focus areas"],
+        "paragraphs": [
+          "These priorities provide the structure for the proposed programmes and services."
+        ]
+      }
+    ]
+  },
+  "programs": {
+    "index": {
+      "title": "Core programmes",
+      "description": "Sustained outreach models adapted to local needs. Programme activity and outcomes shown here are illustrative.",
+      "url": "/what-we-do/programs/",
+      "sections": [
+        {
+          "headings": ["Programme directory"],
+          "paragraphs": [
+            "Explore the purpose, regions and example outcomes of each programme."
+          ]
+        }
+      ]
+    },
+    "items": [
+      {
+        "title": "Afya Mkononi (Mobile Diagnostics)",
+        "description": "Deploying custom-engineered solar-backed medical vans into rural hamlets where the nearest clinical laboratory is over 25 kilometers away.",
+        "url": "/what-we-do/programs/afya-mkononi/",
+        "action": {
+          "url": "/get-involved/partner-and-co-invest/",
+          "label": "Discuss programme support"
+        },
+        "slug": "afya-mkononi",
+        "sections": [
+          {
+            "headings": ["Programme focus"]
+          },
+          {
+            "headings": ["Example outcomes"],
+            "paragraphs": [
+              "The reference outcomes below are demo claims, not verified results."
+            ]
+          },
+          {
+            "headings": ["Illustrative operating regions"]
+          }
+        ],
+        "card": {
+          "label": "Explore"
+        },
+        "focus": "Non-Communicable Diseases (NCDs)",
+        "outcomes": [
+          "Over 180,000 citizens tested with zero fee",
+          "Point-of-care HbA1c & lipids delivered on site",
+          "Digital integration with national health records"
+        ],
+        "regions": ["Dar es Salaam", "Mwanza", "Kigoma", "Dodoma"]
+      },
+      {
+        "title": "Shule Afya (School Wellness & Vision)",
+        "description": "School-based screening detecting refractive errors, nutritional deficiencies, and congenital heart anomalies in primary and secondary students.",
+        "url": "/what-we-do/programs/shule-afya/",
+        "action": {
+          "url": "/get-involved/partner-and-co-invest/",
+          "label": "Discuss programme support"
+        },
+        "slug": "shule-afya",
+        "sections": [
+          {
+            "headings": ["Programme focus"]
+          },
+          {
+            "headings": ["Example outcomes"],
+            "paragraphs": [
+              "The reference outcomes below are demo claims, not verified results."
+            ]
+          },
+          {
+            "headings": ["Illustrative operating regions"]
+          }
+        ],
+        "card": {
+          "label": "Explore"
+        },
+        "focus": "Pediatric & Adolescent Health",
+        "outcomes": [
+          "38,000 pupils examined across 110 schools",
+          "4,200 free corrective glasses distributed",
+          "Teacher-led vision screening toolkits provided"
+        ],
+        "regions": ["Dar es Salaam", "Arusha", "Mwanza"]
+      },
+      {
+        "title": "Mama na Mtoto Salama (Safe Motherhood)",
+        "description": "Community-based ultrasound mapping and pre-eclampsia screening for pregnant mothers in remote wards with direct ambulance linkage.",
+        "url": "/what-we-do/programs/mama-na-mtoto-salama/",
+        "action": {
+          "url": "/get-involved/partner-and-co-invest/",
+          "label": "Discuss programme support"
+        },
+        "slug": "mama-na-mtoto-salama",
+        "sections": [
+          {
+            "headings": ["Programme focus"]
+          },
+          {
+            "headings": ["Example outcomes"],
+            "paragraphs": [
+              "The reference outcomes below are demo claims, not verified results."
+            ]
+          },
+          {
+            "headings": ["Illustrative operating regions"]
+          }
+        ],
+        "card": {
+          "label": "Explore"
+        },
+        "focus": "Maternal & Child Health",
+        "outcomes": [
+          "16,400 ultrasound scans conducted",
+          "98% early detection of gestational risk factors",
+          "Zero maternal mortalities during caravan interventions"
+        ],
+        "regions": ["Kigoma", "Dodoma", "Mbeya"]
+      }
+    ]
+  },
+  "projects": {
+    "index": {
+      "title": "Projects & field interventions",
+      "description": "Time-bound activity with a defined place and purpose. Dates and partner references are demo content.",
+      "url": "/what-we-do/projects/",
+      "sections": [
+        {
+          "headings": ["Field project directory"],
+          "paragraphs": ["Explore the supplied example interventions."]
+        }
+      ]
+    },
+    "items": [
+      {
+        "title": "Lake Zone Hypertension & Renal Safeguard Project",
+        "description": "High-density community field intervention setting up 12 mobile screening tents around fish landing sites and bustling artisanal mining centers.",
+        "url": "/what-we-do/projects/lake-zone-hypertension-blitz/",
+        "action": {
+          "url": "/contact/",
+          "label": "Enquire about this project"
+        },
+        "slug": "lake-zone-hypertension-blitz",
+        "sections": [
+          {
+            "headings": ["Where & when"]
+          },
+          {
+            "headings": ["Example coordinating institutions"],
+            "paragraphs": [
+              "Names supplied in the reference; partnerships have not been verified."
+            ]
+          },
+          {
+            "headings": ["Connecting field work with follow-up"],
+            "paragraphs": [
+              "Local coordination, clear referral information and community engagement belong alongside each screening activity."
+            ]
+          }
+        ],
+        "card": {
+          "label": "Explore",
+          "kicker": "Mwanza · March - August 2026"
+        },
+        "locationAndDates": "Bugogwa & Sangabuye Wards, Ilemela Municipal Council, Mwanza. March - August 2026.",
+        "partners": ["Bugando Medical Centre", "Mwanza City Council"]
+      },
+      {
+        "title": "Kigoma Border Communities Integrated Care Drive",
+        "description": "Field medical response bridging healthcare gaps for host communities and vulnerable settlements with pediatric triage and maternal checks.",
+        "url": "/what-we-do/projects/kigoma-refugee-host-community-care/",
+        "action": {
+          "url": "/contact/",
+          "label": "Enquire about this project"
+        },
+        "slug": "kigoma-refugee-host-community-care",
+        "sections": [
+          {
+            "headings": ["Where & when"]
+          },
+          {
+            "headings": ["Example coordinating institutions"],
+            "paragraphs": [
+              "Names supplied in the reference; partnerships have not been verified."
+            ]
+          },
+          {
+            "headings": ["Connecting field work with follow-up"],
+            "paragraphs": [
+              "Local coordination, clear referral information and community engagement belong alongside each screening activity."
+            ]
+          }
+        ],
+        "card": {
+          "label": "Explore",
+          "kicker": "Kigoma · October - November 2026"
+        },
+        "locationAndDates": "Kigondo & Nyumbigwa Wards, Kasulu Town Council, Kigoma. October - November 2026.",
+        "partners": [
+          "Kigoma Regional Health Management Team",
+          "Tanzania Red Cross"
+        ]
+      },
+      {
+        "title": "Mount Meru Community Vision & Glaucoma Survey",
+        "description": "Screening 8,500 rural coffee farming households for glaucoma, cataracts, and diabetic retinopathy with immediate on-site referral triage.",
+        "url": "/what-we-do/projects/arusha-periurban-eye-initiative/",
+        "action": {
+          "url": "/contact/",
+          "label": "Enquire about this project"
+        },
+        "slug": "arusha-periurban-eye-initiative",
+        "sections": [
+          {
+            "headings": ["Where & when"]
+          },
+          {
+            "headings": ["Example coordinating institutions"],
+            "paragraphs": [
+              "Names supplied in the reference; partnerships have not been verified."
+            ]
+          },
+          {
+            "headings": ["Connecting field work with follow-up"],
+            "paragraphs": [
+              "Local coordination, clear referral information and community engagement belong alongside each screening activity."
+            ]
+          }
+        ],
+        "card": {
+          "label": "Explore",
+          "kicker": "Arusha · April - July 2025"
+        },
+        "locationAndDates": "Poli, Singisi & Akheri Wards, Meru District Council, Arusha. April - July 2025.",
+        "partners": ["CCBRT Hospital", "Meru District Hospital"]
+      }
+    ]
+  }
+}

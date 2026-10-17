@@ -1,0 +1,31 @@
+---
+layout: layouts/content.njk
+mediaSource: podcasts.index
+mediaView: page
+permalink: /media-and-resources/shows-and-podcast/
+tags: [contentPage]
+eleventyComputed:
+  title: "{{ mediaResources.podcasts.index.title | safe }}"
+  description: "{{ mediaResources.podcasts.index.description | safe }}"
+  breadcrumbs:
+    - url: /media-and-resources/
+      title: "{{ mediaResources.overview.title | safe }}"
+---
+
+{% set group = mediaResources.podcasts %}
+
+{# Episode concepts: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">
+          {{ mediaResources.podcasts.index.sections[0].heading }}
+        </h2>
+        <p>{{ mediaResources.podcasts.index.sections[0].text }}</p>
+      </div>
+    </div>
+    {% set cards = group | resourceCards %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

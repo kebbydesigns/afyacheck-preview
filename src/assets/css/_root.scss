@@ -1,0 +1,15 @@
+// Expose shared theme values to component styles at runtime.
+:root {
+  --ac-focus-color: #{$link-color};
+  --ac-section-space: clamp(3rem, 6vw, 6rem);
+  --ac-content-width: 65ch;
+  --ac-base-gradient: linear-gradient(
+    90deg,
+    var(--bs-primary),
+    var(--bs-secondary)
+  );
+}
+// Use a brighter focus outline on dark surfaces.
+[data-bs-theme="dark"] {
+  --ac-focus-color: #{$secondary};
+}

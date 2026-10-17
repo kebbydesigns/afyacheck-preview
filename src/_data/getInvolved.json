@@ -1,0 +1,129 @@
+{
+  "index": {
+    "title": "Make community health a shared effort",
+    "description": "Support outreach, bring your skills or develop an institutional partnership.",
+    "url": "/get-involved/",
+    "sections": [
+      {
+        "headings": ["Find your way to contribute"],
+        "paragraphs": [
+          "Each pathway explains the proposed contribution and lets you try a local enquiry form."
+        ]
+      }
+    ]
+  },
+  "items": [
+    {
+      "title": "Support community care",
+      "description": "Explore ways to support the practical work behind outreach.",
+      "url": "/get-involved/support/",
+      "enquiryType": "support",
+      "slug": "support",
+      "sections": [
+        {
+          "lists": [
+            [
+              "Transport and field logistics",
+              "Screening supplies and equipment",
+              "Community education and follow-up support"
+            ]
+          ],
+          "headings": ["How this pathway works"],
+          "paragraphs": [
+            "These steps describe the proposed process, not an accepted application or partnership."
+          ]
+        },
+        {
+          "headings": ["Support enquiry only"],
+          "paragraphs": [
+            "There is no payment facility in this prototype. Do not enter bank, card or mobile-money details."
+          ]
+        }
+      ],
+      "card": {
+        "text": "Help with outreach transport, screening supplies and follow-up care.",
+        "label": "Explore"
+      }
+    },
+    {
+      "title": "Partner & co-invest",
+      "description": "Build a shared programme around community priorities and a clearly defined contribution.",
+      "url": "/get-involved/partner-and-co-invest/",
+      "enquiryType": "partnership",
+      "slug": "partner-and-co-invest",
+      "sections": [
+        {
+          "lists": [
+            [
+              "Define the community need and programme scope.",
+              "Agree responsibilities, resources and reporting.",
+              "Review clinical oversight and referral arrangements."
+            ]
+          ],
+          "headings": ["How this pathway works"],
+          "paragraphs": [
+            "These steps describe the proposed process, not an accepted application or partnership."
+          ]
+        }
+      ],
+      "card": {
+        "text": "Shape a programme with your institution, workplace or foundation.",
+        "label": "Explore"
+      }
+    },
+    {
+      "title": "Join the volunteer & clinical network",
+      "description": "Explore a role that matches your skills, experience and availability.",
+      "url": "/get-involved/volunteer-and-clinical-network/",
+      "enquiryType": "volunteer",
+      "slug": "volunteer-and-clinical-network",
+      "sections": [
+        {
+          "lists": [
+            [
+              "Clinical roles require appropriate credential verification before deployment.",
+              "Community and operational roles support education, logistics and access.",
+              "Orientation and role-specific supervision should precede field activity."
+            ]
+          ],
+          "headings": ["How this pathway works"],
+          "paragraphs": [
+            "These steps describe the proposed process, not an accepted application or partnership."
+          ]
+        }
+      ],
+      "card": {
+        "title": "Volunteer & clinical network",
+        "text": "Bring clinical, community or operational skills to an outreach team.",
+        "label": "Explore"
+      }
+    },
+    {
+      "title": "Collaborate on research & learning",
+      "description": "Discuss training, field learning and institution-led research proposals.",
+      "url": "/get-involved/institutional-and-research-collaboration/",
+      "enquiryType": "research",
+      "slug": "institutional-and-research-collaboration",
+      "sections": [
+        {
+          "lists": [
+            [
+              "Describe the research question and intended community benefit.",
+              "Identify institutional oversight and any required approvals.",
+              "Agree consent, safeguarding and data handling before work begins."
+            ]
+          ],
+          "headings": ["How this pathway works"],
+          "paragraphs": [
+            "These steps describe the proposed process, not an accepted application or partnership."
+          ]
+        }
+      ],
+      "card": {
+        "title": "Research collaboration",
+        "text": "Discuss field research, training and responsible use of health information.",
+        "label": "Explore"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{# Reusable feature card: omit url for a static card; provide it for a stretched link. #}
+{% macro featureCard(icon, title, text, url = "") %}
+  <div class="card card-hover feature-card">
+    <div class="card-body">
+      <div class="feature-icon">{{ icon }}</div>
+      <h3 class="feature-title">{{ title }}</h3>
+      <p class="feature-description">{{ text }}</p>
+      {% if url %}
+        <a class="feature-link" href="{{ url }}">
+          <span class="feature-link-label">Read more about {{ title }}</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}

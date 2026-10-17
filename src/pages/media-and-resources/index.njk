@@ -1,0 +1,27 @@
+---
+layout: layouts/content.njk
+mediaSource: overview
+mediaView: page
+permalink: /media-and-resources/
+tags: [contentPage]
+eleventyComputed:
+  title: "{{ mediaResources.overview.title | safe }}"
+  description: "{{ mediaResources.overview.description | safe }}"
+  breadcrumbs: []
+---
+
+{# Find your starting point: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">
+          {{ mediaResources.overview.sections[0].heading }}
+        </h2>
+        <p>{{ mediaResources.overview.sections[0].text }}</p>
+      </div>
+    </div>
+    {% set cards = mediaResources.overview.sections[0].cards %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

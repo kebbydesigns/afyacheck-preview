@@ -1,0 +1,250 @@
+// Page introduction aligns breadcrumbs and readable lead copy with the shared shell.
+.page-introduction {
+  @extend .py-5, .bg-body-tertiary;
+  // Keep the page heading aligned with the shared navigation container.
+  .introduction-inner {
+    @extend .container;
+    // Separate the breadcrumb trail from the introduction.
+    nav {
+      @extend .mb-4;
+      .breadcrumb {
+        @extend .small;
+      }
+    }
+    // Cap long headings and lead copy at a readable desktop measure.
+    .introduction-content {
+      max-width: 58rem;
+      .introduction-kicker {
+        @extend .eyebrow, .mb-3;
+      }
+      h1 {
+        @extend .display-5, .fw-bold, .mb-3;
+      }
+      .introduction-lead {
+        @extend .lead, .text-body-secondary, .mb-3;
+      }
+      .introduction-notice {
+        @extend .small, .text-body-secondary, .mb-4;
+      }
+      // Keep 404 recovery actions together while allowing narrow-screen wrapping.
+      .recovery-actions {
+        @extend .d-flex, .flex-wrap, .gap-3;
+      }
+    }
+  }
+}
+
+// Content sections nest copy, media, directories and reporting under their owning container.
+.content-section {
+  @extend .py-5;
+  // Own every section's layout within its container.
+  .content-inner {
+    @extend .container;
+    // Pair introductory copy with optional reference photography.
+    .section-introduction {
+      @extend .row, .g-4, .align-items-center;
+      // Give copy the remaining width alongside an optional image.
+      .section-copy {
+        @extend .col-12, .col-lg;
+        max-width: 70ch;
+        h2 {
+          @extend .h2, .mb-3;
+        }
+        p {
+          @extend .text-body-secondary;
+        }
+        // Keep long clinical and programme lists easy to scan.
+        .section-list {
+          @extend .ps-4, .mb-0;
+          li {
+            @extend .mb-2;
+          }
+        }
+        // Distinguish caveats using the existing primary border colour.
+        .section-note {
+          @extend .small,
+            .border-start,
+            .border-primary,
+            .border-3,
+            .ps-3,
+            .my-4;
+        }
+      }
+      // Stack images on mobile and preserve their natural proportions.
+      .section-media {
+        @extend .col-12, .col-lg-5;
+        img {
+          @extend .w-100, .rounded-4;
+          height: auto;
+        }
+      }
+    }
+    // Scale directories from one to three columns using Bootstrap gutters.
+    .content-cards {
+      @extend .row, .g-4, .mt-1;
+      // Keep column widths with their owning grid item.
+      .content-card-column {
+        @extend .col-12, .col-md-6, .col-xl-4;
+        // Equal-height card bodies align their final navigation links.
+        .content-card {
+          @extend .h-100,
+            .p-4,
+            .border,
+            .rounded-4,
+            .bg-body,
+            .d-flex,
+            .flex-column;
+          .card-kicker {
+            @extend .small, .text-body-secondary, .mb-3;
+          }
+          h3 {
+            @extend .h5, .mb-3;
+          }
+          .card-summary {
+            @extend .text-body-secondary, .mb-4;
+          }
+          // Expand illustrative qualifications without obscuring the main profile.
+          .card-details {
+            @extend .small, .mb-4;
+            summary {
+              @extend .fw-semibold;
+            }
+            ul {
+              @extend .mt-3, .ps-3;
+              li {
+                @extend .mb-2;
+              }
+            }
+          }
+          // Push directory links down and provide unique accessible link names.
+          .card-link {
+            @extend .mt-auto, .fw-semibold;
+            .card-link-context {
+              @extend .visually-hidden;
+            }
+          }
+        }
+      }
+    }
+    // Present campaign figures as labelled values rather than unlabeled counters.
+    .section-facts {
+      @extend .row, .g-4, .mt-2, .mb-0;
+      // Pair each figure with its explicit demo label.
+      .fact-item {
+        @extend .col-12, .col-sm-6;
+        dt {
+          @extend .text-body-secondary, .fw-normal;
+        }
+        dd {
+          @extend .display-6, .fw-bold, .mb-0;
+        }
+      }
+    }
+    // Reporting controls follow their form, fieldset, row and field hierarchy.
+    .impact-controls {
+      @extend .mt-4;
+
+      // Group dashboard controls separately from the static reporting table.
+      .impact-filter-form {
+        @extend .p-4, .border, .rounded-3, .bg-body;
+
+        // Keep controls disabled until their local data and helpers are ready.
+        fieldset {
+          // Give the filter group a visible accessible name.
+          legend {
+            @extend .h5, .mb-3;
+          }
+
+          // Stack filters on phones and use three columns at the medium breakpoint.
+          .impact-filter-row {
+            @extend .row, .g-3;
+
+            // Each field owns its responsive column width.
+            .impact-field {
+              @extend .col-12, .col-md-4;
+            }
+          }
+
+          // Keep reset and export actions close to their filters.
+          .impact-actions {
+            @extend .d-flex, .flex-wrap, .gap-3, .mt-4;
+          }
+        }
+      }
+
+      // Report filtered record counts and totals without hiding the demo qualifier.
+      .impact-status {
+        @extend .mt-3, .mb-0, .small;
+      }
+
+      // Place recovery guidance next to the controls that failed to load.
+      .impact-error {
+        @extend .mt-3;
+      }
+    }
+
+    // Contain wide reporting content without widening the mobile page.
+    .report-table {
+      @extend .table-responsive, .mt-4;
+      // Preserve readable cells and a visible source caption while scrolling.
+      table {
+        @extend .mb-0;
+        caption {
+          @extend .small;
+        }
+        th,
+        td {
+          @extend .px-3, .py-3;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+// Enquiry copy and the guarded local form become two columns at desktop widths.
+.enquiry-section {
+  @extend .py-5, .bg-body-tertiary;
+  // Match enquiry edges to the rest of the page.
+  .enquiry-inner {
+    @extend .container;
+    // Stack the introduction and form until the desktop breakpoint.
+    .enquiry-row {
+      @extend .row, .g-5;
+      // Keep local-demo guidance next to the form.
+      .enquiry-copy {
+        @extend .col-12, .col-lg-5;
+        h2 {
+          @extend .h2, .mb-3;
+        }
+        p {
+          @extend .text-body-secondary;
+        }
+      }
+      // Give form controls the larger desktop column.
+      .enquiry-form-column {
+        @extend .col-12, .col-lg-7;
+        // Group related controls on the existing body surface.
+        .enquiry-form {
+          @extend .p-4, .p-md-5, .bg-body, .border, .rounded-4;
+          // The fieldset also provides the no-JavaScript disabled guard.
+          fieldset {
+            legend {
+              @extend .h5, .mb-4;
+            }
+            .enquiry-field {
+              @extend .mb-3;
+            }
+            .enquiry-consent {
+              @extend .mb-4;
+            }
+          }
+        }
+        // Keep the live confirmation separate from editable controls.
+        .enquiry-confirmation {
+          @extend .mt-3, .p-3, .border, .rounded-3;
+        }
+      }
+    }
+  }
+}

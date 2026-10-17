@@ -1,0 +1,81 @@
+{# Dashboard controls: independent filters, labelled totals and filtered CSV download. #}
+{% set impactOptions = about.impact.records | impactChoices %}
+<div class="impact-controls">
+  <script
+    class="impact-records"
+    type="application/json"
+  >{{ about.impact.records | jsonScript | safe }}</script>
+  <form
+    class="impact-filter-form"
+    x-on:submit="$event.preventDefault()"
+    aria-label="Filter demo impact records"
+  >
+    <fieldset disabled x-bind:disabled="!ready">
+      <legend>Filter demo records</legend>
+      <div class="impact-filter-row">
+        <div class="impact-field">
+          <label class="form-label" for="impact-year">Year</label>
+          <select id="impact-year" class="form-select" x-model="year">
+            <option value="">All years</option>
+            {% for year in impactOptions.years %}
+              <option value="{{ year }}">
+                {{ year }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="impact-field">
+          <label class="form-label" for="impact-region">Region</label>
+          <select id="impact-region" class="form-select" x-model="region">
+            <option value="">All regions</option>
+            {% for region in impactOptions.regions %}
+              <option>
+                {{ region }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="impact-field">
+          <label class="form-label" for="impact-topic">Focus area</label>
+          <select id="impact-topic" class="form-select" x-model="topic">
+            <option value="">All focus areas</option>
+            {% for topic in impactOptions.topics %}
+              <option>
+                {{ topic }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="impact-actions">
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          x-on:click="reset()"
+        >Reset filters</button>
+        <button
+          class="btn btn-primary"
+          type="button"
+          x-on:click="download()"
+          x-bind:disabled="selected.length === 0"
+        >Download demo CSV</button>
+      </div>
+    </fieldset>
+  </form>
+  <p class="impact-status" role="status" aria-atomic="true" x-text="summary">
+    Showing all eight illustrative records. Enable JavaScript to filter or
+    export.
+  </p>
+  <p class="impact-error" role="status" x-cloak x-show="failed">
+    Interactive controls could not load. The complete table remains available.
+    <button class="btn btn-outline-primary" type="button" x-on:click="init()">
+      Retry controls
+    </button>
+  </p>
+  <noscript>
+    <p>
+      All demo records are shown below. Filtering and CSV export require
+      JavaScript.
+    </p>
+  </noscript>
+</div>

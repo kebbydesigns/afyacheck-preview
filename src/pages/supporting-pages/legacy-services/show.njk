@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+dataSource: supportingPages.legacy
+dataView: show
+pagination:
+  data: supportingPages.legacy.items
+  size: 1
+  alias: pageContent
+  addAllPagesToCollections: true
+permalink: '{{ pageContent.url }}'
+eleventyComputed:
+  title: '{{ pageContent.title | safe }}'
+  breadcrumbs: []
+---
+
+{# Our service directory has changed: layout belongs here; copy comes from the section JSON. #}
+<section class="page-introduction">
+  <div class="introduction-inner">
+    <div class="introduction-content">
+      <h1>{{ pageContent.sections[0].headings[0] }}</h1>
+      <p class="introduction-lead">
+        {{ pageContent.sections[0].paragraphs[0] }}
+      </p>
+      <a
+        class="btn btn-primary"
+        href="{{ pageContent.sections[0].attributes[0].value }}"
+      >{{ pageContent.sections[0].labels[0] }}</a>
+    </div>
+  </div>
+</section>

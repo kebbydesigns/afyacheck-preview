@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+dataSource: supportingPages.notFound
+dataView: page
+permalink: /404.html
+eleventyComputed:
+  title: '{{ supportingPages.notFound.title | safe }}'
+  description: '{{ supportingPages.notFound.description | safe }}'
+  breadcrumbs: []
+---
+
+{% set pageContent = supportingPages.notFound %}
+
+{# Let’s get you back on track: layout belongs here; copy comes from the section JSON. #}
+<section class="page-introduction">
+  <div class="introduction-inner">
+    <div class="introduction-content">
+      <p class="introduction-kicker">
+        {{ pageContent.sections[0].paragraphs[0] }}
+      </p>
+      <h1>{{ pageContent.sections[0].headings[0] }}</h1>
+      <p class="introduction-lead">
+        {{ pageContent.sections[0].paragraphs[1] }}
+      </p>
+      <div class="recovery-actions">
+        <a
+          class="btn btn-primary"
+          href="{{ pageContent.sections[0].attributes[0].value }}"
+        >{{ pageContent.sections[0].labels[0] }}</a>
+        <a
+          class="btn btn-outline-primary"
+          href="{{ pageContent.sections[0].attributes[1].value }}"
+        >{{ pageContent.sections[0].labels[1] }}</a>
+      </div>
+    </div>
+  </div>
+</section>

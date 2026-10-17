@@ -1,0 +1,252 @@
+{
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page could not be found. Search AfyaCheck or browse the clinical service directory.",
+    "url": "/404.html",
+    "sections": [
+      {
+        "paragraphs": [
+          "404 · Page not found",
+          "This page may have moved, or the address may be incomplete."
+        ],
+        "headings": ["Let’s get you back on track"],
+        "labels": ["Search the site", "Return home"],
+        "attributes": [
+          {
+            "name": "href",
+            "value": "/search/"
+          },
+          {
+            "name": "href",
+            "value": "/"
+          }
+        ]
+      }
+    ]
+  },
+  "search": {
+    "title": "Search",
+    "description": "Search AfyaCheck's clinical services, programmes, campaigns and resource summaries.",
+    "url": "/search/",
+    "sections": [
+      {
+        "paragraphs": [
+          "Find your next step",
+          "Find a service, programme, campaign or resource. Page content is in English."
+        ],
+        "headings": ["Search AfyaCheck"]
+      },
+      {
+        "headings": ["What are you looking for?", "Browse by section"],
+        "labels": [
+          "Search terms",
+          "Search",
+          "Retry loading search",
+          "service directory",
+          "programmes and projects",
+          "resource centre",
+          "Clinical services",
+          "Programmes & projects",
+          "Campaigns",
+          "Media & resources"
+        ],
+        "paragraphs": [
+          "Try “mobile screening”, “Kigoma” or “youth”. Results describe illustrative prototype content. Avoid personal health details.",
+          "Enter a topic to search the site.",
+          "Interactive search needs JavaScript. Browse the",
+          ",",
+          "or",
+          "."
+        ],
+        "attributes": [
+          {
+            "name": "aria-label",
+            "value": "Search results"
+          },
+          {
+            "name": "href",
+            "value": "/services/"
+          },
+          {
+            "name": "href",
+            "value": "/what-we-do/"
+          },
+          {
+            "name": "href",
+            "value": "/media-and-resources/"
+          },
+          {
+            "name": "href",
+            "value": "/services/"
+          },
+          {
+            "name": "href",
+            "value": "/what-we-do/"
+          },
+          {
+            "name": "href",
+            "value": "/campaigns/"
+          },
+          {
+            "name": "href",
+            "value": "/media-and-resources/"
+          }
+        ]
+      }
+    ]
+  },
+  "styleGuide": {
+    "title": "Shared style guide",
+    "description": "AfyaCheck prototype design foundation and component samples.",
+    "url": "/style-guide/",
+    "sections": [
+      {
+        "headings": ["Brand palette"]
+      },
+      {
+        "headings": ["Typography and spacing", "Bringing clinical care closer"],
+        "paragraphs": [
+          "Community health & clinical outreach",
+          "Clear, readable introductions for every screen.",
+          "Body copy uses a 16px base and relaxed line spacing. Content columns keep longer passages readable, while section spacing scales from 48px to 96px.",
+          "184,520+"
+        ],
+        "labels": ["Demo statistic for typography review."]
+      },
+      {
+        "headings": ["Buttons and links"],
+        "labels": [
+          "Primary",
+          "Secondary",
+          "Outline",
+          "Dark",
+          "Disabled",
+          "Text link to the form samples"
+        ],
+        "paragraphs": [". Use Tab to inspect keyboard focus."],
+        "attributes": [
+          {
+            "name": "href",
+            "value": "#forms-title"
+          }
+        ]
+      },
+      {
+        "headings": [
+          "Cards",
+          "A clear content surface",
+          "Visible interaction states"
+        ],
+        "paragraphs": [
+          "Standard card",
+          "White surfaces, subtle borders and 16px corners on the pale page background.",
+          "Interactive card",
+          "The border responds to pointer hover and keyboard focus."
+        ],
+        "labels": ["Review button samples"],
+        "attributes": [
+          {
+            "name": "href",
+            "value": "#buttons-title"
+          }
+        ]
+      },
+      {
+        "headings": ["Form controls"],
+        "paragraphs": ["Visual samples only. No information is submitted."],
+        "labels": [
+          "Name",
+          "Service",
+          "Select a service",
+          "Community outreach",
+          "Message",
+          "Use this field to inspect text entry and focus.",
+          "Valid state",
+          "Example success message.",
+          "Invalid state",
+          "Example error message.",
+          "Disabled state",
+          "Example checkbox"
+        ],
+        "attributes": [
+          {
+            "name": "placeholder",
+            "value": "Your name"
+          }
+        ]
+      }
+    ],
+    "introduction": {
+      "paragraphs": [
+        "AfyaCheck · Phase 1",
+        "Reference colours, typography and reusable components for the AfyaCheck prototype.",
+        "Body text uses Plus Jakarta Sans, headings use Outfit, and figures use JetBrains Mono. Fonts fall back to system fonts when offline."
+      ],
+      "headings": ["Shared design foundation"]
+    }
+  },
+  "legacy": {
+    "items": [
+      {
+        "title": "Service directory updated",
+        "url": "/services/branding/",
+        "slug": "branding",
+        "sections": [
+          {
+            "headings": ["Our service directory has changed"],
+            "paragraphs": [
+              "Explore AfyaCheck’s clinical and community health services."
+            ],
+            "labels": ["View all eight services"],
+            "attributes": [
+              {
+                "name": "href",
+                "value": "/services/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Service directory updated",
+        "url": "/services/content/",
+        "slug": "content",
+        "sections": [
+          {
+            "headings": ["Our service directory has changed"],
+            "paragraphs": [
+              "Explore AfyaCheck’s clinical and community health services."
+            ],
+            "labels": ["View all eight services"],
+            "attributes": [
+              {
+                "name": "href",
+                "value": "/services/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Service directory updated",
+        "url": "/services/web-design/",
+        "slug": "web-design",
+        "sections": [
+          {
+            "headings": ["Our service directory has changed"],
+            "paragraphs": [
+              "Explore AfyaCheck’s clinical and community health services."
+            ],
+            "labels": ["View all eight services"],
+            "attributes": [
+              {
+                "name": "href",
+                "value": "/services/"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

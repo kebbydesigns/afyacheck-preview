@@ -1,0 +1,451 @@
+{
+  "overview": {
+    "title": "Community health, closer to home",
+    "description": "AfyaCheck connects screening, clinical outreach and health education with the communities that need them.",
+    "url": "/about/",
+    "sections": [
+      {
+        "cards": [
+          {
+            "title": "Accessible care",
+            "text": "Take services beyond a fixed clinic through community-led outreach.",
+            "label": "Explore"
+          },
+          {
+            "title": "Continuity of care",
+            "text": "Make counselling, referral and follow-up part of the same journey.",
+            "label": "Explore"
+          },
+          {
+            "title": "Working together",
+            "text": "Build programmes around local health teams and community priorities.",
+            "label": "Explore"
+          }
+        ],
+        "headings": ["Our mission"],
+        "paragraphs": [
+          "Bring preventive care closer to people and help connect an initial health check with the next step in care."
+        ],
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/assets/images/home/community-health-640.jpg"
+          },
+          {
+            "name": "alt",
+            "value": "Illustrative community health gathering"
+          }
+        ]
+      },
+      {
+        "cards": [
+          {
+            "source": "about.story",
+            "title": "Our story",
+            "text": "From a local screening tent to a wider outreach model.",
+            "label": "Explore"
+          },
+          {
+            "source": "about.team",
+            "title": "Team & clinical expertise",
+            "text": "Meet the illustrative multidisciplinary team.",
+            "label": "Explore"
+          },
+          {
+            "source": "about.impact.overview",
+            "title": "Impact & governance",
+            "text": "See how outcomes and accountability could be presented.",
+            "label": "Explore"
+          }
+        ],
+        "headings": ["Get to know AfyaCheck"],
+        "paragraphs": [
+          "Explore the people, principles and proposed partnerships behind the prototype."
+        ]
+      }
+    ]
+  },
+  "story": {
+    "title": "A journey built around communities",
+    "description": "An illustrative account adapted from the supplied reference. Dates and milestones are demo content.",
+    "url": "/about/our-story/",
+    "sections": [
+      {
+        "headings": ["2018 · Starting locally"],
+        "paragraphs": [
+          "The reference story begins with a volunteer-led screening tent in Buguruni, Dar es Salaam. The idea was simple: make a routine health check easier to access."
+        ]
+      },
+      {
+        "headings": ["2021 · Taking care on the road"],
+        "paragraphs": [
+          "The model expanded towards mobile diagnostics, rural visits and a clearer pathway from screening to referral."
+        ],
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/assets/images/home/mobile-clinic-640.jpg"
+          },
+          {
+            "name": "alt",
+            "value": "Illustrative mobile health clinic"
+          }
+        ]
+      },
+      {
+        "cards": [
+          {
+            "source": "about.team",
+            "title": "Meet the demo team",
+            "text": "Clinical and community roles working together.",
+            "label": "Explore"
+          },
+          {
+            "source": "whatWeDo.programs.index",
+            "title": "Explore the programmes",
+            "text": "See the proposed ongoing streams of work.",
+            "label": "Explore"
+          }
+        ],
+        "headings": ["The next chapter"],
+        "paragraphs": [
+          "Community education, inclusive care and frontline training bring different skills into one outreach network."
+        ]
+      }
+    ]
+  },
+  "team": {
+    "title": "People behind community care",
+    "description": "Illustrative profiles from the supplied reference; names, qualifications and affiliations have not been verified.",
+    "url": "/about/team/",
+    "sections": [
+      {
+        "cards": [
+          {
+            "title": "Dr. Neema Mushi, MD, MMed",
+            "kicker": "Chief Medical Director & Lead Epidemiologist",
+            "text": "Dr. Neema Mushi has spearheaded mobile health screening drives across 14 Tanzanian regions. She holds a Master of Medicine from Muhimbili University of Health and Allied Sciences (MUHAS) and advises national task forces on hypertension and diabetes triage protocols.",
+            "details": [
+              "Public Health Medicine & Chronic Disease Surveillance",
+              "Dar es Salaam, Tanzania",
+              "MD (MUHAS)",
+              "MMed Public Health",
+              "Fellow, African Epidemiological Network"
+            ]
+          },
+          {
+            "title": "Dr. Juma Rashid, MD",
+            "kicker": "Head of Clinical Outreach Operations",
+            "text": "Over 12 years organizing remote field medical clinics and emergency triage logistics in Lake Zone and southern highlands. Expert in cold-chain logistics and rapid mobile laboratory deployment.",
+            "details": [
+              "Emergency Triage & Rural Health Systems",
+              "Mwanza, Tanzania",
+              "MD (KCMUCo)",
+              "Postgrad Cert. Humanitarian Logistics"
+            ]
+          },
+          {
+            "title": "Rehema Kassim, MSc, RN",
+            "kicker": "Director of Community Nursing & Youth Health",
+            "text": "Leads our network of 400+ community health volunteers and school wellness clubs. Rehema coordinates adolescent reproductive health literacy and nutrition counselling modules.",
+            "details": [
+              "Maternal-Child Health & Peer Education",
+              "Dodoma, Tanzania",
+              "BSc Nursing (St. John)",
+              "MSc Maternal & Child Health (UDSM)"
+            ]
+          },
+          {
+            "title": "Baraka Mwakasege, BSc, MPH",
+            "kicker": "Lead Health Informatics & Field Monitoring Specialist",
+            "text": "Oversees the AfyaCheck digital registration and DHIS2 data synchronization. Baraka ensures patient privacy compliance and automated ward-level reporting.",
+            "details": [
+              "Geographic Information Systems & HMIS Integration",
+              "Dar es Salaam, Tanzania",
+              "BSc Health Information (UDSM)",
+              "MPH (London School of Hygiene & Tropical Medicine)"
+            ]
+          }
+        ],
+        "headings": ["Clinical & community team"],
+        "paragraphs": [
+          "A multidisciplinary roster for demonstrating the team directory."
+        ]
+      },
+      {
+        "cards": [
+          {
+            "source": "getInvolved",
+            "slug": "volunteer-and-clinical-network"
+          }
+        ],
+        "headings": ["Join the network"],
+        "paragraphs": [
+          "Clinical, community and operational volunteers can explore how the proposed network works."
+        ]
+      }
+    ]
+  },
+  "partners": {
+    "title": "Working together for community health",
+    "description": "Illustrative partner names from the supplied design. No affiliation or active agreement is asserted.",
+    "url": "/about/partners/",
+    "sections": [
+      {
+        "cards": [
+          {
+            "title": "Ministry of Health Tanzania",
+            "text": "Government Regulator & National Health Authority",
+            "label": "Explore"
+          },
+          {
+            "title": "PO-RALG (TAMISEMI)",
+            "text": "Local Government & Council Coordination",
+            "label": "Explore"
+          },
+          {
+            "title": "Muhimbili University (MUHAS)",
+            "text": "Academic & Clinical Research Partner",
+            "label": "Explore"
+          },
+          {
+            "title": "Bugando Medical Centre",
+            "text": "Zonal Referral Hospital Partner",
+            "label": "Explore"
+          },
+          {
+            "title": "Medical Association of Tanzania (MAT)",
+            "text": "Clinical Volunteer Accreditation",
+            "label": "Explore"
+          },
+          {
+            "title": "National Institute for Medical Research (NIMR)",
+            "text": "Ethics & Scientific Oversight",
+            "label": "Explore"
+          }
+        ],
+        "headings": ["Example institutional network"],
+        "paragraphs": [
+          "The directory demonstrates how government, academic and clinical organisations could be presented."
+        ]
+      },
+      {
+        "cards": [
+          {
+            "source": "getInvolved",
+            "slug": "partner-and-co-invest"
+          },
+          {
+            "source": "getInvolved",
+            "slug": "institutional-and-research-collaboration"
+          }
+        ],
+        "headings": ["Build a partnership"],
+        "paragraphs": [
+          "Discuss programme design, outreach support or institutional collaboration."
+        ]
+      }
+    ]
+  },
+  "impact": {
+    "overview": {
+      "title": "Impact with accountability",
+      "description": "A framework for showing community reach alongside the care pathways and governance behind it.",
+      "url": "/about/impact-and-governance/",
+      "sections": [
+        {
+          "cards": [
+            {
+              "source": "about.impact.dashboard",
+              "title": "Impact dashboard",
+              "text": "Explore the illustrative regional and yearly dataset.",
+              "label": "Explore"
+            },
+            {
+              "source": "about.impact.stories",
+              "title": "Community stories",
+              "text": "Read clearly labelled example care journeys.",
+              "label": "Explore"
+            },
+            {
+              "title": "Reports",
+              "text": "Browse the proposed reporting catalogue.",
+              "url": "/media-and-resources/publications/",
+              "label": "Explore"
+            }
+          ],
+          "headings": ["Looking beyond a screening count"],
+          "paragraphs": [
+            "Reach, referrals, workshops and local participation each describe a different part of an outreach programme."
+          ]
+        },
+        {
+          "lists": [
+            [
+              "Review clinical material before publication.",
+              "Separate anonymised programme reporting from patient records.",
+              "Confirm referral arrangements with local care teams.",
+              "Publish approved policies and verified results before launch."
+            ]
+          ],
+          "headings": ["Proposed governance principles"],
+          "paragraphs": [
+            "Consent, respectful care, clinical oversight and transparent reporting guide this prototype's content model."
+          ]
+        }
+      ]
+    },
+    "dashboard": {
+      "title": "Community health in numbers",
+      "description": "Illustrative reference records. These figures are not live, audited or verified programme results.",
+      "url": "/about/impact-and-governance/dashboard/",
+      "sections": [
+        {
+          "headings": ["Regional screening records"],
+          "paragraphs": [
+            "Filter the demo records by year, region and focus area, then export the matching rows as a CSV file."
+          ],
+          "captions": ["Illustrative reference data · No live patient records"],
+          "columns": [
+            "Year",
+            "Region",
+            "Focus",
+            "Screened",
+            "Referrals",
+            "Workshops",
+            "Councils"
+          ],
+          "cells": [
+            "No records match these filters. Reset filters to show the full demo dataset."
+          ],
+          "attributes": [
+            {
+              "name": "aria-label",
+              "value": "Regional screening records"
+            }
+          ]
+        },
+        {
+          "lists": [
+            [
+              "Screened describes recorded screening activity in the example.",
+              "Referrals describes onward care activity, not completed treatment.",
+              "The homepage headline figures are a separate illustrative dataset."
+            ]
+          ],
+          "headings": ["How to read this dataset"],
+          "paragraphs": [
+            "Each row represents a supplied example record. Do not add the records together as a verified total or infer individual health outcomes."
+          ]
+        }
+      ]
+    },
+    "stories": {
+      "title": "Journeys from screening to care",
+      "description": "Composite examples for this prototype, not patient testimonials or verified clinical outcomes.",
+      "url": "/about/impact-and-governance/stories/",
+      "sections": [
+        {
+          "headings": ["A health check at a familiar gathering place"],
+          "paragraphs": [
+            "A fictional market trader attends a community screening tent. A clinician explains the result and discusses a referral, with follow-up coordinated through the local health team."
+          ]
+        },
+        {
+          "headings": ["Making a referral easier to follow"],
+          "paragraphs": [
+            "A fictional caregiver needs help reaching a specialist appointment. The outreach team explains the next steps and helps identify a local point of contact."
+          ]
+        },
+        {
+          "cards": [
+            {
+              "source": "contact.page",
+              "title": "Contact the team",
+              "text": "Discuss a story or media enquiry.",
+              "label": "Explore"
+            }
+          ],
+          "headings": ["Share a story responsibly"],
+          "paragraphs": [
+            "Any future published patient story should have appropriate consent, an accurate account and editorial review. Please do not send patient details through this prototype."
+          ]
+        }
+      ]
+    },
+    "records": [
+      {
+        "year": 2026,
+        "region": "Kigoma",
+        "topic": "Maternal & Child",
+        "screened": 18240,
+        "referrals": 1340,
+        "workshops": 64,
+        "councilsReached": 6
+      },
+      {
+        "year": 2026,
+        "region": "Dar es Salaam",
+        "topic": "Cardiovascular/NCD",
+        "screened": 41200,
+        "referrals": 3820,
+        "workshops": 110,
+        "councilsReached": 5
+      },
+      {
+        "year": 2025,
+        "region": "Mwanza",
+        "topic": "Cardiovascular/NCD",
+        "screened": 32400,
+        "referrals": 2910,
+        "workshops": 88,
+        "councilsReached": 7
+      },
+      {
+        "year": 2025,
+        "region": "Arusha",
+        "topic": "Eye Health",
+        "screened": 19800,
+        "referrals": 1640,
+        "workshops": 45,
+        "councilsReached": 6
+      },
+      {
+        "year": 2025,
+        "region": "Dodoma",
+        "topic": "Maternal & Child",
+        "screened": 24100,
+        "referrals": 1980,
+        "workshops": 72,
+        "councilsReached": 6
+      },
+      {
+        "year": 2024,
+        "region": "Mbeya",
+        "topic": "Infectious Diseases",
+        "screened": 22100,
+        "referrals": 1420,
+        "workshops": 58,
+        "councilsReached": 5
+      },
+      {
+        "year": 2024,
+        "region": "Tanga",
+        "topic": "Nutrition",
+        "screened": 14680,
+        "referrals": 920,
+        "workshops": 40,
+        "councilsReached": 4
+      },
+      {
+        "year": 2024,
+        "region": "Dar es Salaam",
+        "topic": "Cardiovascular/NCD",
+        "screened": 12000,
+        "referrals": 860,
+        "workshops": 36,
+        "councilsReached": 3
+      }
+    ]
+  }
+}

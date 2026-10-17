@@ -1,0 +1,70 @@
+---
+layout: layouts/content.njk
+dataSource: campaigns
+dataView: show
+pagination:
+  data: campaigns.items
+  size: 1
+  alias: pageContent
+  addAllPagesToCollections: true
+permalink: '{{ pageContent.url }}'
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ pageContent.title | safe }}'
+  description: '{{ pageContent.description | safe }}'
+  breadcrumbs:
+    - url: /campaigns/
+      title: '{{ (campaigns.index).title | safe }}'
+  action:
+    url: '{{ pageContent.action.url }}'
+    label: '{{ pageContent.action.label | safe }}'
+---
+
+{# Campaign at a glance: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.dateRange }} · {{ pageContent.location }}</p>
+        <p class="section-note">{{ pageContent.sections[0].paragraphs[0] }}</p>
+      </div>
+    </div>
+    <dl class="section-facts">
+      <div class="fact-item">
+        <dt>{{ pageContent.sections[0].terms[0] }}</dt>
+        <dd>{{ pageContent.targetScreenings | formatNumber }}</dd>
+      </div>
+      <div class="fact-item">
+        <dt>{{ pageContent.sections[0].terms[1] }}</dt>
+        <dd>
+          {% if pageContent.achievedScreenings is number %}
+            {{ pageContent.achievedScreenings | formatNumber }}
+          {% else %}
+            {{ campaigns.notSuppliedLabel }}
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+{# Before attending: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">{{ pageContent.sections[1].headings[0] }}</h2>
+        <p>{{ pageContent.sections[1].paragraphs[0] }}</p>
+        <ul class="section-list">
+          {% for item in pageContent.sections[1].lists[0] %}
+            <li>
+              {{ item }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

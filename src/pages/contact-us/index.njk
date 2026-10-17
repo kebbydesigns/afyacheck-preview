@@ -1,0 +1,35 @@
+---
+layout: layouts/content.njk
+dataSource: contact.page
+dataView: page
+permalink: /contact/
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ contact.page.title | safe }}'
+  description: '{{ contact.page.description | safe }}'
+  breadcrumbs: []
+  enquiryType: '{{ contact.page.enquiryType }}'
+---
+
+{% set pageContent = contact.page %}
+
+{# Contact AfyaCheck: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.sections[0].paragraphs[0] }}</p>
+        <ul class="section-list">
+          {% for item in pageContent.sections[0].lists[0] %}
+            <li>
+              {{ item }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "partials/demo-enquiry.njk" %}

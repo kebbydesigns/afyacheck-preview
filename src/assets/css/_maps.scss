@@ -1,0 +1,14 @@
+// src/assets/css/_maps.scss
+// Each name added here creates classes like:
+// .btn-accent  .btn-outline-accent  .bg-accent  .text-accent
+// .text-bg-accent  .border-accent  .link-accent
+
+@use "sass:map";
+
+// Register extra theme names before Bootstrap generates component utilities.
+$custom-theme-colors: (
+  "accent": $accent,
+);
+
+// Merge custom names without replacing Bootstrap's built-in palette.
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);

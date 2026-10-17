@@ -1,0 +1,195 @@
+{
+  "index": {
+    "title": "Care that meets communities where they are",
+    "description": "Explore eight connected services, from mobile screening to training and inclusive care.",
+    "heading": "Our clinical & community services",
+    "introduction": "Service descriptions are reference content for this prototype. Availability, equipment and referral arrangements must be confirmed with the team."
+  },
+  "detail": {
+    "scope": {
+      "heading": "Clinical scope",
+      "description": "Proposed activities from the reference service profile."
+    },
+    "audience": {
+      "heading": "Who this service is designed for"
+    },
+    "equipment": {
+      "heading": "Equipment & delivery",
+      "description": "Illustrative equipment, rather than a verified inventory or guarantee of availability."
+    },
+    "turnaround": {
+      "heading": "Results & follow-up",
+      "note": "Example service timing only. Confirm the available service, clinical suitability and referral pathway before arranging care."
+    },
+    "action": {
+      "url": "/contact/",
+      "label": "Enquire about this service"
+    },
+    "relatedHeading": "Keep exploring",
+    "cardLabel": "View service"
+  },
+  "items": [
+    {
+      "slug": "mobile-health-screening",
+      "title": "Mobile Health Screening",
+      "description": "Fully equipped mobile clinical vans bringing rapid point-of-care laboratory tests, blood pressure, glucose, BMI, and ECG to remote and peri-urban populations.",
+      "homeTitle": "Mobile Health Screening",
+      "homeDescription": "Mobile clinics bring blood pressure, glucose and other point-of-care checks closer to communities.",
+      "scope": [
+        "Blood Pressure & Mean Arterial Pressure monitoring",
+        "Random & Fasting Blood Glucose (POC Glucometry)",
+        "Point-of-care Lipid Panel & HbA1c",
+        "Portable 12-lead Electrocardiogram (ECG)",
+        "Body Mass Index & Visceral Adiposity assessment"
+      ],
+      "audience": "Rural community gatherings, market squares, faith-based institutions, and underserved peri-urban wards.",
+      "equipment": [
+        "Digital Sphygmomanometers (Omron HEM-907)",
+        "Alere Afinion AS100 Analyzer",
+        "Edan SE-1200 Pro ECG Units",
+        "Portable Solar Battery Generators"
+      ],
+      "turnaround": "Immediate results on-site with clinician counselling (15-20 minutes)."
+    },
+    {
+      "slug": "community-health-outreach",
+      "title": "Community Health Outreach",
+      "description": "Grassroots door-to-door community health initiatives, family health profiling, and liaison with village executive officers (VEOs) and Ward Health Committees.",
+      "homeTitle": "Community Health Outreach",
+      "homeDescription": "Household visits, local health education and coordinated support through village and ward networks.",
+      "scope": [
+        "Household sanitation & vector breeding audits",
+        "Maternal danger signs surveillance and antenatal tracking",
+        "Malnutrition mid-upper arm circumference (MUAC) screening in under-5s",
+        "Defaulter tracing for chronic disease and vaccination regimens"
+      ],
+      "audience": "Vulnerable households, isolated hamlets, elderly citizens with mobility restrictions.",
+      "equipment": [
+        "MUAC Color Bands",
+        "Electronic Weighing Scales",
+        "Tablet-based Household Data Surveyors"
+      ],
+      "turnaround": "Continuous village monitoring with bi-weekly outreach rounds."
+    },
+    {
+      "slug": "clinical-and-specialist-services",
+      "title": "Clinical and Specialist Services",
+      "description": "Temporary specialty field clinics staffed by visiting cardiologists, pediatricians, obstetricians, and ophthalmologists addressing advanced medical diagnoses.",
+      "homeTitle": "Clinical & Specialist Services",
+      "homeDescription": "Visiting specialists provide consultations, diagnostic reviews and links to further care.",
+      "scope": [
+        "Obstetric & Abdominal Ultrasound sonography",
+        "Cervical Cancer Visual Inspection with Acetic Acid (VIA)",
+        "Specialist Pediatric review for congenital conditions",
+        "Ophthalmic slit-lamp exams and cataract identification"
+      ],
+      "audience": "Referred patients from initial community screening needing secondary specialist review.",
+      "equipment": [
+        "Chison Portable Ultrasound Handheld Scanners",
+        "Cryotherapy & Thermal Coagulation Guns",
+        "Handheld Slit Lamp Biomicrosopes"
+      ],
+      "turnaround": "Specialist consultation and ultrasound report issued same day with direct hospital referral letter."
+    },
+    {
+      "slug": "rehabilitation-and-inclusive-care",
+      "title": "Rehabilitation and Inclusive Care",
+      "description": "Targeted support for persons with disabilities, pediatric cerebral palsy, post-stroke motor impairment, and assistive device fitting.",
+      "homeTitle": "Rehabilitation & Inclusive Care",
+      "homeDescription": "Mobility assessments, assistive devices and caregiver support for people with disabilities.",
+      "scope": [
+        "Functional motor capacity and mobility evaluations",
+        "Custom fitting of wheelchairs, crutches, and white canes",
+        "Home-based physical therapy coaching for primary caregivers",
+        "Hearing impairment audiometry baseline testing"
+      ],
+      "audience": "Persons living with physical or sensory disabilities, stroke survivors, and disabled youth.",
+      "equipment": [
+        "Terrain-adaptive Mobility Wheelchairs",
+        "Goniometers & Physical Therapy Bands",
+        "Pocket Screeners for Audiology"
+      ],
+      "turnaround": "Initial functional assessment with custom assistive device allocation and home exercise plan."
+    },
+    {
+      "slug": "health-education-and-public-communication",
+      "title": "Health Education & Public Communication",
+      "description": "Evidence-based health promotion campaigns using local vernacular languages, public townhalls, community radio dramas, and interactive Q&A sessions.",
+      "homeTitle": "Health Education & Public Communication",
+      "homeDescription": "Accessible health messages through local languages, community radio and public conversations.",
+      "scope": [
+        "Dietary sodium and saturated fat reduction workshops",
+        "Tobacco & shisha cessation advocacy",
+        "Breast and testicular self-examination coaching",
+        "Misinformation refutation around chronic disease treatment"
+      ],
+      "audience": "General public, women groups, local market associations, and boda-boda rider unions.",
+      "equipment": [
+        "Public Address Sound Systems",
+        "Anatomical Simulation Pelvic & Breast Models",
+        "Illustrated Swahili Infographic Booklets"
+      ],
+      "turnaround": "Multi-week ongoing behavioral change campaigns and weekly radio episodes."
+    },
+    {
+      "slug": "workplace-and-institutional-wellness",
+      "title": "Workplace and Institutional Wellness",
+      "description": "Occupational health audits, ergonomic risk assessments, and structured health screenings tailored for corporate teams, civil service workers, and industrial facilities.",
+      "homeTitle": "Workplace & Institutional Wellness",
+      "homeDescription": "Preventive screening and practical wellbeing programmes for teams, workplaces and institutions.",
+      "scope": [
+        "Comprehensive corporate executive health profiles",
+        "Ergonomic workspace assessment & repetitive strain injury prevention",
+        "Workplace mental health and burnout resilience workshops",
+        "Annual OSHA-compliant worker medical surveillance"
+      ],
+      "audience": "Corporates, public sector parastatals, manufacturing factories, and educational institutions.",
+      "equipment": [
+        "Mobile Laboratory Analyzer Units",
+        "Audiometric Booths for Factory Floor Noise Screening",
+        "Vision Screeners for Screen Fatigue"
+      ],
+      "turnaround": "Corporate aggregate health index report delivered within 7 working days (anonymized data)."
+    },
+    {
+      "slug": "research-and-technical-collaboration",
+      "title": "Research and Technical Collaboration",
+      "description": "Rigorous epidemiological field data collection, bio-statistical modeling, and partnership with academic research institutes investigating non-communicable diseases in Africa.",
+      "homeTitle": "Research & Technical Collaboration",
+      "homeDescription": "Field research, health data and academic partnerships that inform community health programmes.",
+      "scope": [
+        "Community-level NCD prevalence estimation protocols",
+        "Digital health surveillance with geo-referenced ward mapping",
+        "Qualitative health access barrier assessments",
+        "Collaborative peer-reviewed manuscript development"
+      ],
+      "audience": "Universities, international health consortiums, National Institute for Medical Research (NIMR).",
+      "equipment": [
+        "Encrypted Field Data Collection Tablets",
+        "ODK / KoboCollect HIPAA-ready servers",
+        "Statistical Computing Workstations"
+      ],
+      "turnaround": "Quarterly surveillance bulletins and multi-year collaborative grant projects."
+    },
+    {
+      "slug": "public-health-training-and-capacity-building",
+      "title": "Public Health Training & Capacity Building",
+      "description": "Accredited modular training modules for Community Health Workers (CHWs), dispensary nurses, and youth peer health champions.",
+      "homeTitle": "Public Health Training & Capacity Building",
+      "homeDescription": "Practical training and continuing support for community health workers and frontline teams.",
+      "scope": [
+        "Standardized diagnostic triage and referral criteria",
+        "Blood pressure measurement precision and error minimization",
+        "Compassionate communication and patient counseling",
+        "Mobile application data entry and real-time synchronisation"
+      ],
+      "audience": "Ward Health Officers, Village Health Workers, student nurses, and peer educators.",
+      "equipment": [
+        "Clinical Practice Manikins & Simulation Arms",
+        "Competency Evaluation Logbooks",
+        "Certificate Portfolios"
+      ],
+      "turnaround": "5-day intensive certificate courses with post-training field supervision."
+    }
+  ]
+}

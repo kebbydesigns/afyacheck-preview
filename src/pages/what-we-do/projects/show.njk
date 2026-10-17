@@ -1,0 +1,67 @@
+---
+layout: layouts/content.njk
+dataSource: whatWeDo.projects
+dataView: show
+pagination:
+  data: whatWeDo.projects.items
+  size: 1
+  alias: pageContent
+  addAllPagesToCollections: true
+permalink: '{{ pageContent.url }}'
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ pageContent.title | safe }}'
+  description: '{{ pageContent.description | safe }}'
+  breadcrumbs:
+    - url: /what-we-do/
+      title: '{{ (whatWeDo.overview).title | safe }}'
+    - url: /what-we-do/projects/
+      title: '{{ (whatWeDo.projects.index).title | safe }}'
+  action:
+    url: '{{ pageContent.action.url }}'
+    label: '{{ pageContent.action.label | safe }}'
+---
+
+{# Where & when: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.locationAndDates }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Example coordinating institutions: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">{{ pageContent.sections[1].headings[0] }}</h2>
+        <p>{{ pageContent.sections[1].paragraphs[0] }}</p>
+        <ul class="section-list">
+          {% for item in pageContent.partners %}
+            <li>
+              {{ item }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Connecting field work with follow-up: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-3">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-3">{{ pageContent.sections[2].headings[0] }}</h2>
+        <p>{{ pageContent.sections[2].paragraphs[0] }}</p>
+      </div>
+    </div>
+  </div>
+</section>

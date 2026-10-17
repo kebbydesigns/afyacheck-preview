@@ -1,0 +1,89 @@
+// Search page: keep the form, status and results inside their own container.
+.search-section {
+  @extend .py-5;
+
+  // Align search content with the shared page edges.
+  .search-inner {
+    @extend .container;
+
+    // Keep the search heading distinct from result headings.
+    h2 {
+      @extend .h3, .mb-4;
+    }
+
+    // Stack the field and action on phones, then pair them when space permits.
+    .search-form {
+      @extend .d-flex, .flex-column, .flex-sm-row, .align-items-sm-end, .gap-3;
+
+      // Let the labelled field fill the remaining row width.
+      .search-field {
+        @extend .flex-grow-1;
+        min-width: 0;
+      }
+
+      // Preserve space for the search action without a fixed height.
+      .btn {
+        @extend .flex-shrink-0;
+      }
+    }
+
+    // Keep example searches close to the input they explain.
+    .search-help {
+      @extend .small, .text-body-secondary, .mt-3;
+    }
+
+    // Announce loading, results and recovery without moving keyboard focus.
+    .search-status {
+      @extend .my-4, .fw-semibold;
+      overflow-wrap: anywhere;
+    }
+
+    // Keep result numbering semantic while giving each result its own panel.
+    .search-results {
+      @extend .list-unstyled, .p-0, .mb-5;
+
+      // Separate results without changing link or button colour states.
+      .search-result {
+        @extend .mb-3;
+
+        // Group each result's title and summary in the existing body surface.
+        article {
+          @extend .border, .rounded-3, .p-4, .bg-body;
+
+          // Keep result destinations prominent and readable on small screens.
+          h3 {
+            @extend .h5, .mb-2;
+            overflow-wrap: anywhere;
+          }
+
+          // Let the summary support the linked title.
+          p {
+            @extend .text-body-secondary, .mb-0;
+          }
+        }
+      }
+    }
+
+    // Offer directory links for empty searches and no-JavaScript visits.
+    .search-browse {
+      @extend .mt-5;
+
+      // Keep the browsing heading below the search-result hierarchy.
+      h3 {
+        @extend .h5;
+      }
+
+      // Wrap related directory choices without using utilities in markup.
+      ul {
+        @extend .list-unstyled, .d-flex, .flex-wrap, .gap-4, .p-0;
+
+        // Keep directory destinations easy to activate by touch.
+        li {
+          a {
+            @extend .d-inline-flex, .align-items-center, .py-2;
+          }
+        }
+      }
+    }
+  }
+}

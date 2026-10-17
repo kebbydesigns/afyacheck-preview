@@ -1,0 +1,52 @@
+---
+layout: layouts/content.njk
+dataSource: campaigns.index
+dataView: page
+permalink: /campaigns/
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ campaigns.index.title | safe }}'
+  description: '{{ campaigns.index.description | safe }}'
+  breadcrumbs: []
+---
+
+{% set pageContent = campaigns.index %}
+
+{# Featured campaign: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.sections[0].paragraphs[0] }}</p>
+      </div>
+      <div class="section-media">
+        <img
+          src="{{ pageContent.sections[0].attributes[0].value }}"
+          alt="{{ pageContent.sections[0].attributes[1].value }}"
+          width="640"
+          height="478"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+    {% set cards = campaigns | campaignCards("featured") %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>
+
+{# More campaign examples: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">{{ pageContent.sections[1].headings[0] }}</h2>
+        <p>{{ pageContent.sections[1].paragraphs[0] }}</p>
+      </div>
+    </div>
+    {% set cards = campaigns | campaignCards("remaining") %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

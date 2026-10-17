@@ -1,0 +1,36 @@
+{
+  "name": "afyacheck",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "run-s check:*",
+    "check:header": "node scripts/check-header.mjs",
+    "check:footer": "node scripts/check-footer.mjs",
+    "check:home": "node scripts/check-home.mjs",
+    "check:content": "node scripts/check-content.mjs",
+    "check:features": "node scripts/check-features.mjs",
+    "check:templates": "node scripts/check-template-styles.mjs",
+    "check:colors": "node scripts/check-theme-colors.mjs",
+    "dev:css": "sass --watch --load-path=node_modules --quiet-deps --silence-deprecation=import --silence-deprecation=global-builtin --silence-deprecation=color-functions --no-source-map src/assets/css/main.scss:_site/assets/css/main.css",
+    "dev:site": "eleventy --serve",
+    "start": "run-p dev:*",
+    "build:site": "eleventy",
+    "build:css": "sass --load-path=node_modules --quiet-deps --silence-deprecation=import --silence-deprecation=global-builtin --silence-deprecation=color-functions --no-source-map --style=compressed src/assets/css/main.scss:_site/assets/css/main.css",
+    "build": "run-s build:site build:css",
+    "format": "prettier --write \"**/*.{js,json,scss,css,html,njk,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{js,json,scss,css,html,njk,md,yml,yaml}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-nunjucks": "^0.2.3"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "alpinejs": "^3.14.9",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.13.2",
+    "npm-run-all2": "^8.0.4",
+    "sass-embedded": "^1.105.1"
+  }
+}

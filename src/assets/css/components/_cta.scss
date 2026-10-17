@@ -1,0 +1,17 @@
+// Use Bootstrap's spacing and brand fill for the shared enquiry banner.
+.enquiry-banner {
+  @extend .py-5, .bg-primary, .text-white;
+
+  // Pair the heading and action when the banner has sufficient space.
+  .enquiry-inner {
+    @extend .container,
+      .d-md-flex,
+      .justify-content-between,
+      .align-items-center;
+  }
+
+  // Keep mobile spacing below the title and remove it in the desktop row.
+  .enquiry-title {
+    @extend .h4, .mb-3, .mb-md-0;
+  }
+}

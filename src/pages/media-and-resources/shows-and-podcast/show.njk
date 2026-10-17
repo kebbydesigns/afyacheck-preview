@@ -1,0 +1,58 @@
+---
+layout: layouts/content.njk
+mediaSource: podcasts
+mediaView: show
+pagination:
+  data: mediaResources.podcasts.items
+  size: 1
+  alias: resource
+  addAllPagesToCollections: true
+permalink: "/media-and-resources/shows-and-podcast/{{ resource.slug }}/"
+tags: [contentPage]
+eleventyComputed:
+  title: "{{ resource.title | safe }}"
+  description: "{{ resource.description | safe }}"
+  breadcrumbs:
+    - url: /media-and-resources/
+      title: "{{ mediaResources.overview.title | safe }}"
+    - url: "{{ mediaResources.podcasts.index.url }}"
+      title: "{{ mediaResources.podcasts.index.title | safe }}"
+---
+
+{% set group = mediaResources.podcasts %}
+
+{# Episode notes: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ resource.sections[0].heading }}</h2>
+        <p>{{ resource | resourceMetadata(group) }}</p>
+        <ul class="section-list">
+          {% for item in resource.topics %}
+            <li>
+              {{ item }}
+            </li>
+          {% endfor %}
+        </ul>
+        <p class="section-note">{{ resource.sections[0].note }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Related records: reuse the directory data and exclude this page. #}
+<section
+  class="content-section related-section"
+  aria-labelledby="related-heading"
+>
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="related-heading">{{ group.relatedHeading }}</h2>
+      </div>
+    </div>
+    {% set cards = group | resourceCards(resource.slug) %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

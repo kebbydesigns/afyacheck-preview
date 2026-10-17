@@ -1,0 +1,224 @@
+---
+layout: layouts/base.njk
+dataSource: supportingPages.styleGuide
+dataView: page
+permalink: /style-guide/
+eleventyComputed:
+  title: '{{ supportingPages.styleGuide.title | safe }}'
+  description: '{{ supportingPages.styleGuide.description | safe }}'
+  breadcrumbs: []
+---
+
+{% set pageContent = supportingPages.styleGuide %}
+
+<div class="style-guide">
+  <div class="guide-intro">
+    <p class="eyebrow">{{ pageContent.introduction.paragraphs[0] }}</p>
+    <h1 class="guide-title">{{ pageContent.introduction.headings[0] }}</h1>
+    <p class="guide-lead">{{ pageContent.introduction.paragraphs[1] }}</p>
+    <p>{{ pageContent.introduction.paragraphs[2] }}</p>
+  </div>
+
+  {# Brand palette: layout belongs here; copy comes from the section JSON. #}
+  <section class="guide-section" aria-labelledby="colours-title">
+    <h2 id="colours-title" class="guide-heading">
+      {{ pageContent.sections[0].headings[0] }}
+    </h2>
+    <div class="palette-row">
+      {% for name in ["primary", "secondary", "dark", "light"] %}
+        <div class="palette-column">
+          <div class="card palette-card">
+            <div class="palette-swatch palette-{{ name }}" aria-hidden="true">
+              &nbsp;
+            </div>
+            <div class="card-body">
+              <h3 class="palette-name">{{ name }}</h3>
+              <code>var(--bs-{{ name }})</code>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# Typography and spacing: layout belongs here; copy comes from the section JSON. #}
+  <section class="guide-section" aria-labelledby="type-title">
+    <h2 id="type-title" class="guide-heading">
+      {{ pageContent.sections[1].headings[0] }}
+    </h2>
+    <div class="card">
+      <div class="card-body guide-copy">
+        <p class="eyebrow">{{ pageContent.sections[1].paragraphs[0] }}</p>
+        <h3 class="guide-display">{{ pageContent.sections[1].headings[1] }}</h3>
+        <p class="guide-sample-lead">
+          {{ pageContent.sections[1].paragraphs[1] }}
+        </p>
+        <p>{{ pageContent.sections[1].paragraphs[2] }}</p>
+        <p class="guide-stat">{{ pageContent.sections[1].paragraphs[3] }}</p>
+        <small class="guide-secondary">
+          {{ pageContent.sections[1].labels[0] }}
+        </small>
+      </div>
+    </div>
+  </section>
+
+  {# Buttons and links: layout belongs here; copy comes from the section JSON. #}
+  <section class="guide-section" aria-labelledby="buttons-title">
+    <h2 id="buttons-title" class="guide-heading">
+      {{ pageContent.sections[2].headings[0] }}
+    </h2>
+    <div class="button-samples">
+      <button class="btn btn-primary" type="button">
+        {{ pageContent.sections[2].labels[0] }}
+      </button>
+      <button class="btn btn-secondary" type="button">
+        {{ pageContent.sections[2].labels[1] }}
+      </button>
+      <button class="btn btn-outline-primary" type="button">
+        {{ pageContent.sections[2].labels[2] }}
+      </button>
+      <button class="btn btn-dark" type="button">
+        {{ pageContent.sections[2].labels[3] }}
+      </button>
+      <button class="btn btn-primary" type="button" disabled>
+        {{ pageContent.sections[2].labels[4] }}
+      </button>
+    </div>
+    <p>
+      <a href="{{ pageContent.sections[2].attributes[0].value }}">
+        {{ pageContent.sections[2].labels[5] }}
+      </a>
+      {{ pageContent.sections[2].paragraphs[0] }}
+    </p>
+  </section>
+
+  {# Cards: layout belongs here; copy comes from the section JSON. #}
+  <section class="guide-section" aria-labelledby="cards-title">
+    <h2 id="cards-title" class="guide-heading">
+      {{ pageContent.sections[3].headings[0] }}
+    </h2>
+    <div class="card-samples">
+      <div class="card-sample-column">
+        <div class="card sample-card">
+          <div class="card-body">
+            <p class="eyebrow">{{ pageContent.sections[3].paragraphs[0] }}</p>
+            <h3 class="sample-card-title">
+              {{ pageContent.sections[3].headings[1] }}
+            </h3>
+            <p class="sample-card-description">
+              {{ pageContent.sections[3].paragraphs[1] }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-sample-column">
+        <div class="card card-hover sample-card">
+          <div class="card-body">
+            <p class="eyebrow">{{ pageContent.sections[3].paragraphs[2] }}</p>
+            <h3 class="sample-card-title">
+              {{ pageContent.sections[3].headings[2] }}
+            </h3>
+            <p class="guide-secondary">
+              {{ pageContent.sections[3].paragraphs[3] }}
+            </p>
+            <a
+              class="sample-card-link"
+              href="{{ pageContent.sections[3].attributes[0].value }}"
+            >{{ pageContent.sections[3].labels[0] }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Form controls: layout belongs here; copy comes from the section JSON. #}
+  <section aria-labelledby="forms-title">
+    <h2 id="forms-title" class="guide-form-title">
+      {{ pageContent.sections[4].headings[0] }}
+    </h2>
+    <p class="guide-secondary">{{ pageContent.sections[4].paragraphs[0] }}</p>
+    <div class="card form-samples">
+      <div class="card-body">
+        <div class="sample-field">
+          <label class="form-label" for="sample-name">
+            {{ pageContent.sections[4].labels[0] }}
+          </label>
+          <input
+            id="sample-name"
+            class="form-control"
+            placeholder="{{ pageContent.sections[4].attributes[0].value }}"
+            autocomplete="off"
+          />
+        </div>
+        <div class="sample-field">
+          <label class="form-label" for="sample-service">
+            {{ pageContent.sections[4].labels[1] }}
+          </label>
+          <select id="sample-service" class="form-select">
+            <option>{{ pageContent.sections[4].labels[2] }}</option>
+            <option>{{ pageContent.sections[4].labels[3] }}</option>
+          </select>
+        </div>
+        <div class="sample-field">
+          <label class="form-label" for="sample-message">
+            {{ pageContent.sections[4].labels[4] }}
+          </label>
+          <textarea
+            id="sample-message"
+            class="form-control"
+            rows="3"
+            aria-describedby="sample-help"
+          ></textarea>
+          <div id="sample-help" class="form-text">
+            {{ pageContent.sections[4].labels[5] }}
+          </div>
+        </div>
+        <div class="sample-field">
+          <label class="form-label" for="sample-valid">
+            {{ pageContent.sections[4].labels[6] }}
+          </label>
+          <input
+            id="sample-valid"
+            class="form-control is-valid"
+            value="Sample value"
+            aria-describedby="valid-help"
+          />
+          <div id="valid-help" class="valid-feedback">
+            {{ pageContent.sections[4].labels[7] }}
+          </div>
+        </div>
+        <div class="sample-field">
+          <label class="form-label" for="sample-invalid">
+            {{ pageContent.sections[4].labels[8] }}
+          </label>
+          <input
+            id="sample-invalid"
+            class="form-control is-invalid"
+            aria-invalid="true"
+            aria-describedby="invalid-help"
+          />
+          <div id="invalid-help" class="invalid-feedback">
+            {{ pageContent.sections[4].labels[9] }}
+          </div>
+        </div>
+        <div class="sample-field">
+          <label class="form-label" for="sample-disabled">
+            {{ pageContent.sections[4].labels[10] }}
+          </label>
+          <input
+            id="sample-disabled"
+            class="form-control"
+            value="Unavailable"
+            disabled
+          />
+        </div>
+        <div class="form-check">
+          <input id="sample-check" class="form-check-input" type="checkbox" />
+          <label class="form-check-label" for="sample-check">
+            {{ pageContent.sections[4].labels[11] }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,135 @@
+---
+layout: layouts/base.njk
+dataSource: supportingPages.search
+dataView: page
+permalink: /search/
+eleventyComputed:
+  title: '{{ supportingPages.search.title | safe }}'
+  description: '{{ supportingPages.search.description | safe }}'
+  breadcrumbs: []
+---
+
+{% set pageContent = supportingPages.search %}
+
+{# Search AfyaCheck: layout belongs here; copy comes from the section JSON. #}
+<section class="page-introduction">
+  <div class="introduction-inner">
+    <div class="introduction-content">
+      <p class="introduction-kicker">
+        {{ pageContent.sections[0].paragraphs[0] }}
+      </p>
+      <h1>{{ pageContent.sections[0].headings[0] }}</h1>
+      <p class="introduction-lead">
+        {{ pageContent.sections[0].paragraphs[1] }}
+      </p>
+    </div>
+  </div>
+</section>
+
+{# What are you looking for?: layout belongs here; copy comes from the section JSON. #}
+<section
+  class="search-section"
+  aria-labelledby="search-heading"
+  x-data="siteSearch"
+>
+  <div class="search-inner">
+    <h2 id="search-heading">{{ pageContent.sections[1].headings[0] }}</h2>
+    <form
+      class="search-form"
+      action="/search/"
+      method="get"
+      role="search"
+      x-on:submit="$event.preventDefault(); search()"
+    >
+      <div class="search-field">
+        <label class="form-label" for="search-query">
+          {{ pageContent.sections[1].labels[0] }}
+        </label>
+        <input
+          id="search-query"
+          class="form-control"
+          name="q"
+          type="search"
+          maxlength="120"
+          x-model="query"
+          aria-describedby="search-help"
+        />
+      </div>
+      <button class="btn btn-primary" type="submit">
+        {{ pageContent.sections[1].labels[1] }}
+      </button>
+    </form>
+    <p id="search-help" class="search-help">
+      {{ pageContent.sections[1].paragraphs[0] }}
+    </p>
+    <p class="search-status" role="status" aria-atomic="true" x-text="status">
+      {{ pageContent.sections[1].paragraphs[1] }}
+    </p>
+    <button
+      class="btn btn-outline-primary"
+      type="button"
+      x-cloak
+      x-show="failed"
+      x-on:click="load()"
+    >{{ pageContent.sections[1].labels[2] }}</button>
+    <ol
+      class="search-results"
+      aria-label="{{ pageContent.sections[1].attributes[0].value }}"
+      x-cloak
+      x-show="results.length"
+    >
+      <template x-for="result in results" x-bind:key="result.url">
+        <li class="search-result">
+          <article>
+            <h3>
+              <a x-bind:href="result.url" x-text="result.title"></a>
+            </h3>
+            <p x-text="result.description"></p>
+          </article>
+        </li>
+      </template>
+    </ol>
+    <noscript>
+      <p>
+        {{ pageContent.sections[1].paragraphs[2] }}
+        <a href="{{ pageContent.sections[1].attributes[1].value }}">
+          {{ pageContent.sections[1].labels[3] }}
+        </a>
+        {{ pageContent.sections[1].paragraphs[3] }}
+        <a href="{{ pageContent.sections[1].attributes[2].value }}">
+          {{ pageContent.sections[1].labels[4] }}
+        </a>
+        {{ pageContent.sections[1].paragraphs[4] }}
+        <a href="{{ pageContent.sections[1].attributes[3].value }}">
+          {{ pageContent.sections[1].labels[5] }}
+        </a>
+        {{ pageContent.sections[1].paragraphs[5] }}
+      </p>
+    </noscript>
+    <div class="search-browse">
+      <h3>{{ pageContent.sections[1].headings[1] }}</h3>
+      <ul>
+        <li>
+          <a href="{{ pageContent.sections[1].attributes[4].value }}">
+            {{ pageContent.sections[1].labels[6] }}
+          </a>
+        </li>
+        <li>
+          <a href="{{ pageContent.sections[1].attributes[5].value }}">
+            {{ pageContent.sections[1].labels[7] }}
+          </a>
+        </li>
+        <li>
+          <a href="{{ pageContent.sections[1].attributes[6].value }}">
+            {{ pageContent.sections[1].labels[8] }}
+          </a>
+        </li>
+        <li>
+          <a href="{{ pageContent.sections[1].attributes[7].value }}">
+            {{ pageContent.sections[1].labels[9] }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

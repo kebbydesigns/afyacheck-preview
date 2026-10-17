@@ -1,0 +1,49 @@
+---
+layout: layouts/content.njk
+mediaSource: newsroom
+mediaView: show
+pagination:
+  data: mediaResources.newsroom.items
+  size: 1
+  alias: resource
+  addAllPagesToCollections: true
+permalink: "/media-and-resources/newsroom/{{ resource.slug }}/"
+tags: [contentPage]
+eleventyComputed:
+  title: "{{ resource.title | safe }}"
+  description: "{{ resource.description | safe }}"
+  breadcrumbs:
+    - url: /media-and-resources/
+      title: "{{ mediaResources.overview.title | safe }}"
+    - url: "{{ mediaResources.newsroom.index.url }}"
+      title: "{{ mediaResources.newsroom.index.title | safe }}"
+---
+
+{% set group = mediaResources.newsroom %}
+
+{# Demo field report: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ resource.sections[0].heading }}</h2>
+        <p>{{ resource | resourceMetadata(group) }}</p>
+        <p class="section-note">{{ resource.sections[0].note }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Related programme context: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">{{ resource.sections[1].heading }}</h2>
+        <p>{{ resource.sections[1].text }}</p>
+      </div>
+    </div>
+    {% set cards = resource.sections[1].cards %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

@@ -1,0 +1,571 @@
+// Scope homepage surfaces and colours independently of other pages.
+.home-page {
+  --ac-home-surface: #{$input-bg};
+  --ac-home-tint: #{$light};
+  --ac-home-ink: #{$dark};
+  --ac-home-muted: #{$body-secondary-color};
+  --ac-home-border: #{$border-color};
+  color: var(--ac-home-ink);
+  // Use consistent responsive gaps between homepage sections.
+  .home-section {
+    margin-top: var(--ac-section-space);
+  }
+  // Stack paired content until wider screens allow two columns.
+  .home-split {
+    @extend .row, .align-items-center, .g-5;
+  }
+  // Bootstrap columns keep copy and image aligned without custom grid rules.
+  .hero-copy,
+  .hero-media,
+  .youth-copy,
+  .youth-media {
+    @extend .col-12, .col-lg-6;
+  }
+  // Set apart the introduction with a full-width content surface.
+  .home-hero {
+    background: var(--ac-home-surface);
+    border-bottom: 1px solid var(--ac-home-border);
+    padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  // Introduce the outreach focus with a compact tinted label.
+  .hero-kicker {
+    @extend .d-inline-flex;
+    gap: 0.5rem;
+    @extend .align-items-center;
+    background: rgba($primary, 0.08);
+    border: 1px solid rgba($link-color, 0.3);
+    @extend .rounded-1;
+    color: var(--bs-link-color);
+    font-size: 0.75rem;
+    @extend .fw-semibold;
+    padding: 0.5rem 0.75rem;
+    @extend .mb-4;
+  }
+  // Scale the hero headline without overwhelming smaller screens.
+  h1 {
+    font-size: clamp(2.25rem, 4.1vw, 3.75rem);
+    line-height: 1.1;
+    font-weight: 800;
+    @extend .mb-4;
+  }
+  // Emphasize clinical care with the readable brand link colour.
+  h1 span {
+    color: var(--bs-link-color);
+  }
+  // Scale homepage section titles across screen sizes.
+  h2 {
+    font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+    @extend .mb-3;
+  }
+  // Keep introductory paragraphs readable and limit their line length.
+  .hero-lead,
+  .youth-lead {
+    color: var(--ac-home-muted);
+    font-size: 1.0625rem;
+    max-width: 60ch;
+    @extend .mb-4;
+  }
+  // Wrap adjacent CTAs without clipping long labels.
+  .home-actions {
+    @extend .d-flex,
+      .flex-wrap,
+      .flex-column,
+      .flex-sm-row,
+      .align-items-stretch,
+      .align-items-sm-center,
+      .gap-3;
+  }
+  // Separate the outreach principles from the primary CTAs.
+  .hero-trust {
+    @extend .d-flex, .flex-wrap;
+    gap: 0.75rem 1.5rem;
+    @extend .list-unstyled;
+    padding: 1.25rem 0 0;
+    @extend .mt-4, .mb-0;
+    border-top: 1px solid var(--ac-home-border);
+    font-size: 0.75rem;
+    color: var(--ac-home-muted);
+    // Give the approach markers a small brand-colour accent.
+    li span {
+      color: var(--bs-link-color);
+      font-size: 1rem;
+      margin-right: 0.375rem;
+    }
+  }
+  // Reset figure spacing so images align with their content grid.
+  figure {
+    @extend .m-0;
+    min-width: 0;
+  }
+  // Fill figure widths and crop consistently when an aspect ratio applies.
+  figure img {
+    @extend .d-block, .w-100;
+    object-fit: cover;
+  }
+  // Contain the hero photograph, caption and floating demo total.
+  .hero-figure {
+    @extend .position-relative, .overflow-hidden;
+    @extend .rounded-3;
+    border: 1px solid var(--ac-home-border);
+    @extend .shadow-lg;
+  }
+  // Reserve a consistent crop for the hero photograph.
+  .hero-figure img {
+    aspect-ratio: 16/11;
+    height: auto;
+  }
+  // Keep caption text readable over varying photograph colours.
+  .hero-figure figcaption {
+    @extend .position-absolute;
+    inset: auto 0 0;
+    padding: 3rem 1.25rem 1.25rem;
+    background: linear-gradient(rgba($dark, 0), rgba($dark, 0.92));
+    color: $input-bg;
+    font-size: 0.75rem;
+    // Distinguish the image caption label from its description.
+    span {
+      @extend .d-block;
+      color: $secondary;
+      @extend .text-uppercase;
+      @extend .fw-bold;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.25rem;
+    }
+  }
+  // Keep the illustrative screening total legible over the photograph.
+  .hero-stat {
+    @extend .position-absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1rem;
+    background: $input-bg;
+    color: $dark;
+    border: 1px solid $border-color;
+    @extend .rounded;
+    @extend .shadow-sm;
+    // Emphasize the illustrative screening total within its badge.
+    strong {
+      @extend .d-block;
+      font-size: 1.125rem;
+    }
+    // Keep the demo qualifier beside the screening total.
+    span {
+      @extend .d-block;
+      font-size: 0.625rem;
+    }
+  }
+  // Let section headings and supporting content share a wrapping row.
+  .home-section-heading {
+    @extend .d-flex,
+      .flex-wrap,
+      .gap-3,
+      .justify-content-between,
+      .align-items-center;
+    @extend .mb-4;
+    // Avoid extra bottom spacing inside the shared heading row.
+    h2 {
+      @extend .mb-0;
+    }
+  }
+  // Keep homepage section labels close to their headings.
+  .eyebrow {
+    @extend .mb-2;
+  }
+  // Keep future-feature labels visible without presenting a live action.
+  .home-coming {
+    color: var(--ac-home-muted);
+    font-size: 0.75rem;
+    // Separate availability labels from their surrounding item names.
+    small {
+      @extend .d-block;
+      font-size: 0.625rem;
+    }
+  }
+  // Keep illustrative-data explanations secondary but readable.
+  .home-demo-note {
+    color: var(--ac-home-muted);
+    font-size: 0.75rem;
+  }
+  // Limit supporting section copy alongside its heading.
+  .home-section-intro {
+    color: var(--ac-home-muted);
+    font-size: 0.875rem;
+    max-width: 32ch;
+    @extend .m-0;
+  }
+  // Give the impact panel responsive internal spacing.
+  .home-impact {
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+  // Use a smaller heading within the impact card.
+  .home-impact .home-section-heading h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+  // Arrange the four figures in a compact two-column base layout.
+  .impact-grid {
+    @extend .row, .g-4;
+    border-top: 1px solid var(--ac-home-border);
+    @extend .pt-4;
+    @extend .mb-0;
+  }
+  // Keep each metric within its grid column.
+  .impact-stat {
+    @extend .col-6, .col-lg-3;
+    min-width: 0;
+    // Keep each metric label distinct from its numeric value.
+    dt {
+      font-size: 0.8125rem;
+      @extend .fw-semibold;
+    }
+    // Remove browser-default spacing from metric values.
+    dd {
+      @extend .mb-0;
+    }
+    // Scale tabular totals while keeping each metric inside its column.
+    strong {
+      @extend .d-block;
+      font-size: clamp(1.625rem, 3vw, 2.5rem);
+      line-height: 1.4;
+      letter-spacing: -0.06em;
+    }
+    // Separate each demo trend with a small tinted label.
+    .stat-trend {
+      display: inline-block;
+      background: rgba($primary, 0.08);
+      color: var(--bs-link-color);
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      margin-block: 0.375rem;
+      font-size: 0.6875rem;
+      @extend .fw-semibold;
+    }
+    // Keep metric context below its value and trend.
+    .stat-detail {
+      @extend .d-block;
+      color: var(--ac-home-muted);
+      font-size: 0.75rem;
+    }
+  }
+  // Give the featured demo caravan a contrasting dark panel.
+  .home-campaign {
+    background: $dark;
+    color: $input-bg;
+    @extend .rounded-4;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    // Use lime labels against the fixed dark campaign panel.
+    .eyebrow {
+      color: $secondary;
+    }
+    // Keep the campaign title white on its fixed dark panel.
+    h2 {
+      color: $input-bg;
+    }
+    // Keep the campaign summary readable on the dark background.
+    .campaign-lead {
+      color: $border-color;
+      font-size: 0.9375rem;
+    }
+  }
+  // Bootstrap supplies the featured campaign's responsive copy and media split.
+  .campaign-layout {
+    @extend .row, .align-items-center, .g-5;
+  }
+  .campaign-copy {
+    @extend .col-12, .col-lg-7;
+  }
+  .campaign-media {
+    @extend .col-12, .col-lg-5;
+  }
+  // Allow dates and locations to wrap independently.
+  .campaign-meta {
+    @extend .list-unstyled;
+    @extend .p-0;
+    @extend .d-flex, .flex-wrap;
+    gap: 0.5rem 1.5rem;
+    color: $border-color;
+    font-size: 0.75rem;
+  }
+  // Group the accessible progress element with its explanatory text.
+  .campaign-progress {
+    @extend .my-4;
+    // Let progress labels and counts wrap without overlap.
+    label {
+      @extend .d-flex, .flex-wrap, .justify-content-between;
+      gap: 0.25rem 1rem;
+      font-size: 0.75rem;
+      @extend .mb-2;
+    }
+    // Retain native progress semantics while applying the brand treatment.
+    progress {
+      @extend .d-block, .w-100;
+      height: 0.625rem;
+      @extend .border-0;
+      @extend .rounded-3;
+      @extend .overflow-hidden;
+      background: $body-secondary-color;
+      color: $secondary;
+      appearance: none;
+    }
+    // Set the unfilled progress track in Chromium and Safari.
+    progress::-webkit-progress-bar {
+      background: $body-secondary-color;
+    }
+    // Apply the brand gradient to filled progress in Chromium and Safari.
+    progress::-webkit-progress-value {
+      background: linear-gradient(90deg, $primary, $secondary);
+      @extend .rounded-3;
+    }
+    // Provide a readable progress fill in Firefox.
+    progress::-moz-progress-bar {
+      background: $secondary;
+    }
+    // Keep the demo-progress explanation beside its indicator.
+    p {
+      font-size: 0.6875rem;
+      color: $border-color;
+      margin: 0.5rem 0 0;
+    }
+  }
+  // Crop the mobile-clinic photograph to the campaign panel.
+  .campaign-figure img {
+    aspect-ratio: 4/3;
+    height: auto;
+    @extend .rounded-3;
+    border: 1px solid $body-secondary-color;
+  }
+  // Keep the illustrative-image caption readable on charcoal.
+  .campaign-figure figcaption {
+    color: $border-color;
+    font-size: 0.6875rem;
+    margin-top: 0.75rem;
+  }
+  // Keep the service anchor clear of the sticky navigation.
+  #home-services {
+    scroll-margin-top: 7rem;
+  }
+  // Space the eight service cards in a responsive grid.
+  .home-services-grid {
+    @extend .row, .g-4;
+  }
+  // Change service column counts through Bootstrap's responsive grid.
+  .service-column {
+    @extend .col-12, .col-sm-6, .col-xl-3;
+  }
+  // Keep service card surfaces consistent with the current theme.
+  .home-service {
+    @extend .h-100;
+    background: var(--ac-home-surface);
+    border-color: var(--ac-home-border);
+    // Use a column layout so enquiry links align across cards.
+    .card-body {
+      @extend .d-flex, .flex-column, .align-items-start;
+    }
+    // Keep long service names readable within equal-width cards.
+    h3 {
+      font-size: 1.125rem;
+      line-height: 1.3;
+      margin-block: 1rem 0.75rem;
+    }
+    // Keep service summaries readable above their enquiry links.
+    p {
+      font-size: 0.8125rem;
+      color: var(--ac-home-muted);
+      @extend .mb-4;
+    }
+    // Pin enquiry links to card bottoms with a touch-friendly target.
+    a {
+      @extend .d-flex,
+        .align-items-center,
+        .justify-content-between,
+        .w-100,
+        .gap-3;
+      min-height: 2.75rem;
+      border-top: 1px solid var(--ac-home-border);
+      padding-top: 0.75rem;
+      font-size: 0.8125rem;
+      @extend .fw-semibold;
+      @extend .mt-auto;
+    }
+  }
+  // Distinguish service order with a compact numbered marker.
+  .service-number {
+    @extend .d-inline-flex, .justify-content-center, .align-items-center;
+    width: 2.5rem;
+    height: 2.5rem;
+    @extend .rounded;
+    background: var(--ac-home-tint);
+    color: var(--bs-link-color);
+    @extend .fw-bold;
+  }
+  // Separate the youth spotlight with its own content surface.
+  .home-youth {
+    background: var(--ac-home-surface);
+    border-block: 1px solid var(--ac-home-border);
+    padding-block: var(--ac-section-space);
+  }
+  // Use a consistent workshop crop with subtle separation.
+  .youth-figure img {
+    @extend .rounded-3;
+    aspect-ratio: 4/3;
+    height: auto;
+    @extend .shadow;
+  }
+  // Keep the workshop image's illustrative context visible.
+  .youth-figure figcaption {
+    color: var(--ac-home-muted);
+    font-size: 0.6875rem;
+    margin-top: 0.75rem;
+  }
+  // Group the school programme and podcast highlights.
+  .youth-highlights {
+    @extend .row, .g-3;
+    @extend .my-4;
+    // Separate each youth highlight with a bordered tinted panel.
+    // Bootstrap columns pair the youth highlights when space permits.
+    .youth-highlight-column {
+      @extend .col-12, .col-sm-6;
+    }
+    .youth-highlight {
+      @extend .h-100;
+      background: var(--ac-home-tint);
+      border: 1px solid var(--ac-home-border);
+      @extend .rounded;
+      @extend .p-3;
+    }
+    // Use compact headings within the youth highlight panels.
+    h3 {
+      font-family: $font-family-sans-serif;
+      font-size: 0.8125rem;
+      letter-spacing: 0;
+    }
+    // Keep youth highlight descriptions short and secondary.
+    p {
+      font-size: 0.75rem;
+      color: var(--ac-home-muted);
+      @extend .mb-0;
+    }
+  }
+  // Arrange illustrative partner tiles in a flexible grid.
+  .partner-grid {
+    @extend .row, .g-3, .list-unstyled;
+    @extend .p-0;
+    margin: 1.5rem 0 0;
+    // Keep each partner mark and name centred within its tile.
+    .partner-column {
+      @extend .col-6, .col-sm-4, .col-xl-2;
+    }
+    // Keep the bordered tile inside its Bootstrap gutter column.
+    .partner-tile {
+      @extend .h-100,
+        .d-flex,
+        .flex-column,
+        .align-items-center,
+        .justify-content-center,
+        .text-center;
+      gap: 0.375rem;
+      background: var(--ac-home-surface);
+      border: 1px solid var(--ac-home-border);
+      @extend .rounded;
+      padding: 1.25rem 0.75rem;
+    }
+    // Distinguish partner marks with the shared numeric font.
+    strong {
+      font-size: 0.8125rem;
+      color: var(--bs-link-color);
+    }
+    // Keep partner organisation names secondary to their marks.
+    span {
+      font-size: 0.6875rem;
+      color: var(--ac-home-muted);
+    }
+  }
+  // Separate the final homepage notice from the footer.
+  .home-clinical {
+    margin-bottom: var(--ac-section-space);
+  }
+  // Keep the awareness notice distinct in either page theme.
+  .clinical-banner {
+    @extend .d-flex, .align-items-start, .gap-3;
+    background: $light;
+    color: $dark;
+    border: 1px solid $warning;
+    @extend .rounded;
+    padding: 1.25rem;
+    // Use a compact heading within the clinical notice.
+    h2 {
+      font-size: 1rem;
+      @extend .mb-2;
+    }
+    // Keep the awareness message compact above its notice link.
+    p {
+      font-size: 0.8125rem;
+      @extend .mb-2;
+    }
+    // Keep the medical-notice link readable and touch-friendly.
+    a {
+      color: $link-color;
+      font-size: 0.8125rem;
+      @extend .fw-semibold;
+      @extend .d-inline-flex, .align-items-center;
+      min-height: 2.75rem;
+    }
+  }
+  // Provide a text-based notice marker without external assets.
+  .clinical-icon {
+    @extend .d-inline-flex,
+      .align-items-center,
+      .justify-content-center,
+      .flex-shrink-0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid currentColor;
+    @extend .rounded-circle;
+    @extend .fw-bold;
+  }
+
+  // Reduce spacing and stack controls on narrow phones.
+  @include media-breakpoint-down(sm) {
+    // Reduce the demo badge footprint on narrow photographs.
+    .hero-stat {
+      top: 0.625rem;
+      right: 0.625rem;
+      padding: 0.5rem 0.75rem;
+    }
+  }
+
+  // Align full-width and standalone sections to the shared Bootstrap container.
+  .home-inner,
+  .home-content {
+    @extend .container;
+  }
+  // Align demo figures without a presentation utility in the template.
+  .stat-value,
+  .service-number {
+    @extend .font-monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  // Separate availability copy from the service grid.
+  .service-availability {
+    @extend .mt-3, .mb-0;
+  }
+  // Centre the illustrative partner strip's heading and supporting copy.
+  .partner-kicker,
+  .partner-title,
+  .partner-note {
+    @extend .text-center;
+  }
+}
+// Swap homepage surfaces and text for dark mode.
+[data-bs-theme="dark"] .home-page {
+  --ac-home-surface: #{$dark};
+  --ac-home-tint: #{$dark};
+  --ac-home-ink: #{$light};
+  --ac-home-muted: #{$border-color};
+  --ac-home-border: #{$body-secondary-color};
+  // Keep Bootstrap cards aligned with the homepage dark palette.
+  .card {
+    color: var(--ac-home-ink);
+    background: var(--ac-home-surface);
+    border-color: var(--ac-home-border);
+  }
+}

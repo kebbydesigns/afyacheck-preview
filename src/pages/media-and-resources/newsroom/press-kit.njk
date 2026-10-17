@@ -1,0 +1,50 @@
+---
+layout: layouts/content.njk
+mediaSource: newsroom.pressKit
+mediaView: page
+permalink: /media-and-resources/newsroom/press-kit/
+tags: [contentPage]
+eleventyComputed:
+  title: "{{ mediaResources.newsroom.pressKit.title | safe }}"
+  description: "{{ mediaResources.newsroom.pressKit.description | safe }}"
+  breadcrumbs:
+    - url: /media-and-resources/
+      title: "{{ mediaResources.overview.title | safe }}"
+    - url: "{{ mediaResources.newsroom.index.url }}"
+      title: "{{ mediaResources.newsroom.index.title | safe }}"
+---
+
+{# Brand asset: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">
+          {{ mediaResources.newsroom.pressKit.sections[0].heading }}
+        </h2>
+        <p>{{ mediaResources.newsroom.pressKit.sections[0].text }}</p>
+        <a
+          class="btn btn-outline-primary"
+          href="{{ mediaResources.newsroom.pressKit.sections[0].download.url }}"
+          download
+        >{{ mediaResources.newsroom.pressKit.sections[0].download.label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Media contact: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">
+          {{ mediaResources.newsroom.pressKit.sections[1].heading }}
+        </h2>
+        <p>{{ mediaResources.newsroom.pressKit.sections[1].text }}</p>
+      </div>
+    </div>
+    {% set cards = mediaResources.newsroom.pressKit.sections[1].cards %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

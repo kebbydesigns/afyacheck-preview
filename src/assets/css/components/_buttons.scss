@@ -1,0 +1,16 @@
+// Align button content and let padding and line-height determine its height.
+.btn {
+  display: inline-flex;
+  @extend .align-items-center, .justify-content-center;
+  gap: 0.5rem;
+  white-space: normal;
+}
+// Keep labels white in every state; Bootstrap still generates backgrounds and borders.
+.btn-primary,
+.btn-secondary,
+.btn-dark {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-disabled-color: var(--bs-white);
+}

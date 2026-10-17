@@ -1,0 +1,8 @@
+node_modules/
+_site/
+_pages/
+artifacts/
+refference/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,188 @@
+{
+  "mission": "AfyaCheck brings community health screening, clinical outreach and health education closer to communities across Tanzania.",
+  "newsletter": {
+    "kicker": "Public Health Dispatch",
+    "title": "Stay connected to community health",
+    "description": "Updates on screening caravans, field stories and health education.",
+    "demoNotice": "Prototype demo only. Your email is not sent or saved, and no subscription is created.",
+    "confirmation": "Demo complete. No subscription was created and your email was not sent or saved."
+  },
+  "columns": [
+    {
+      "id": "about",
+      "title": "About Us",
+      "items": [
+        {
+          "label": "Overview & Mission",
+          "url": "/about/",
+          "available": true
+        },
+        {
+          "label": "Our Story",
+          "url": "/about/our-story/",
+          "available": true
+        },
+        {
+          "label": "Team & Clinical Roster",
+          "url": "/about/team/",
+          "available": true
+        },
+        {
+          "label": "Impact & Governance",
+          "url": "/about/impact-and-governance/",
+          "available": true
+        },
+        {
+          "label": "Impact Dashboard",
+          "url": "/about/impact-and-governance/dashboard/",
+          "available": true
+        },
+        {
+          "label": "Institutional Partners",
+          "url": "/about/partners/",
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "title": "Clinical Services",
+      "items": [
+        {
+          "label": "Mobile Health Screening",
+          "url": "/services/mobile-health-screening/",
+          "available": true
+        },
+        {
+          "label": "Community Outreach",
+          "url": "/services/community-health-outreach/",
+          "available": true
+        },
+        {
+          "label": "Specialist Services",
+          "url": "/services/clinical-and-specialist-services/",
+          "available": true
+        },
+        {
+          "label": "Inclusive & Rehab Care",
+          "url": "/services/rehabilitation-and-inclusive-care/",
+          "available": true
+        },
+        {
+          "label": "Workplace Wellness",
+          "url": "/services/workplace-and-institutional-wellness/",
+          "available": true
+        },
+        {
+          "label": "View all services",
+          "url": "/services/",
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "title": "Media & Resources",
+      "items": [
+        {
+          "label": "Health Library",
+          "url": "/media-and-resources/health-library/",
+          "available": true
+        },
+        {
+          "label": "Shows & Podcast",
+          "url": "/media-and-resources/shows-and-podcast/",
+          "available": true
+        },
+        {
+          "label": "Youth Corner",
+          "url": "/media-and-resources/youth-corner/",
+          "available": true
+        },
+        {
+          "label": "Newsroom & Updates",
+          "url": "/media-and-resources/newsroom/",
+          "available": true
+        },
+        {
+          "label": "Press Kit & Media Assets",
+          "url": "/media-and-resources/newsroom/press-kit/",
+          "available": true
+        },
+        {
+          "label": "Publications & Reports",
+          "url": "/media-and-resources/publications/",
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "involvement",
+      "title": "Get Involved",
+      "items": [
+        {
+          "label": "Support / Donate",
+          "url": "/get-involved/support/",
+          "available": true
+        },
+        {
+          "label": "Partner & Co-Invest",
+          "url": "/get-involved/partner-and-co-invest/",
+          "available": true
+        },
+        {
+          "label": "Volunteer Network",
+          "url": "/get-involved/volunteer-and-clinical-network/",
+          "available": true
+        },
+        {
+          "label": "Research Collaboration",
+          "url": "/get-involved/institutional-and-research-collaboration/",
+          "available": true
+        },
+        {
+          "label": "Make an enquiry",
+          "url": "/contact/",
+          "available": true
+        }
+      ]
+    }
+  ],
+  "contact": {
+    "title": "Contact AfyaCheck",
+    "location": "Tanzania",
+    "description": "For screening, partnership and volunteer enquiries.",
+    "label": "Contact our team"
+  },
+  "medical": {
+    "title": "Medical notice",
+    "message": "All clinical and educational content on this portal is intended for public health awareness and preventive guidance. It does not constitute individual medical diagnosis or emergency treatment. In acute clinical emergencies, consult a licensed clinician or your nearest hospital immediately."
+  },
+  "legal": [
+    {
+      "label": "Privacy Policy",
+      "url": "/privacy-policy/",
+      "available": true
+    },
+    {
+      "label": "Terms of Use",
+      "url": "/terms-of-use/",
+      "available": true
+    },
+    {
+      "label": "Accessibility Statement",
+      "url": "/accessibility/",
+      "available": true
+    },
+    {
+      "label": "Medical notice",
+      "url": "/medical-information-disclaimer/",
+      "available": true
+    },
+    {
+      "label": "Safeguarding Policy",
+      "url": "/safeguarding-policy/",
+      "available": true
+    }
+  ]
+}

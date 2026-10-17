@@ -1,0 +1,6 @@
+{# Keep English fallback text alongside the dictionary key for local navigation switching. #}
+{% macro label(text) %}
+  <span data-nav-text="{{ text }}">
+    {{ text }}
+  </span>
+{% endmacro %}

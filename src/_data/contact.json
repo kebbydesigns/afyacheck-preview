@@ -1,0 +1,23 @@
+{
+  "page": {
+    "title": "Let’s talk about community health",
+    "description": "Ask about outreach, services, programmes or collaboration.",
+    "url": "/contact/",
+    "enquiryType": "contact",
+    "sections": [
+      {
+        "lists": [
+          [
+            "For service enquiries, mention the service and proposed location.",
+            "For partnerships, outline your institution and area of interest.",
+            "Please do not include patient records or private medical details."
+          ]
+        ],
+        "headings": ["Contact AfyaCheck"],
+        "paragraphs": [
+          "Email info@afyacheck.org. The prototype does not list unverified office addresses or telephone numbers."
+        ]
+      }
+    ]
+  }
+}

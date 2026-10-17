@@ -1,0 +1,19 @@
+// Responsive text alignment utilities.
+// Usage: .text-justify, .text-sm-justify, .text-md-justify, etc.
+.text-justify {
+  text-align: justify !important;
+}
+
+// Generate alignment utilities from Bootstrap's breakpoint map.
+@each $breakpoint, $min-width in $grid-breakpoints {
+  // Skip the base breakpoint already covered above.
+  @if $min-width != 0 {
+    // Apply the alignment override only above its breakpoint.
+    @media (min-width: $min-width) {
+      // Expose a breakpoint-specific justified-text class.
+      .text-#{$breakpoint}-justify {
+        text-align: justify !important;
+      }
+    }
+  }
+}

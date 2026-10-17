@@ -1,0 +1,30 @@
+// Keep single-line fields large enough for touch input.
+.form-control,
+.form-select {
+  min-height: 2.75rem;
+
+  // Pair field text and surface in dark mode despite the fixed light input token.
+  [data-bs-theme="dark"] & {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+
+    // Keep placeholder guidance readable on the themed input surface.
+    &::placeholder {
+      color: var(--bs-secondary-color);
+    }
+  }
+}
+// Allow longer messages without horizontal resizing.
+textarea.form-control {
+  min-height: 8rem;
+  resize: vertical;
+}
+// Indicate that disabled fields cannot be edited.
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+}
+// Keep checkbox boundaries visible on pale surfaces.
+.form-check-input {
+  border-color: $input-placeholder-color;
+}

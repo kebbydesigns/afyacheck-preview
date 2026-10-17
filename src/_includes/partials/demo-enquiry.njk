@@ -1,0 +1,151 @@
+{# Enquiries demonstrate validation without sending, storing or accepting sensitive records. #}
+<section
+  class="enquiry-section"
+  aria-labelledby="enquiry-heading"
+  x-data="demoEnquiry"
+>
+  <div class="enquiry-inner">
+    <div class="enquiry-row">
+      <div class="enquiry-copy">
+        <h2 id="enquiry-heading">
+          {% if enquiryType == "registration" %}
+            Try a registration
+          {% else %}
+            Start an enquiry
+          {% endif %}
+        </h2>
+        <p id="enquiry-notice">
+          Local demo only. Use invented details. Nothing is sent or saved; no
+          appointment, application, donation or reminder is created.
+        </p>
+        <p>
+          Do not enter medical records, safeguarding reports, identity documents
+          or payment details.
+        </p>
+        <p>
+          For a real enquiry:
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </p>
+      </div>
+      <div class="enquiry-form-column">
+        <form
+          class="enquiry-form"
+          aria-describedby="enquiry-notice"
+          x-on:submit="$event.preventDefault(); complete($el)"
+          x-on:input="submitted = false"
+        >
+          <fieldset disabled x-bind:disabled="!ready">
+            <legend>Demo {{ enquiryType }} details</legend>
+            <div class="enquiry-field">
+              <label class="form-label" for="enquiry-name">
+                Your name (required)
+              </label>
+              <input
+                id="enquiry-name"
+                class="form-control"
+                type="text"
+                required
+                minlength="2"
+                maxlength="100"
+                autocomplete="off"
+              />
+            </div>
+            <div class="enquiry-field">
+              <label class="form-label" for="enquiry-email">
+                Email (required)
+              </label>
+              <input
+                id="enquiry-email"
+                class="form-control"
+                type="email"
+                required
+                maxlength="254"
+                autocomplete="off"
+              />
+            </div>
+            <div class="enquiry-field">
+              <label class="form-label" for="enquiry-interest">
+                {% if enquiryType == "registration" %}
+                  Preferred demo location
+                {% elif enquiryType == "volunteer" %}
+                  Area of contribution
+                {% else %}
+                  Area of interest
+                {% endif %}
+                (required)
+              </label>
+              <select id="enquiry-interest" class="form-select" required>
+                <option value="">Choose an option</option>
+                {% if enquiryType == "registration" %}
+                  <option>Kasulu</option>
+                  <option>Kibondo</option>
+                  <option>Kigoma Ujiji</option>
+                {% elif enquiryType == "volunteer" %}
+                  <option>Clinical care</option>
+                  <option>Community education</option>
+                  <option>Field logistics</option>
+                {% elif enquiryType == "support" %}
+                  <option>Outreach transport</option>
+                  <option>Screening supplies</option>
+                  <option>Education & follow-up</option>
+                {% elif enquiryType == "research" %}
+                  <option>Field research</option>
+                  <option>Training collaboration</option>
+                  <option>Institutional partnership</option>
+                {% else %}
+                  <option>Clinical services</option>
+                  <option>Programmes & campaigns</option>
+                  <option>Partnerships</option>
+                  <option>Media & other enquiries</option>
+                {% endif %}
+              </select>
+            </div>
+            <div class="enquiry-field">
+              <label class="form-label" for="enquiry-message">
+                {% if enquiryType == "registration" %}
+                  Access or language preferences
+                {% else %}
+                  Your enquiry
+                {% endif %}
+                (optional)
+              </label>
+              <textarea
+                id="enquiry-message"
+                class="form-control"
+                rows="4"
+                maxlength="2000"
+              ></textarea>
+            </div>
+            <div class="form-check enquiry-consent">
+              <input
+                id="enquiry-consent"
+                class="form-check-input"
+                type="checkbox"
+                required
+              />
+              <label class="form-check-label" for="enquiry-consent">
+                I understand this is a local demo and nothing will be submitted.
+              </label>
+            </div>
+            <button class="btn btn-primary" type="submit">Complete demo</button>
+          </fieldset>
+          <noscript>
+            <p>
+              JavaScript is required for this local demonstration. You can use
+              the email link for a real enquiry.
+            </p>
+          </noscript>
+        </form>
+        <p
+          class="enquiry-confirmation"
+          role="status"
+          x-cloak
+          x-show="submitted"
+        >
+          Demo complete. Your entries were cleared. Nothing was sent or saved
+          and no booking, application, payment or reminder was created.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

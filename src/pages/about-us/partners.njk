@@ -1,0 +1,44 @@
+---
+layout: layouts/content.njk
+dataSource: about.partners
+dataView: page
+permalink: /about/partners/
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ about.partners.title | safe }}'
+  description: '{{ about.partners.description | safe }}'
+  breadcrumbs:
+    - url: /about/
+      title: '{{ (about.overview).title | safe }}'
+---
+
+{% set pageContent = about.partners %}
+
+{# Example institutional network: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.sections[0].paragraphs[0] }}</p>
+      </div>
+    </div>
+    {% set cardReferences = pageContent.sections[0].cards %}
+    {% include "partials/section-cards.njk" %}
+  </div>
+</section>
+
+{# Build a partnership: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">{{ pageContent.sections[1].headings[0] }}</h2>
+        <p>{{ pageContent.sections[1].paragraphs[0] }}</p>
+      </div>
+    </div>
+    {% set cardReferences = pageContent.sections[1].cards %}
+    {% include "partials/section-cards.njk" %}
+  </div>
+</section>

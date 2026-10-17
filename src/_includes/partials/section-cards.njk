@@ -1,0 +1,15 @@
+{# Cross-section cards resolve content references without duplicating page titles and summaries. #}
+{% set sources ={
+    about: about,
+    whatWeDo: whatWeDo,
+    campaigns: campaigns,
+    getInvolved: getInvolved,
+    contact: contact,
+    policies: policies,
+    supportingPages: supportingPages,
+    services: services,
+    mediaResources: mediaResources
+  }
+%}
+{% set cards = cardReferences | resolveContentCards(sources) %}
+{% include "partials/content-cards.njk" %}

@@ -1,0 +1,135 @@
+// Expose the shared container and responsive section spacing.
+.style-guide {
+  @extend .container, .section-space;
+  // Demonstrate a card-wide link without a helper class in the template.
+  .sample-card-link {
+    @extend .stretched-link;
+  }
+
+  // Limit the introductory copy and separate it from samples.
+  .guide-intro {
+    @extend .content-width, .mb-5;
+  }
+
+  // Use Bootstrap's display scale for the review-page title.
+  .guide-title {
+    @extend .display-4;
+  }
+
+  // Keep introductory copy secondary to the main title.
+  .guide-lead {
+    @extend .lead, .text-body-secondary;
+  }
+
+  // Separate each component sample group.
+  .guide-section {
+    @extend .mb-5;
+  }
+
+  // Use consistent section heading size and spacing.
+  .guide-heading {
+    @extend .h3, .mb-4;
+  }
+
+  // Use Bootstrap gutters between palette samples.
+  .palette-row {
+    @extend .row, .g-3;
+  }
+
+  // Scale palette samples from two to four columns.
+  .palette-column {
+    @extend .col-6, .col-lg-3;
+  }
+
+  // Keep palette cards equal-height and clip the swatch corners.
+  .palette-card {
+    @extend .overflow-hidden, .h-100;
+  }
+
+  // Keep colour names compact and consistently capitalised.
+  .palette-name {
+    @extend .h6, .text-capitalize;
+  }
+
+  // Limit the typography sample to a readable measure.
+  .guide-copy {
+    @extend .content-width;
+  }
+
+  // Demonstrate Bootstrap's smaller display heading.
+  .guide-display {
+    @extend .display-6;
+  }
+
+  // Demonstrate the shared lead paragraph style.
+  .guide-sample-lead {
+    @extend .lead;
+  }
+
+  // Compare aligned numeric text at a larger scale.
+  .guide-stat {
+    @extend .font-monospace, .mb-1, .fs-3;
+  }
+
+  // Keep supporting sample explanations secondary.
+  .guide-secondary {
+    @extend .text-body-secondary;
+  }
+
+  // Wrap button examples with consistent spacing.
+  .button-samples {
+    @extend .d-flex, .flex-wrap, .gap-3, .mb-3;
+  }
+
+  // Use Bootstrap gutters between card examples.
+  .card-samples {
+    @extend .row, .g-4;
+  }
+
+  // Pair sample cards once medium-screen space allows.
+  .card-sample-column {
+    @extend .col-md-6;
+  }
+
+  // Keep comparison cards at equal height.
+  .sample-card {
+    @extend .h-100;
+  }
+
+  // Use the shared card heading size.
+  .sample-card-title {
+    @extend .h4;
+  }
+
+  // Keep sample descriptions secondary without trailing space.
+  .sample-card-description {
+    @extend .text-body-secondary, .mb-0;
+  }
+
+  // Separate the form heading from its sample controls.
+  .guide-form-title {
+    @extend .h3, .mb-3;
+  }
+
+  // Limit sample fields to a comfortable reading width.
+  .form-samples {
+    @extend .content-width;
+  }
+
+  // Separate individual form-control examples.
+  .sample-field {
+    @extend .mb-3;
+  }
+
+  // Keep palette values attached to the named samples rather than template utility strings.
+  .palette-swatch {
+    @extend .border-bottom, .p-4;
+  }
+
+  @each $name in (primary, secondary, dark, light) {
+    // Reuse Bootstrap's generated background for each brand sample.
+    .palette-#{$name} {
+      @extend .bg-#{$name};
+    }
+  }
+}

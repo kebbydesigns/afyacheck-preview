@@ -1,0 +1,356 @@
+{% from "macros/navigation.njk" import label %}
+{# Keyboard shortcut to the focusable main region in base.njk. #}
+<a class="skip-link" href="#main-content">Skip to main content</a>
+{# Shared header: labels and route availability come from header.json. #}
+<header class="site-header" x-data="{ bannerVisible: true }">
+  {# Dismissible demo notice; return focus to the brand when dismissed. #}
+  <div class="header-announcement" x-show="bannerVisible">
+    {# Announcement container: message content followed by its dismiss control. #}
+    <div class="announcement-inner">
+      <p class="announcement-copy">
+        <span class="announcement-label">{{ header.announcement.label }}:</span>
+        {{ header.announcement.message }}
+        <a href="{{ header.announcement.link.url }}">
+          {{ header.announcement.link.label }}
+          <span aria-hidden="true">→</span>
+        </a>
+      </p>
+      <button
+        class="announcement-close"
+        type="button"
+        x-on:click="bannerVisible = false; $nextTick(() => $refs.brand.focus())"
+        aria-label="Dismiss campaign announcement"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+  </div>
+  {# Opening hours, search, navigation-language choices and theme utilities. #}
+  <div class="header-utilities">
+    {# Utility container: opening hours and secondary actions wrap independently. #}
+    <div class="utility-inner">
+      {# Availability group: secondary opening hours. #}
+      <div class="utility-contact">
+        <span class="utility-hours">{{ header.utilities.hours }}</span>
+      </div>
+      {# Tools group: search destination, navigation-language choices and theme toggle. #}
+      <div class="utility-tools">
+        <a
+          class="utility-control"
+          href="/search/"
+          {% if page.url == "/search/" %}
+            aria-current="page"
+          {% endif %}
+        >
+          <span class="utility-icon" aria-hidden="true">
+            {{ "search" | bootstrapIcon | safe }}
+          </span>
+          {{ label("Search") }}
+        </a>
+        {# Native language dropdown retains the saved navigation-language preference. #}
+        <div class="dropdown utility-dropdown">
+          <button
+            id="language-menu-toggle"
+            class="utility-control dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            aria-controls="language-menu"
+          >
+            <span class="utility-icon" aria-hidden="true">
+              {{ "translate" | bootstrapIcon | safe }}
+            </span>
+            {{ label("Language") }}
+          </button>
+          <ul
+            id="language-menu"
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="language-menu-toggle"
+          >
+            <li>
+              <button
+                class="dropdown-item"
+                type="button"
+                lang="en"
+                data-navigation-language="en"
+                aria-label="Use English navigation"
+                aria-pressed="true"
+                disabled
+              >English</button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                type="button"
+                lang="sw"
+                data-navigation-language="sw"
+                aria-label="Tumia menyu ya Kiswahili"
+                aria-pressed="false"
+                disabled
+              >Kiswahili</button>
+            </li>
+          </ul>
+        </div>
+        {% if header.themeToggle %}
+          {# Native theme choices share the existing Alpine state and local preference. #}
+          <div class="dropdown utility-dropdown" x-data="themeToggle">
+            <button
+              id="theme-menu-toggle"
+              class="utility-control dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              aria-controls="theme-menu"
+            >
+              <span class="utility-icon" aria-hidden="true">
+                {{ "circle-half" | bootstrapIcon | safe }}
+              </span>
+              {{ label("Theme") }}
+            </button>
+            <ul
+              id="theme-menu"
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="theme-menu-toggle"
+            >
+              <li>
+                <button
+                  class="dropdown-item"
+                  type="button"
+                  x-on:click="setTheme(false)"
+                  x-bind:aria-pressed="!dark"
+                  x-bind:class="{ active: !dark }"
+                  aria-pressed="true"
+                >
+                  <span class="utility-icon" aria-hidden="true">
+                    {{ "sun" | bootstrapIcon | safe }}
+                  </span>
+                  {{ label("Light mode") }}
+                </button>
+              </li>
+              <li>
+                <button
+                  class="dropdown-item"
+                  type="button"
+                  x-on:click="setTheme(true)"
+                  x-bind:aria-pressed="dark"
+                  x-bind:class="{ active: dark }"
+                  aria-pressed="false"
+                >
+                  <span class="utility-icon" aria-hidden="true">
+                    {{ "moon-stars" | bootstrapIcon | safe }}
+                  </span>
+                  {{ label("Dark mode") }}
+                </button>
+              </li>
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {# Sticky navigation tier; app.js updates the scrolling utility-strip offset. #}
+  <div class="header-navigation">
+    <nav
+      class="navbar navbar-expand-xl"
+      aria-label="Main navigation"
+      data-nav-aria="Main navigation"
+    >
+      {# Navigation container: brand, mobile offcanvas trigger and responsive destinations. #}
+      <div class="navigation-inner">
+        {# Preserve the supplied brand and the announcement's return-focus target. #}
+        <a
+          class="navbar-brand"
+          x-ref="brand"
+          href="{{ header.brand.url }}"
+          {% if page.url == "/" %}
+            aria-current="page"
+          {% endif %}
+        >
+          <img
+            src="{{ header.brand.logo }}"
+            alt="{{ header.brand.label }} home"
+            width="325"
+            height="80"
+          />
+        </a>
+        {# Bootstrap opens a side panel below the existing desktop expansion breakpoint. #}
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle main navigation"
+          data-nav-aria="Toggle main navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {# One destination group becomes a modal side panel on mobile and stays inline on desktop. #}
+        <div
+          id="mainNav"
+          class="offcanvas offcanvas-end navigation-menu"
+          tabindex="-1"
+          aria-labelledby="mainNavLabel"
+        >
+          {# Mobile brand heading retains the menu's accessible name beside the close control. #}
+          <div class="offcanvas-header">
+            <h2 id="mainNavLabel" class="offcanvas-title">
+              <span class="offcanvas-menu-label">
+                {{ label("Main navigation") }}
+              </span>
+              <img
+                src="{{ header.brand.logo }}"
+                alt=""
+                aria-hidden="true"
+                width="325"
+                height="80"
+              />
+            </h2>
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close navigation"
+              data-nav-aria="Close navigation"
+            ></button>
+          </div>
+          {# The panel body owns scrolling on mobile and the existing horizontal desktop layout. #}
+          <div class="offcanvas-body">
+            {# Destination list: each item owns its disclosure and optional submenu. #}
+            <ul class="navbar-nav">
+              {% for item in header.navigation %}
+                {% set isActive = page.url == item.url or(
+                    item.url != "/" and page.url.startsWith(
+                      item.url
+                    )
+                  )
+                %}
+                <li
+                  class="
+                    nav-item
+                    {% if item.items %}
+                      dropdown
+                    {% endif %}
+                  "
+                >
+                  {% if item.items %}
+                    <button
+                      id="nav-{{ item.id }}"
+                      class="
+                        nav-link
+                        dropdown-toggle
+                        {% if isActive %}
+                          active
+                        {% endif %}
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      data-bs-display="static"
+                      aria-expanded="false"
+                      aria-controls="nav-{{ item.id }}-links"
+                      {% if isActive %}
+                        aria-describedby="nav-{{ item.id }}-current"
+                      {% endif %}
+                    >
+                      {{ label(item.label) }}
+                    </button>
+                    {# Announce the active section without repeating visible navigation text. #}
+                    {% if isActive %}
+                      <span
+                        id="nav-{{ item.id }}-current"
+                        class="current-section-label"
+                      >
+                        {{ label("Current section") }}
+                      </span>
+                    {% endif %}
+                    {# Desktop panel: the same destinations become a three-column card grid from xl. #}
+                    <div
+                      id="nav-{{ item.id }}-links"
+                      class="dropdown-menu"
+                      aria-labelledby="nav-{{ item.id }}"
+                    >
+                      <p class="dropdown-panel-label">
+                        {{ label(item.label) }}
+                      </p>
+                      <ul class="dropdown-links">
+                        {% for child in item.items %}
+                          <li>
+                            {% if child.available %}
+                              <a
+                                class="
+                                  dropdown-item
+                                  {% if page.url == child.url %}
+                                    active
+                                  {% endif %}
+                                "
+                                href="{{ child.url }}"
+                                {% if page.url == child.url %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                <span
+                                  class="dropdown-card-icon"
+                                  aria-hidden="true"
+                                >{{ child.icon | bootstrapIcon | safe }}</span>
+                                <span class="dropdown-card-title">
+                                  {{ label(child.label) }}
+                                </span>
+                                <span
+                                  class="dropdown-card-description"
+                                  lang="en"
+                                >{{ child.description }}</span>
+                              </a>
+                            {% else %}
+                              <span
+                                class="dropdown-item disabled future-link"
+                                aria-disabled="true"
+                              >
+                                <span
+                                  class="dropdown-card-icon"
+                                  aria-hidden="true"
+                                >{{ child.icon | bootstrapIcon | safe }}</span>
+                                <span class="dropdown-card-title">
+                                  {{ child.label }}
+                                </span>
+                                <span
+                                  class="dropdown-card-description"
+                                  lang="en"
+                                >{{ child.description }}</span>
+                                <small>Coming soon</small>
+                              </span>
+                            {% endif %}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  {% else %}
+                    <a
+                      class="
+                        nav-link
+                        {% if isActive %}
+                          active
+                        {% endif %}
+                      "
+                      href="{{ item.url }}"
+                      {% if page.url == item.url %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      {{ label(item.label) }}
+                    </a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            {# Primary action stays alongside the list on desktop and below it on mobile. #}
+            <a class="btn btn-secondary header-cta" href="{{ header.cta.url }}">
+              {{ label(header.cta.label) }}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

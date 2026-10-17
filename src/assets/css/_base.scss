@@ -1,0 +1,8 @@
+// Keep short pages full-height with the footer below main content.
+.site-body {
+  @extend .d-flex, .flex-column, .min-vh-100;
+}
+// Let page content fill the space between shared header and footer.
+.site-main {
+  @extend .flex-grow-1;
+}

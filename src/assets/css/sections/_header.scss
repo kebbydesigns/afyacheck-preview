@@ -1,0 +1,416 @@
+// Keep the keyboard shortcut outside the header and reveal it on focus.
+.skip-link {
+  @extend .visually-hidden-focusable,
+    .position-fixed,
+    .top-0,
+    .start-0,
+    .m-2,
+    .rounded-1,
+    .py-2,
+    .px-3,
+    .bg-body;
+  z-index: $zindex-toast;
+}
+
+// Shared palette and sticky offset apply to all three header tiers.
+.site-header {
+  @extend .position-sticky;
+  // The scrolling offset is calculated by app.js; Bootstrap supplies its initial zero.
+  top: var(--ac-header-offset, #{map-get($position-values, 0)});
+  z-index: $zindex-sticky;
+  // Bootstrap has no minimum tap-target size; retain the existing shared target.
+  --ac-header-control-min-size: 2.75rem;
+  --ac-header-surface: #{$input-bg};
+  --ac-header-ink-rgb: #{to-rgb($dark)};
+  --ac-header-ink: rgb(var(--ac-header-ink-rgb));
+  --ac-header-border: #{$border-color};
+
+  // Change shared tokens once while keeping each tier's layout with its markup.
+  [data-bs-theme="dark"] & {
+    --ac-header-surface: #{$dark};
+    --ac-header-ink-rgb: #{to-rgb($light)};
+    --ac-header-border: #{$body-secondary-color};
+  }
+
+  // Announcement tier: message and dismissal share one container.
+  .header-announcement {
+    @extend .bg-dark, .text-light;
+    font-size: $font-size-sm;
+
+    // Align the notice and dismissal with the page edges.
+    .announcement-inner {
+      @extend .container, .d-flex, .align-items-center, .gap-3, .py-1;
+
+      // Let the message fill the space beside the close control.
+      .announcement-copy {
+        @extend .mb-0, .flex-fill;
+
+        // Distinguish the demo label from the announcement text.
+        .announcement-label {
+          @extend .fw-bold, .text-uppercase, .text-primary;
+          // Bootstrap has no letter-spacing utility for this announcement label.
+          letter-spacing: 0.04em;
+        }
+
+        // Keep the campaign destination readable on charcoal.
+        a {
+          @extend .fw-semibold,
+            .link-secondary,
+            .text-decoration-underline,
+            .link-offset-3;
+        }
+      }
+
+      // Keep dismissal touch-friendly without a prominent fill.
+      .announcement-close {
+        @extend .btn,
+          .btn-outline-light,
+          .flex-shrink-0,
+          .border-0,
+          .rounded-1,
+          .p-1,
+          .fs-4,
+          .lh-1;
+        min-width: var(--ac-header-control-min-size);
+        min-height: var(--ac-header-control-min-size);
+      }
+    }
+
+    // Keep keyboard focus visible on the fixed dark announcement.
+    :focus-visible {
+      outline-color: $secondary !important;
+    }
+  }
+
+  // Utility tier: white semibold labels sit on the shared base gradient.
+  .header-utilities {
+    @extend .text-white, .fw-semibold, .py-1, .border-bottom;
+    background: var(--ac-base-gradient);
+    --bs-border-color: var(--ac-header-border);
+    font-size: $font-size-sm;
+
+    // Align utility groups with page content and allow them to wrap.
+    .utility-inner {
+      @extend .container,
+        .d-flex,
+        .align-items-center,
+        .flex-wrap,
+        .justify-content-between,
+        .gap-0,
+        .row-gap-sm-1,
+        .column-gap-sm-1;
+
+      // Availability group: align the opening hours with the utility controls.
+      .utility-contact {
+        @extend .d-flex,
+          .align-items-center,
+          .flex-wrap,
+          .row-gap-1,
+          .column-gap-3;
+
+        // Keep secondary opening hours for screens with enough space.
+        .utility-hours {
+          @extend .d-none, .d-sm-inline;
+        }
+      }
+
+      // Tools group: spread controls across the row on narrow phones.
+      .utility-tools {
+        @extend .d-flex,
+          .align-items-center,
+          .flex-wrap,
+          .row-gap-1,
+          .column-gap-2,
+          .column-gap-sm-3,
+          .col-12,
+          .col-sm-auto,
+          .justify-content-between,
+          .justify-content-sm-start;
+
+        // Let compact utility buttons size naturally from Bootstrap's padding and type.
+        .utility-control {
+          @extend .btn,
+            .btn-sm,
+            .btn-link,
+            .border-0,
+            .rounded-1,
+            .d-inline-flex,
+            .align-items-center,
+            .text-white,
+            .fw-semibold,
+            .gap-2,
+            .p-1;
+        }
+
+        // Keep utility menus compact and separate from the desktop navigation panels.
+        .utility-dropdown {
+          .dropdown-menu {
+            @extend .shadow-sm, .p-0;
+
+            // Align each theme icon and label with native dropdown spacing and states.
+            .dropdown-item {
+              @extend .d-flex, .align-items-center, .gap-2;
+            }
+          }
+        }
+
+        // Keep supplied Bootstrap SVG icons aligned with utility labels.
+        .utility-icon {
+          @extend .d-inline-flex, .align-items-center;
+          svg {
+            @extend .d-block;
+          }
+        }
+      }
+    }
+  }
+
+  // Navigation tier: Bootstrap owns the mobile offcanvas and desktop dropdowns.
+  .header-navigation {
+    @extend .border-bottom, .shadow-sm;
+    background: var(--ac-header-surface);
+    --bs-border-color: var(--ac-header-border);
+
+    // Map Bootstrap navigation states to the existing header palette.
+    .navbar {
+      --bs-navbar-color: var(--ac-header-ink);
+      --bs-navbar-active-color: var(--bs-link-color);
+      --bs-navbar-hover-color: var(--bs-link-color);
+
+      // Align the brand, menu toggle and destination group with page content.
+      .navigation-inner {
+        @extend .container, .position-relative;
+
+        // Reserve space for the supplied logo beside navigation.
+        .navbar-brand {
+          @extend .flex-shrink-0, .me-3;
+
+          // Preserve the original logo's contrast in dark mode.
+          [data-bs-theme="dark"] & {
+            @extend .rounded-1, .p-2;
+          }
+
+          // Keep the logo proportional and leave room for the mobile toggle.
+          img {
+            @extend .d-block, .h-auto;
+            // Bootstrap has no fixed brand-logo width; keep the supplied sizing.
+            width: 10rem;
+
+            // Reduce logo width on narrow phones.
+            @include media-breakpoint-down(sm) {
+              width: 9rem;
+            }
+          }
+        }
+
+        // Use one panel for mobile navigation and Bootstrap's expanded desktop layout.
+        .navigation-menu {
+          // Bound Bootstrap's panel width on narrow screens; no native viewport cap exists.
+          --bs-offcanvas-width: min(#{$offcanvas-horizontal-width}, 90vw);
+          --bs-offcanvas-bg: var(--ac-header-surface);
+          --bs-offcanvas-color: var(--ac-header-ink);
+          --bs-offcanvas-border-color: var(--ac-header-border);
+
+          // Keep the mobile title and close control outside the scrolling destinations.
+          .offcanvas-header {
+            @extend .border-bottom;
+
+            // Keep the compact brand heading beside the close control.
+            .offcanvas-title {
+              @extend .mb-0, .me-3;
+
+              // Preserve the translated dialog name for assistive technology.
+              .offcanvas-menu-label {
+                @extend .visually-hidden;
+              }
+
+              // Bootstrap has no 120px logo width; retain its responsive image proportions.
+              img {
+                @extend .img-fluid, .d-block;
+                width: 120px;
+              }
+            }
+          }
+
+          // Scroll only the panel body on mobile; fill the desktop navigation row.
+          .offcanvas-body {
+            @extend .flex-xl-grow-1, .align-items-xl-center;
+
+            // Centre desktop destinations between the brand and primary action.
+            .navbar-nav {
+              @extend .mx-xl-auto;
+
+              // Each item owns its disclosure, current-section label and submenu.
+              .nav-item {
+                @extend .position-static;
+
+                // Match navigation ink while Bootstrap opacity softens mobile separators.
+                &:not(:last-child) {
+                  @extend .border-bottom,
+                    .border-2,
+                    .border-opacity-25,
+                    .border-bottom-xl-0;
+                  --bs-border-color: rgba(
+                    var(--ac-header-ink-rgb),
+                    var(--bs-border-opacity)
+                  );
+                }
+
+                // Align destination labels and keep every target touch-friendly.
+                .nav-link {
+                  @extend .d-flex,
+                    .align-items-center,
+                    .justify-content-between,
+                    .w-100,
+                    .border-0,
+                    .text-start,
+                    .text-nowrap,
+                    .fw-semibold,
+                    .gap-2,
+                    .p-3,
+                    .p-xl-2,
+                    .bg-transparent,
+                    .rounded-1;
+                  min-height: var(--ac-header-control-min-size);
+                  font-size: $font-size-sm;
+
+                  // Identify the current section with an underline as well as colour.
+                  &.active {
+                    @extend .text-decoration-underline, .link-offset-3;
+                  }
+                }
+
+                // Expose current-section context without adding a visible label.
+                .current-section-label {
+                  @extend .visually-hidden;
+                }
+
+                // Anchor each desktop panel to the full navigation container.
+                .dropdown-menu {
+                  @extend .border-0,
+                    .border-xl,
+                    .p-2,
+                    .p-xl-4,
+                    .rounded,
+                    .rounded-xl-4,
+                    .shadow-none,
+                    .shadow-xl-lg,
+                    .m-0,
+                    .mt-xl-3,
+                    .mb-2,
+                    .mb-xl-0,
+                    .w-100,
+                    .start-0,
+                    .end-0,
+                    .top-100,
+                    .overflow-y-auto;
+                  --bs-dropdown-bg: var(--ac-header-surface);
+                  --bs-dropdown-color: var(--ac-header-ink);
+                  --bs-dropdown-link-color: var(--ac-header-ink);
+                  --bs-dropdown-link-hover-color: var(--bs-link-color);
+                  --bs-dropdown-link-hover-bg: var(--bs-tertiary-bg);
+                  --bs-dropdown-border-color: var(--ac-header-border);
+                  --bs-border-color: var(--bs-dropdown-border-color);
+                  // Bootstrap has no viewport-bounded dropdown scroll-height token.
+                  max-height: min(70vh, 38rem);
+
+                  // Place mobile submenus inline inside the scrolling panel body.
+                  @include media-breakpoint-down(xl) {
+                    // Bootstrap has no responsive max-height reset; let the panel body scroll.
+                    max-height: none;
+                  }
+
+                  // Label the desktop panel without repeating it inside the mobile list.
+                  .dropdown-panel-label {
+                    @extend .d-none,
+                      .d-xl-block,
+                      .dropdown-header,
+                      .text-uppercase,
+                      .fw-semibold,
+                      .p-0,
+                      .mb-3;
+                  }
+
+                  // Bootstrap's responsive grid keeps mobile links in one column.
+                  .dropdown-links {
+                    @extend .row,
+                      .row-cols-1,
+                      .row-cols-xl-3,
+                      .g-0,
+                      .g-xl-3,
+                      .list-unstyled,
+                      .p-0,
+                      .mb-0;
+
+                    // Stretch cards evenly across each desktop row.
+                    li {
+                      @extend .d-flex;
+                      // Wrap long labels within the submenu width.
+                      .dropdown-item {
+                        @extend .d-flex,
+                          .flex-column,
+                          .justify-content-center,
+                          .justify-content-xl-start,
+                          .py-2,
+                          .px-3,
+                          .p-xl-3,
+                          .h-100,
+                          .text-wrap,
+                          .rounded-1,
+                          .rounded-xl-3,
+                          .bg-xl-body-tertiary;
+                        min-height: var(--ac-header-control-min-size);
+                        font-size: $font-size-sm;
+
+                        // Keep Bootstrap's native active palette above the card background.
+                        &.active {
+                          @extend .bg-primary;
+                        }
+
+                        // Bootstrap Icons are decorative; the destination title names each link.
+                        .dropdown-card-icon {
+                          @extend .d-none, .d-xl-block, .mb-xl-4, .opacity-75;
+                          svg {
+                            @extend .d-block;
+                          }
+                        }
+
+                        // Use the Bootstrap heading scale only in the desktop card grid.
+                        .dropdown-card-title {
+                          @extend .d-block, .fw-xl-semibold, .fs-xl-6;
+                        }
+
+                        // Keep supporting copy out of the compact mobile destination list.
+                        .dropdown-card-description {
+                          @extend .d-none,
+                            .d-xl-block,
+                            .small,
+                            .mt-1,
+                            .opacity-75;
+                        }
+
+                        // Present staged routes without making them interactive.
+                        &.future-link {
+                          // Separate the availability line from the destination name.
+                          small {
+                            @extend .small;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            // Keep the primary action separate from the destination list.
+            .header-cta {
+              @extend .d-flex, .flex-shrink-0, .text-nowrap, .mt-3, .mt-xl-0;
+              font-size: $font-size-sm;
+            }
+          }
+        }
+      }
+    }
+  }
+}

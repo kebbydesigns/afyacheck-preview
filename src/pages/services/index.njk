@@ -1,0 +1,23 @@
+---
+layout: layouts/content.njk
+permalink: /services/
+tags: [contentPage]
+breadcrumbs: []
+eleventyComputed:
+  title: "{{ services.index.title | safe }}"
+  description: "{{ services.index.description | safe }}"
+---
+
+{# Service directory: one JSON dataset supplies the heading, introduction and linked cards. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ services.index.heading }}</h2>
+        <p>{{ services.index.introduction }}</p>
+      </div>
+    </div>
+    {% set cards = services.items | serviceCards('', services.detail.cardLabel) %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

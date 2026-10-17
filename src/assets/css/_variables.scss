@@ -1,0 +1,89 @@
+// Reference design tokens, loaded before Bootstrap defaults.
+// Brand and status colours; text links use a darker cyan for contrast.
+$primary: #01a6da;
+$secondary: #bbd65a;
+$success: #18794e;
+$info: #087c9f;
+$warning: #f59e0b;
+$danger: #be123c;
+$light: #f2f6f9;
+$dark: #222222;
+$accent: $secondary;
+$link-color: #007a9f;
+// Page surfaces and supporting text colours.
+$body-bg: $light;
+$body-color: $dark;
+$body-secondary-color: #57534e;
+$body-tertiary-bg: #eaf0f4;
+$border-color: #dededb;
+// Font families and readable default text metrics.
+$font-family-sans-serif:
+  "Plus Jakarta Sans",
+  system-ui,
+  -apple-system,
+  "Segoe UI",
+  Arial,
+  sans-serif;
+$headings-font-family: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+$font-family-monospace: "JetBrains Mono", Consolas, monospace;
+$font-size-base: 1rem;
+$line-height-base: 1.65;
+$headings-line-height: 1.15;
+$headings-font-weight: 700;
+$lead-font-size: 1.125rem;
+$lead-font-weight: 400;
+$link-decoration: none;
+$link-hover-decoration: underline;
+// Responsive containers; the widest outer container matches the reference.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1280px,
+);
+// Grid spacing, corner radii and shared shadow strengths.
+$grid-gutter-width: 3rem;
+$border-radius: 0.75rem;
+$border-radius-sm: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+$box-shadow-sm: 0 1px 3px rgba(34, 34, 34, 0.06);
+$box-shadow: 0 8px 24px rgba(34, 34, 34, 0.08);
+$box-shadow-lg: 0 16px 40px rgba(34, 34, 34, 0.12);
+// Bootstrap feature switches; components opt into shadows explicitly.
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-negative-margins: true;
+// Button sizing and label weights, including larger variants.
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 1.5rem;
+$btn-font-size: 0.875rem;
+$btn-font-weight: 600;
+$btn-border-radius: 0.75rem;
+$btn-padding-y-lg: 0.875rem;
+$btn-padding-x-lg: 1.75rem;
+$btn-font-size-lg: 1rem;
+$btn-border-radius-lg: 0.75rem;
+$btn-border-radius-sm: 0.5rem;
+// Focus and input tokens shared by Bootstrap form controls.
+$focus-ring-color: rgba(0, 122, 159, 0.3);
+$input-btn-focus-color: $focus-ring-color;
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+$input-bg: #ffffff;
+$input-border-color: #a8a29e;
+$input-focus-border-color: #007a9f;
+$input-placeholder-color: #78716c;
+$form-label-font-weight: 600;
+$form-label-font-size: 0.875rem;
+$form-text-color: #57534e;
+// Default card surfaces, borders and internal spacing.
+$card-bg: #ffffff;
+$card-border-width: 1px;
+$card-border-color: #dededb;
+$card-border-radius: 1rem;
+$card-spacer-y: 1.5rem;
+$card-spacer-x: 1.5rem;
+// Base navbar spacing before section-specific adjustments.
+$navbar-padding-y: 1rem;

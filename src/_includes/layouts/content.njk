@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+---
+
+{# Shared page introduction: breadcrumbs, title, demo context and primary action. #}
+<section class="page-introduction">
+  <div class="introduction-inner">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        {% for ancestor in breadcrumbs %}
+          <li class="breadcrumb-item">
+            <a href="{{ ancestor.url }}">{{ ancestor.title }}</a>
+          </li>
+        {% endfor %}
+        <li class="breadcrumb-item" aria-current="page">{{ title }}</li>
+      </ol>
+    </nav>
+    <div class="introduction-content">
+      <p class="introduction-kicker">
+        {% if policy %}
+          Draft policy
+        {% else %}
+          AfyaCheck · Prototype
+        {% endif %}
+      </p>
+      <h1>{{ title }}</h1>
+      <p class="introduction-lead">{{ description }}</p>
+      <p class="introduction-notice">
+        Prototype content · Figures, profiles, events and affiliations are
+        illustrative.
+      </p>
+      {% if action %}
+        <a class="btn btn-secondary" href="{{ action.url }}">
+          {{ action.label }}
+          <span aria-hidden="true">↗</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{# Individual page files own their section order, markup and copy. #}
+{{ content | safe }}

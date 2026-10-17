@@ -1,0 +1,189 @@
+{% from "macros/navigation.njk" import label %}
+{# Shared footer content comes from footer.json; retain its fixed dark palette. #}
+<footer class="site-footer" data-bs-theme="dark" aria-labelledby="footer-title">
+  <div class="footer-inner">
+    {# Mission and newsletter form the first responsive footer row. #}
+    <div class="footer-top">
+      {# Preserve the supplied logo and the shared mission summary. #}
+      <div class="footer-mission">
+        <h2 id="footer-title" class="footer-accessible-title">
+          About AfyaCheck and site information
+        </h2>
+        <a class="footer-brand" href="/" aria-label="{{ site.title }} home">
+          <img
+            src="{{ site.brandLogo }}"
+            alt="{{ site.title }}"
+            width="325"
+            height="80"
+            loading="lazy"
+          />
+        </a>
+        <p class="footer-mission-copy">{{ footer.mission }}</p>
+        <a class="footer-about-link" href="/about/">
+          Learn about AfyaCheck
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      {# Newsletter: native validation plus a local Alpine demo; enable only when its component is ready. #}
+      <div class="footer-newsletter-column">
+        <section
+          class="footer-newsletter"
+          aria-labelledby="footer-newsletter-title"
+          x-data="newsletterForm"
+        >
+          <p class="footer-kicker">{{ footer.newsletter.kicker }}</p>
+          <h2 id="footer-newsletter-title" class="newsletter-title">
+            {{ footer.newsletter.title }}
+          </h2>
+          <p class="footer-description">{{ footer.newsletter.description }}</p>
+          <p id="footer-newsletter-demo" class="newsletter-demo">
+            {{ footer.newsletter.demoNotice }}
+          </p>
+          <form
+            class="newsletter-form"
+            x-on:submit="$event.preventDefault(); submit()"
+          >
+            <label class="form-label" for="footer-newsletter-email">
+              Email address
+            </label>
+            <div class="newsletter-controls">
+              <input
+                id="footer-newsletter-email"
+                class="form-control"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+                maxlength="254"
+                disabled
+                x-bind:disabled="!ready"
+                x-model="email"
+                x-on:input="submitted = false"
+                aria-describedby="footer-newsletter-demo"
+              />
+              <button
+                class="btn btn-primary"
+                type="submit"
+                disabled
+                x-bind:disabled="!ready"
+              >
+                Subscribe (demo)
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+            <p class="newsletter-feedback" role="status" aria-atomic="true">
+              <span x-show="submitted" x-cloak>
+                {{ footer.newsletter.confirmation }}
+              </span>
+            </p>
+            <noscript>
+              <p class="newsletter-fallback">
+                Enable JavaScript to try the newsletter demo. No subscription
+                service is connected.
+              </p>
+            </noscript>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    {# Navigation groups: only available entries become links; retain future-route labels. #}
+    <div class="footer-directory">
+      {% for column in footer.columns %}
+        <nav
+          class="footer-column"
+          aria-labelledby="footer-{{ column.id }}-title"
+        >
+          <h2 id="footer-{{ column.id }}-title" class="footer-group-title">
+            {{ label(column.title) }}
+          </h2>
+          <ul class="footer-links">
+            {% for item in column.items %}
+              <li>
+                {% if item.available %}
+                  <a
+                    href="{{ item.url }}"
+                    {% if page.url == item.url %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    {{ label(item.label) }}
+                  </a>
+                {% else %}
+                  <span class="footer-future" aria-disabled="true">
+                    {{ item.label }}
+                    <small>Coming soon</small>
+                  </span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endfor %}
+      {# Contact: use the shared site email; office details remain pending reconciliation. #}
+      <section class="footer-contact" aria-labelledby="footer-contact-title">
+        <h2 id="footer-contact-title" class="footer-group-title">
+          {{ footer.contact.title }}
+        </h2>
+        <address>
+          <p>{{ footer.contact.location }}</p>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </address>
+        <p class="footer-description">{{ footer.contact.description }}</p>
+        <a class="footer-contact-link" href="/contact/">
+          {{ footer.contact.label }}
+          <span aria-hidden="true">→</span>
+        </a>
+      </section>
+    </div>
+
+    {# Medical notice: static content, also targeted by homepage and policy-strip anchors. #}
+    <section
+      id="footer-medical-notice"
+      class="footer-medical-notice"
+      tabindex="-1"
+      aria-labelledby="footer-medical-title"
+    >
+      <span class="medical-notice-icon" aria-hidden="true">!</span>
+      <div class="medical-notice-content">
+        <h2 id="footer-medical-title" class="footer-group-title">
+          {{ footer.medical.title }}
+        </h2>
+        <p class="medical-notice-copy">{{ footer.medical.message }}</p>
+      </div>
+    </section>
+
+    {# Legal strip: copyright and policy destinations follow their owning columns. #}
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <p class="text-copyright">
+          &copy; {% year %} {{ site.title }}. All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer-legal">
+        <nav
+          aria-label="Policies and site information"
+          data-nav-aria="Policies and site information"
+        >
+          <ul class="list-legal">
+            {% for item in footer.legal %}
+              <li>
+                {% if item.available %}
+                  <a href="{{ item.url }}">
+                    {{ label(item.label) }}
+                  </a>
+                {% else %}
+                  <span class="footer-future" aria-disabled="true">
+                    {{ item.label }}
+                    <small>Coming soon</small>
+                  </span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>

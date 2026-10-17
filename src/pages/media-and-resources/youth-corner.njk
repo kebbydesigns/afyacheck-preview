@@ -1,0 +1,55 @@
+---
+layout: layouts/content.njk
+mediaSource: youthCorner
+mediaView: page
+permalink: /media-and-resources/youth-corner/
+tags: [contentPage]
+eleventyComputed:
+  title: "{{ mediaResources.youthCorner.title | safe }}"
+  description: "{{ mediaResources.youthCorner.description | safe }}"
+  breadcrumbs:
+    - url: /media-and-resources/
+      title: "{{ mediaResources.overview.title | safe }}"
+---
+
+{# Start a conversation: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">
+          {{ mediaResources.youthCorner.sections[0].heading }}
+        </h2>
+        <p>{{ mediaResources.youthCorner.sections[0].text }}</p>
+      </div>
+      <div class="section-media">
+        <img
+          src="{{ mediaResources.youthCorner.sections[0].image.src }}"
+          alt="{{ mediaResources.youthCorner.sections[0].image.alt }}"
+          width="{{ mediaResources.youthCorner.sections[0].image.width }}"
+          height="{{ mediaResources.youthCorner.sections[0].image.height }}"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+    {% set cards = mediaResources.youthCorner.sections[0].cards %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>
+
+{# Bring a session to your school or group: keep layout here and edit its copy in mediaResources.json. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">
+          {{ mediaResources.youthCorner.sections[1].heading }}
+        </h2>
+        <p>{{ mediaResources.youthCorner.sections[1].text }}</p>
+      </div>
+    </div>
+    {% set cards = mediaResources.youthCorner.sections[1].cards %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

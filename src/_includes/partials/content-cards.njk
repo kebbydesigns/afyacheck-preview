@@ -1,0 +1,35 @@
+{# Reusable directory grid: semantic columns carry all Bootstrap layout through SCSS. #}
+<div class="content-cards">
+  {% for card in cards %}
+    <div class="content-card-column">
+      <article class="content-card">
+        {% if card.kicker %}
+          <p class="card-kicker">
+            {{ card.kicker }}
+          </p>
+        {% endif %}
+        <h3>{{ card.title }}</h3>
+        <p class="card-summary">{{ card.text }}</p>
+        {% if card.details %}
+          <details class="card-details">
+            <summary>Profile details · Demo</summary>
+            <ul>
+              {% for detail in card.details %}
+                <li>
+                  {{ detail }}
+                </li>
+              {% endfor %}
+            </ul>
+          </details>
+        {% endif %}
+        {% if card.url %}
+          <a class="card-link" href="{{ card.url }}">
+            {{ card.label or "Explore" }}
+            <span class="card-link-context">: {{ card.title }}</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        {% endif %}
+      </article>
+    </div>
+  {% endfor %}
+</div>

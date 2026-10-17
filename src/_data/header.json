@@ -1,0 +1,275 @@
+{
+  "announcement": {
+    "label": "Demo field campaign",
+    "message": "Kigoma Caravan 2026 · Free community health screening in Kasulu & Kibondo.",
+    "link": {
+      "label": "Explore demo campaign",
+      "url": "/campaigns/kigoma-screening-caravan-2026/"
+    }
+  },
+  "utilities": {
+    "hours": "Open: 08:00–17:00"
+  },
+  "brand": {
+    "label": "AfyaCheck",
+    "logo": "/assets/images/brand/ac-logo-primary.png",
+    "url": "/"
+  },
+  "navigation": [
+    {
+      "id": "about",
+      "label": "About Us",
+      "url": "/about/",
+      "items": [
+        {
+          "label": "Overview & Mission",
+          "url": "/about/",
+          "available": true,
+          "icon": "bullseye",
+          "description": "Our mission and approach to community health."
+        },
+        {
+          "label": "Our Story",
+          "url": "/about/our-story/",
+          "available": true,
+          "icon": "clock-history",
+          "description": "Follow the story behind the outreach model."
+        },
+        {
+          "label": "Team & Clinical Expertise",
+          "url": "/about/team/",
+          "available": true,
+          "icon": "people",
+          "description": "Meet the illustrative clinical and community team."
+        },
+        {
+          "label": "Impact & Governance",
+          "url": "/about/impact-and-governance/",
+          "available": true,
+          "icon": "shield-check",
+          "description": "Explore impact reporting and governance principles."
+        },
+        {
+          "label": "Impact Dashboard",
+          "url": "/about/impact-and-governance/dashboard/",
+          "available": true,
+          "icon": "bar-chart-line",
+          "description": "Browse and filter the example screening records."
+        },
+        {
+          "label": "Community Stories",
+          "url": "/about/impact-and-governance/stories/",
+          "available": true,
+          "icon": "chat-heart",
+          "description": "Read illustrative journeys from screening to care."
+        },
+        {
+          "label": "Partners",
+          "url": "/about/partners/",
+          "available": true,
+          "icon": "diagram-3",
+          "description": "Explore the proposed institutional network."
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "label": "What We Do",
+      "url": "/what-we-do/",
+      "items": [
+        {
+          "label": "Focus Areas",
+          "url": "/what-we-do/focus-areas/",
+          "available": true,
+          "icon": "bullseye",
+          "description": "Discover the health priorities behind our work."
+        },
+        {
+          "label": "Core Programs",
+          "url": "/what-we-do/programs/",
+          "available": true,
+          "icon": "diagram-3",
+          "description": "Explore ongoing community health programmes."
+        },
+        {
+          "label": "Projects & Field Interventions",
+          "url": "/what-we-do/projects/",
+          "available": true,
+          "icon": "geo-alt",
+          "description": "Find field activities organised by place and purpose."
+        }
+      ]
+    },
+    {
+      "id": "campaigns",
+      "label": "Campaigns",
+      "url": "/campaigns/",
+      "items": [
+        {
+          "label": "Campaigns Overview",
+          "url": "/campaigns/",
+          "available": true,
+          "icon": "calendar-event",
+          "description": "Browse the example caravans and outreach drives."
+        },
+        {
+          "label": "Kigoma Caravan 2026",
+          "url": "/campaigns/kigoma-screening-caravan-2026/",
+          "available": true,
+          "icon": "truck",
+          "description": "Explore the featured Kigoma screening caravan."
+        },
+        {
+          "label": "Past Campaigns",
+          "url": "/campaigns/past/",
+          "available": true,
+          "icon": "archive",
+          "description": "Look back through the illustrative campaign archive."
+        },
+        {
+          "label": "Registration & Reminders",
+          "url": "/campaigns/kigoma-screening-caravan-2026/register/",
+          "available": true,
+          "icon": "bell",
+          "description": "Try the local registration and reminder demo."
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "url": "/services/",
+      "items": [
+        {
+          "label": "All Services",
+          "url": "/services/",
+          "available": true,
+          "icon": "grid",
+          "description": "Browse the full clinical and community service directory."
+        },
+        {
+          "label": "Mobile Health Screening",
+          "url": "/services/mobile-health-screening/",
+          "available": true,
+          "icon": "truck",
+          "description": "Explore mobile screening and point-of-care checks."
+        },
+        {
+          "label": "Community Health Outreach",
+          "url": "/services/community-health-outreach/",
+          "available": true,
+          "icon": "people",
+          "description": "Learn about household outreach and local health education."
+        },
+        {
+          "label": "Clinical & Specialist Services",
+          "url": "/services/clinical-and-specialist-services/",
+          "available": true,
+          "icon": "heart-pulse",
+          "description": "Explore specialist consultations and referral pathways."
+        },
+        {
+          "label": "Rehabilitation & Inclusive Care",
+          "url": "/services/rehabilitation-and-inclusive-care/",
+          "available": true,
+          "icon": "universal-access",
+          "description": "Discover mobility, accessibility and caregiver support."
+        },
+        {
+          "label": "Health Education & Public Communication",
+          "url": "/services/health-education-and-public-communication/",
+          "available": true,
+          "icon": "megaphone",
+          "description": "Explore health education and community communication."
+        },
+        {
+          "label": "Workplace & Institutional Wellness",
+          "url": "/services/workplace-and-institutional-wellness/",
+          "available": true,
+          "icon": "briefcase",
+          "description": "Find preventive health support for workplaces and teams."
+        },
+        {
+          "label": "Research & Technical Collaboration",
+          "url": "/services/research-and-technical-collaboration/",
+          "available": true,
+          "icon": "clipboard-data",
+          "description": "Explore field research, health data and collaboration."
+        },
+        {
+          "label": "Public Health Training & Capacity Building",
+          "url": "/services/public-health-training-and-capacity-building/",
+          "available": true,
+          "icon": "mortarboard",
+          "description": "Learn about training for frontline health teams."
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "label": "Media & Resources",
+      "url": "/media-and-resources/",
+      "items": [
+        {
+          "label": "Overview",
+          "url": "/media-and-resources/",
+          "available": true,
+          "icon": "collection",
+          "description": "Find health information, media and reference reports."
+        },
+        {
+          "label": "Health Library",
+          "url": "/media-and-resources/health-library/",
+          "available": true,
+          "icon": "journal-medical",
+          "description": "Browse proposed preventive health resource summaries."
+        },
+        {
+          "label": "Shows & Podcast",
+          "url": "/media-and-resources/shows-and-podcast/",
+          "available": true,
+          "icon": "mic",
+          "description": "Explore episode concepts and health discussion topics."
+        },
+        {
+          "label": "Youth Corner",
+          "url": "/media-and-resources/youth-corner/",
+          "available": true,
+          "icon": "emoji-smile",
+          "description": "Discover youth health conversations and group activities."
+        },
+        {
+          "label": "Newsroom",
+          "url": "/media-and-resources/newsroom/",
+          "available": true,
+          "icon": "newspaper",
+          "description": "Read illustrative field updates and announcements."
+        },
+        {
+          "label": "Press Kit",
+          "url": "/media-and-resources/newsroom/press-kit/",
+          "available": true,
+          "icon": "folder2-open",
+          "description": "Find the supplied brand asset and media contact."
+        },
+        {
+          "label": "Publications & Reports",
+          "url": "/media-and-resources/publications/",
+          "available": true,
+          "icon": "file-earmark-text",
+          "description": "Browse proposed publications and report summaries."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "url": "/contact/"
+    }
+  ],
+  "cta": {
+    "label": "Get involved",
+    "url": "/get-involved/"
+  },
+  "themeToggle": true
+}

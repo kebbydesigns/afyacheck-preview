@@ -1,0 +1,28 @@
+---
+layout: layouts/content.njk
+dataSource: getInvolved.index
+dataView: page
+permalink: /get-involved/
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ getInvolved.index.title | safe }}'
+  description: '{{ getInvolved.index.description | safe }}'
+  breadcrumbs: []
+---
+
+{% set pageContent = getInvolved.index %}
+
+{# Find your way to contribute: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.sections[0].paragraphs[0] }}</p>
+      </div>
+    </div>
+    {% set cards = getInvolved.items | pageCards %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

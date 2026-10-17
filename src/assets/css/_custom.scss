@@ -1,0 +1,89 @@
+// src/assets/css/_custom.scss
+// Your own extra styles. Bootstrap's variables and mixins work here.
+
+// Hide Alpine elements until Alpine has started (prevents flicker)
+[x-cloak] {
+  display: none !important;
+}
+
+// Document shell and Bootstrap-backed component presentation.
+@import "base";
+
+// start components
+@import "components/buttons";
+@import "components/forms";
+@import "components/cards";
+@import "components/cta";
+@import "components/feature-card";
+// end components
+
+// start sections
+@import "sections/header";
+@import "sections/footer";
+@import "sections/home";
+@import "sections/content";
+@import "sections/search";
+@import "sections/style-guide";
+// end sections
+
+// Smooth font rendering across shared page layouts.
+body {
+  -webkit-font-smoothing: antialiased;
+}
+// Keep shared headings compact and balance their line breaks.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+// Keep media within the available content width.
+img,
+svg {
+  @extend .mw-100;
+}
+// Keep keyboard focus visible against the surrounding surface.
+:focus-visible {
+  outline: 3px solid var(--ac-focus-color) !important;
+  outline-offset: 3px;
+}
+// Apply the shared responsive section padding.
+.section-space {
+  padding-block: var(--ac-section-space);
+}
+// Limit long passages to a comfortable reading measure.
+.content-width {
+  max-width: var(--ac-content-width);
+}
+// Distinguish small section labels from body copy.
+.eyebrow {
+  font-size: 0.75rem;
+  @extend .fw-bold;
+  letter-spacing: 0.08em;
+  @extend .text-uppercase;
+  color: var(--bs-link-color);
+}
+// Expose the heading font for reusable display text.
+.font-display {
+  font-family: $headings-font-family;
+}
+// Use tabular figures for comparable numeric values.
+.font-mono {
+  font-family: $font-family-monospace;
+  font-variant-numeric: tabular-nums;
+}
+// Respect requests to reduce decorative motion.
+@media (prefers-reduced-motion: reduce) {
+  // Shorten animations and remove smooth scrolling for reduced motion.
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

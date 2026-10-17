@@ -1,0 +1,183 @@
+{
+  "index": {
+    "title": "Community health on the road",
+    "description": "Explore the reference caravans and outreach drives. All dates, locations and progress figures are demo content.",
+    "url": "/campaigns/",
+    "sections": [
+      {
+        "headings": ["Featured campaign"],
+        "paragraphs": [
+          "The Kigoma caravan is the featured example, with a dedicated registration demonstration."
+        ],
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/assets/images/home/mobile-clinic-640.jpg"
+          },
+          {
+            "name": "alt",
+            "value": "Illustrative mobile health clinic"
+          }
+        ]
+      },
+      {
+        "headings": ["More campaign examples"],
+        "paragraphs": ["Browse the remaining supplied campaigns."]
+      }
+    ]
+  },
+  "past": {
+    "title": "Past campaign examples",
+    "description": "An illustrative archive, rather than a verified record of completed activity.",
+    "url": "/campaigns/past/",
+    "sections": [
+      {
+        "headings": ["Campaign archive"],
+        "paragraphs": [
+          "The supplied completed campaign examples are shown below."
+        ]
+      }
+    ]
+  },
+  "registration": {
+    "title": "Registration & reminders",
+    "description": "Try the local registration demonstration. No appointment is booked and no SMS reminder is sent.",
+    "url": "/campaigns/kigoma-screening-caravan-2026/register/",
+    "enquiryType": "registration",
+    "sections": [
+      {
+        "headings": ["About this demonstration"],
+        "paragraphs": [
+          "Use invented details only. The form stays in this browser tab and does not create a patient record."
+        ]
+      }
+    ]
+  },
+  "items": [
+    {
+      "title": "Lake Tanganyika Maternal & Chronic Care Caravan 2026",
+      "description": "A high-impact 16-day expedition targeting 18,000 community members across 6 border councils with comprehensive cardiac, diabetic, and cervical cancer screenings.",
+      "url": "/campaigns/kigoma-screening-caravan-2026/",
+      "action": {
+        "url": "/campaigns/kigoma-screening-caravan-2026/register/",
+        "label": "Try demo registration"
+      },
+      "slug": "kigoma-screening-caravan-2026",
+      "sections": [
+        {
+          "headings": ["Campaign at a glance"],
+          "paragraphs": [
+            "Reference progress is illustrative and may include activity beyond the displayed campaign dates. No appointment or venue is confirmed here."
+          ],
+          "terms": ["Demo target", "Demo screenings"]
+        },
+        {
+          "lists": [
+            [
+              "Discuss accessibility and language needs in advance.",
+              "Ask which screening services are available at the confirmed venue.",
+              "Follow individual advice from the attending clinical team."
+            ]
+          ],
+          "headings": ["Before attending"],
+          "paragraphs": [
+            "Contact the team to confirm dates, venue, eligibility, available services and any access requirements. Do not treat this prototype as an event announcement."
+          ]
+        }
+      ],
+      "status": "Active",
+      "card": {
+        "label": "View campaign"
+      },
+      "dateRange": "Nov 12 - Nov 28, 2026",
+      "location": "Kigoma Ujiji, Kasulu & Kibondo Districts",
+      "region": "Kigoma",
+      "targetScreenings": 18000,
+      "achievedScreenings": 12450
+    },
+    {
+      "title": "Mwanza Lake Zone Hypertension & Kidney Health Blitz",
+      "description": "Completed outreach screening 14,200 fishermen, market traders, and residents along Lake Victoria with on-site urinalysis and blood pressure triage.",
+      "url": "/campaigns/mwanza-lake-hypertension-drive/",
+      "action": {
+        "url": "/contact/",
+        "label": "Enquire about campaigns"
+      },
+      "slug": "mwanza-lake-hypertension-drive",
+      "sections": [
+        {
+          "headings": ["Campaign at a glance"],
+          "paragraphs": [
+            "Reference progress is illustrative and may include activity beyond the displayed campaign dates. No appointment or venue is confirmed here."
+          ],
+          "terms": ["Demo target", "Demo screenings"]
+        },
+        {
+          "lists": [
+            [
+              "Discuss accessibility and language needs in advance.",
+              "Ask which screening services are available at the confirmed venue.",
+              "Follow individual advice from the attending clinical team."
+            ]
+          ],
+          "headings": ["Before attending"],
+          "paragraphs": [
+            "Contact the team to confirm dates, venue, eligibility, available services and any access requirements. Do not treat this prototype as an event announcement."
+          ]
+        }
+      ],
+      "status": "Past",
+      "card": {
+        "label": "View campaign"
+      },
+      "dateRange": "Aug 04 - Aug 18, 2026",
+      "location": "Ilemela, Nyamagana & Misungwi",
+      "region": "Mwanza",
+      "targetScreenings": 14000,
+      "achievedScreenings": 14210
+    },
+    {
+      "title": "Dodoma Rural Cervical & Maternal Wellness Drive",
+      "description": "Collaborative initiative with regional health management team bringing thermal coagulation and early HPV screening to rural women.",
+      "url": "/campaigns/dodoma-rural-cervical-screen/",
+      "action": {
+        "url": "/contact/",
+        "label": "Enquire about campaigns"
+      },
+      "slug": "dodoma-rural-cervical-screen",
+      "sections": [
+        {
+          "headings": ["Campaign at a glance"],
+          "paragraphs": [
+            "Reference progress is illustrative and may include activity beyond the displayed campaign dates. No appointment or venue is confirmed here."
+          ],
+          "terms": ["Demo target", "Demo screenings"]
+        },
+        {
+          "lists": [
+            [
+              "Discuss accessibility and language needs in advance.",
+              "Ask which screening services are available at the confirmed venue.",
+              "Follow individual advice from the attending clinical team."
+            ]
+          ],
+          "headings": ["Before attending"],
+          "paragraphs": [
+            "Contact the team to confirm dates, venue, eligibility, available services and any access requirements. Do not treat this prototype as an event announcement."
+          ]
+        }
+      ],
+      "status": "Upcoming",
+      "card": {
+        "label": "View campaign"
+      },
+      "dateRange": "Jan 15 - Feb 02, 2027",
+      "location": "Chamwino, Bahi & Chemba Councils",
+      "region": "Dodoma",
+      "targetScreenings": 12000,
+      "achievedScreenings": null
+    }
+  ],
+  "featuredSlug": "kigoma-screening-caravan-2026",
+  "notSuppliedLabel": "Not supplied"
+}

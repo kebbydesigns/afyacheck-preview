@@ -1,0 +1,228 @@
+{
+  "stats": [
+    {
+      "value": "184,520",
+      "label": "Citizens screened",
+      "detail": "Community screening visits",
+      "trend": "+28% year on year"
+    },
+    {
+      "value": "14,890",
+      "label": "Urgent referrals",
+      "detail": "Linked to referral hospitals",
+      "trend": "94% linkage rate"
+    },
+    {
+      "value": "42",
+      "label": "Local councils reached",
+      "detail": "Across city and rural districts",
+      "trend": "8 regions"
+    },
+    {
+      "value": "680+",
+      "label": "Clinical volunteers",
+      "detail": "Doctors, nurses & community specialists",
+      "trend": "Working together"
+    }
+  ],
+  "campaign": {
+    "description": "A community screening caravan bringing cardiac, diabetes and cervical health checks closer to families across six councils in Kigoma.",
+    "dates": "12–28 November 2026",
+    "location": "Kigoma Ujiji, Kasulu & Kibondo"
+  },
+  "partners": [
+    {
+      "mark": "WIZARA YA AFYA",
+      "name": "Ministry of Health Tanzania"
+    },
+    {
+      "mark": "TAMISEMI",
+      "name": "Local government coordination"
+    },
+    {
+      "mark": "MUHAS",
+      "name": "Muhimbili University"
+    },
+    {
+      "mark": "BUGANDO",
+      "name": "Bugando Medical Centre"
+    },
+    {
+      "mark": "MAT",
+      "name": "Medical Association of Tanzania"
+    },
+    {
+      "mark": "NIMR",
+      "name": "National Institute for Medical Research"
+    }
+  ],
+  "metadata": {
+    "title": "Home",
+    "description": "Community health screening, clinical outreach and health education across Tanzania. Explore the AfyaCheck website prototype."
+  },
+  "sections": [
+    {
+      "labels": [
+        "＋",
+        "Clinical Care",
+        "Enquire about free screening",
+        "→",
+        "＋",
+        "Community-first outreach",
+        "♡",
+        "Early screening & referral",
+        "Care closer to home",
+        "Community health screening in action. Illustrative field image.",
+        "184,520+",
+        "Demo screenings completed"
+      ],
+      "paragraphs": [
+        "Community clinical outreach & point-of-care diagnostics",
+        "AfyaCheck brings mobile health screening, volunteer clinical specialists and health education closer to communities across Tanzania — helping people identify health risks early and connect with care."
+      ],
+      "headings": ["Bringing", "Direct to Every Community"],
+      "attributes": [
+        {
+          "name": "href",
+          "value": "/contact/"
+        },
+        {
+          "name": "href",
+          "value": "#home-services"
+        },
+        {
+          "name": "aria-label",
+          "value": "Our approach"
+        },
+        {
+          "name": "src",
+          "value": "/assets/images/home/community-health-1280.jpg"
+        },
+        {
+          "name": "srcset",
+          "value": "/assets/images/home/community-health-640.jpg 640w, /assets/images/home/community-health-1280.jpg 1280w"
+        },
+        {
+          "name": "alt",
+          "value": "Health workers checking blood pressure and providing care at a village outreach table"
+        }
+      ],
+      "serviceLink": "Explore all {count} services"
+    },
+    {
+      "paragraphs": [
+        "Community health in numbers · Demo data",
+        "All figures shown are illustrative prototype data for 2024–2026."
+      ],
+      "headings": ["Field outcomes, at a glance"],
+      "labels": ["Impact dashboard", "↗"],
+      "attributes": [
+        {
+          "name": "href",
+          "value": "/about/impact-and-governance/dashboard/"
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        "Featured caravan · Demo campaign",
+        "Demo dates and progress. Explore the campaign profile for context."
+      ],
+      "labels": [
+        "Sample screening progress",
+        "Explore the caravan",
+        "→",
+        "Mobile care, closer to the community. Illustrative field image."
+      ],
+      "attributes": [
+        {
+          "name": "href",
+          "value": "/campaigns/kigoma-screening-caravan-2026/"
+        },
+        {
+          "name": "src",
+          "value": "/assets/images/home/mobile-clinic-1200.jpg"
+        },
+        {
+          "name": "srcset",
+          "value": "/assets/images/home/mobile-clinic-640.jpg 640w, /assets/images/home/mobile-clinic-1200.jpg 1200w"
+        },
+        {
+          "name": "alt",
+          "value": "A mobile clinic vehicle beside a shaded outdoor blood pressure screening station"
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        "Clinical & community health",
+        "From early screening to stronger local health systems.",
+        "Explore each service profile, then contact the team about availability."
+      ],
+      "labels": ["Explore service", "→"],
+      "serviceHeading": "Our {count} core services"
+    },
+    {
+      "labels": [
+        "Learning and talking about health together. Illustrative workshop image.",
+        "Enquire about school programmes",
+        "→",
+        "Youth Corner",
+        "↗"
+      ],
+      "paragraphs": [
+        "Empowering the next generation",
+        "Through Shule Afya and Youth Corner, AfyaCheck supports young people with health education, peer conversations and school-based vision screening — helping pupils learn and thrive.",
+        "Distributed to pupils with vision needs. Demo programme figure.",
+        "Open conversations about health with clinical and community voices."
+      ],
+      "headings": [
+        "Building youth health champions & school wellness",
+        "Shule Afya: 4,200+ glasses",
+        "Radio & podcast conversations"
+      ],
+      "attributes": [
+        {
+          "name": "src",
+          "value": "/assets/images/home/youth-workshop-1280.jpg"
+        },
+        {
+          "name": "srcset",
+          "value": "/assets/images/home/youth-workshop-640.jpg 640w, /assets/images/home/youth-workshop-1280.jpg 1280w"
+        },
+        {
+          "name": "alt",
+          "value": "Young people discussing health education materials with a workshop facilitator"
+        },
+        {
+          "name": "href",
+          "value": "/contact/"
+        },
+        {
+          "name": "href",
+          "value": "/media-and-resources/youth-corner/"
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        "Stronger together",
+        "Illustrative partner organisations shown for this prototype."
+      ],
+      "headings": ["Community health through collaboration"]
+    },
+    {
+      "labels": ["i", "Read the medical notice", "→"],
+      "headings": ["Clinical notice"],
+      "paragraphs": [
+        "This information supports public health awareness and does not replace individual medical advice."
+      ],
+      "attributes": [
+        {
+          "name": "href",
+          "value": "#footer-medical-notice"
+        }
+      ]
+    }
+  ]
+}

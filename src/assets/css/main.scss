@@ -1,0 +1,65 @@
+// src/assets/css/main.scss  →  becomes /assets/css/main.css
+
+// 1. Bootstrap's helper functions (needed by the next steps)
+@import "bootstrap/scss/functions";
+
+// Bootstrap Icons are loaded from the CDN in base.njk.
+
+// 2. YOUR variable overrides – loaded BEFORE Bootstrap's defaults
+@import "variables";
+
+// 3. Bootstrap's default variables (only fill in what you didn't set)
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// 4. YOUR extra theme colours
+@import "maps";
+
+// 5. Bootstrap's core
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// 6. Bootstrap's styles. Put // in front of a line to remove
+//    a component you don't use and make the CSS smaller.
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+@import "bootstrap/scss/helpers";
+
+// 7. Utility classes (mt-3, d-flex, text-center…) – keep this near the end
+@import "bootstrap-utilities";
+@import "bootstrap/scss/utilities/api";
+
+// 8. YOUR own styles – last, so they win
+@import "root";
+@import "custom";
+@import "utilities";

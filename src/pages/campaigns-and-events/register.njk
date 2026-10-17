@@ -1,0 +1,34 @@
+---
+layout: layouts/content.njk
+dataSource: campaigns.registration
+dataView: page
+permalink: /campaigns/kigoma-screening-caravan-2026/register/
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ campaigns.registration.title | safe }}'
+  description: '{{ campaigns.registration.description | safe }}'
+  breadcrumbs:
+    - url: /campaigns/
+      title: '{{ (campaigns.index).title | safe }}'
+    - url: /campaigns/kigoma-screening-caravan-2026/
+      title: >-
+        {{ (campaigns.items |
+        recordBySlug("kigoma-screening-caravan-2026")).title | safe }}
+  enquiryType: '{{ campaigns.registration.enquiryType }}'
+---
+
+{% set pageContent = campaigns.registration %}
+
+{# About this demonstration: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.sections[0].paragraphs[0] }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "partials/demo-enquiry.njk" %}

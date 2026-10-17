@@ -1,0 +1,361 @@
+---
+layout: layouts/base.njk
+permalink: /
+eleventyComputed:
+  title: '{{ home.metadata.title | safe }}'
+  description: '{{ home.metadata.description | safe }}'
+---
+{% set pageContent = home %}
+{% set featuredCampaign = campaigns.items | recordBySlug(campaigns.featuredSlug) %}
+{# Homepage scope: shared chrome lives in base.njk; content is in home.json. #}
+<div class="home-page">
+  {# Hero: responsive outreach image, primary enquiry and service-section shortcut. #}
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="home-inner">
+      <div class="home-split">
+        <div class="hero-copy">
+          <p class="hero-kicker">
+            <span aria-hidden="true">
+              {{ pageContent.sections[0].labels[0] }}
+            </span>
+            {{ pageContent.sections[0].paragraphs[0] }}
+          </p>
+          <h1 id="home-title">
+            {{ pageContent.sections[0].headings[0] }}
+            <span>{{ pageContent.sections[0].labels[1] }}</span>
+            {{ pageContent.sections[0].headings[1] }}
+          </h1>
+          <p class="hero-lead">{{ pageContent.sections[0].paragraphs[1] }}</p>
+          <div class="home-actions">
+            <a
+              class="btn btn-secondary"
+              href="{{ pageContent.sections[0].attributes[0].value }}"
+            >
+              {{ pageContent.sections[0].labels[2] }}
+              <span aria-hidden="true">
+                {{ pageContent.sections[0].labels[3] }}
+              </span>
+            </a>
+            <a
+              class="btn btn-outline-primary"
+              href="{{ pageContent.sections[0].attributes[1].value }}"
+            >{{ home.sections[0].serviceLink | replace("{count}", services.items.length) }}</a>
+          </div>
+          <ul
+            class="hero-trust"
+            aria-label="{{ pageContent.sections[0].attributes[2].value }}"
+          >
+            <li>
+              <span aria-hidden="true">
+                {{ pageContent.sections[0].labels[4] }}
+              </span>
+              {{ pageContent.sections[0].labels[5] }}
+            </li>
+            <li>
+              <span aria-hidden="true">
+                {{ pageContent.sections[0].labels[6] }}
+              </span>
+              {{ pageContent.sections[0].labels[7] }}
+            </li>
+          </ul>
+        </div>
+        <div class="hero-media">
+          <figure class="hero-figure">
+            <img
+              src="{{ pageContent.sections[0].attributes[3].value }}"
+              srcset="{{ pageContent.sections[0].attributes[4].value }}"
+              sizes="(min-width: 992px) 50vw, 100vw"
+              alt="{{ pageContent.sections[0].attributes[5].value }}"
+              width="1280"
+              height="714"
+              fetchpriority="high"
+            />
+            <figcaption>
+              <span>{{ pageContent.sections[0].labels[8] }}</span>
+              {{ pageContent.sections[0].labels[9] }}
+            </figcaption>
+            <div class="hero-stat">
+              <strong class="stat-value">
+                {{ pageContent.sections[0].labels[10] }}
+              </strong>
+              <span>{{ pageContent.sections[0].labels[11] }}</span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Impact: illustrative figures from home.stats; keep the demo qualifier visible. #}
+  <section
+    class="home-content home-section"
+    aria-labelledby="home-impact-title"
+  >
+    <div class="home-impact card">
+      <div class="home-section-heading">
+        <div>
+          <p class="eyebrow">{{ pageContent.sections[1].paragraphs[0] }}</p>
+          <h2 id="home-impact-title">
+            {{ pageContent.sections[1].headings[0] }}
+          </h2>
+        </div>
+        <a
+          class="home-coming"
+          href="{{ pageContent.sections[1].attributes[0].value }}"
+        >
+          {{ pageContent.sections[1].labels[0] }}
+          <span aria-hidden="true">
+            {{ pageContent.sections[1].labels[1] }}
+          </span>
+        </a>
+      </div>
+      <p id="home-impact-demo" class="home-demo-note">
+        {{ pageContent.sections[1].paragraphs[1] }}
+      </p>
+      <dl class="impact-grid" aria-describedby="home-impact-demo">
+        {% for stat in home.stats %}
+          <div class="impact-stat">
+            <dt>{{ stat.label }}</dt>
+            <dd>
+              <strong class="stat-value">{{ stat.value }}</strong>
+              <span class="stat-trend">{{ stat.trend }}</span>
+              <span class="stat-detail">{{ stat.detail }}</span>
+            </dd>
+          </div>
+        {% endfor %}
+      </dl>
+    </div>
+  </section>
+
+  {# Campaign: home.campaign supplies the demo dates, target and native progress value. #}
+  <section
+    class="home-content home-section"
+    aria-labelledby="home-campaign-title"
+  >
+    <div class="home-campaign">
+      <div class="campaign-layout">
+        <div class="campaign-copy">
+          <p class="eyebrow">{{ pageContent.sections[2].paragraphs[0] }}</p>
+          <h2 id="home-campaign-title">{{ featuredCampaign.title }}</h2>
+          <p class="campaign-lead">{{ home.campaign.description }}</p>
+          <ul class="campaign-meta">
+            <li>{{ home.campaign.dates }}</li>
+            <li>{{ home.campaign.location }}</li>
+          </ul>
+          <div class="campaign-progress">
+            <label for="home-campaign-progress">
+              {{ pageContent.sections[2].labels[0] }}
+              <strong
+                class="stat-value"
+              >{{ featuredCampaign.achievedScreenings | formatNumber }} /
+                {{ featuredCampaign.targetScreenings | formatNumber }}</strong>
+            </label>
+            <progress
+              id="home-campaign-progress"
+              value="{{ featuredCampaign.achievedScreenings }}"
+              max="{{ featuredCampaign.targetScreenings }}"
+              aria-describedby="home-campaign-demo"
+            >
+              {{ featuredCampaign.achievedScreenings | formatNumber }} of
+              {{ featuredCampaign.targetScreenings | formatNumber }} screenings
+            </progress>
+            <p id="home-campaign-demo">
+              {{ pageContent.sections[2].paragraphs[1] }}
+            </p>
+          </div>
+          <a
+            class="btn btn-primary"
+            href="{{ pageContent.sections[2].attributes[0].value }}"
+          >
+            {{ pageContent.sections[2].labels[1] }}
+            <span aria-hidden="true">
+              {{ pageContent.sections[2].labels[2] }}
+            </span>
+          </a>
+        </div>
+        <div class="campaign-media">
+          <figure class="campaign-figure">
+            <img
+              src="{{ pageContent.sections[2].attributes[1].value }}"
+              srcset="{{ pageContent.sections[2].attributes[2].value }}"
+              sizes="(min-width: 992px) 40vw, 100vw"
+              alt="{{ pageContent.sections[2].attributes[3].value }}"
+              width="1200"
+              height="896"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>{{ pageContent.sections[2].labels[3] }}</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Services: homepage summaries share the canonical service records with index and show views. #}
+  <section
+    id="home-services"
+    class="home-content home-section"
+    aria-labelledby="home-services-title"
+    tabindex="-1"
+  >
+    <div class="home-section-heading">
+      <div>
+        <p class="eyebrow">{{ pageContent.sections[3].paragraphs[0] }}</p>
+        <h2 id="home-services-title">
+          {{ home.sections[3].serviceHeading | replace("{count}", services.items.length) }}
+        </h2>
+      </div>
+      <p class="home-section-intro">
+        {{ pageContent.sections[3].paragraphs[1] }}
+      </p>
+    </div>
+    <div class="home-services-grid">
+      {% for service in services.items %}
+        <div class="service-column">
+          <article
+            id="home-service-{{ service.slug }}"
+            class="card card-hover home-service"
+          >
+            <div class="card-body">
+              <span
+                class="service-number"
+                aria-hidden="true"
+              >0{{ loop.index }}</span>
+              <h3>{{ service.homeTitle or service.title }}</h3>
+              <p>{{ service.homeDescription or service.description }}</p>
+              <a
+                href="/services/{{ service.slug }}/"
+                aria-label="Explore {{ service.homeTitle or service.title }}"
+              >
+                {{ pageContent.sections[3].labels[0] }}
+                <span aria-hidden="true">
+                  {{ pageContent.sections[3].labels[1] }}
+                </span>
+              </a>
+            </div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+    <p class="home-demo-note service-availability">
+      {{ pageContent.sections[3].paragraphs[2] }}
+    </p>
+  </section>
+
+  {# Youth spotlight: school programme demo figure, workshop image and youth resources. #}
+  <section class="home-youth home-section" aria-labelledby="home-youth-title">
+    <div class="home-inner">
+      <div class="home-split">
+        <div class="youth-media">
+          <figure class="youth-figure">
+            <img
+              src="{{ pageContent.sections[4].attributes[0].value }}"
+              srcset="{{ pageContent.sections[4].attributes[1].value }}"
+              sizes="(min-width: 992px) 45vw, 100vw"
+              alt="{{ pageContent.sections[4].attributes[2].value }}"
+              width="1280"
+              height="714"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>{{ pageContent.sections[4].labels[0] }}</figcaption>
+          </figure>
+        </div>
+        <div class="youth-copy">
+          <p class="eyebrow">{{ pageContent.sections[4].paragraphs[0] }}</p>
+          <h2 id="home-youth-title">
+            {{ pageContent.sections[4].headings[0] }}
+          </h2>
+          <p class="youth-lead">{{ pageContent.sections[4].paragraphs[1] }}</p>
+          <div class="youth-highlights">
+            <div class="youth-highlight-column">
+              <div class="youth-highlight">
+                <h3>{{ pageContent.sections[4].headings[1] }}</h3>
+                <p>{{ pageContent.sections[4].paragraphs[2] }}</p>
+              </div>
+            </div>
+            <div class="youth-highlight-column">
+              <div class="youth-highlight">
+                <h3>{{ pageContent.sections[4].headings[2] }}</h3>
+                <p>{{ pageContent.sections[4].paragraphs[3] }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="home-actions">
+            <a
+              class="btn btn-primary"
+              href="{{ pageContent.sections[4].attributes[3].value }}"
+            >
+              {{ pageContent.sections[4].labels[1] }}
+              <span aria-hidden="true">
+                {{ pageContent.sections[4].labels[2] }}
+              </span>
+            </a>
+            <a
+              class="home-coming"
+              href="{{ pageContent.sections[4].attributes[4].value }}"
+            >
+              {{ pageContent.sections[4].labels[3] }}
+              <span aria-hidden="true">
+                {{ pageContent.sections[4].labels[4] }}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Partners: illustrative names from home.partners; these tiles do not assert live partnerships. #}
+  <section
+    class="home-partners home-section"
+    aria-labelledby="home-partners-title"
+  >
+    <div class="home-inner">
+      <p class="eyebrow partner-kicker">
+        {{ pageContent.sections[5].paragraphs[0] }}
+      </p>
+      <h2 id="home-partners-title" class="partner-title">
+        {{ pageContent.sections[5].headings[0] }}
+      </h2>
+      <p class="home-demo-note partner-note">
+        {{ pageContent.sections[5].paragraphs[1] }}
+      </p>
+      <ul class="partner-grid">
+        {% for partner in home.partners %}
+          <li class="partner-column">
+            <div class="partner-tile">
+              <strong class="stat-value">{{ partner.mark }}</strong>
+              <span>{{ partner.name }}</span>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  {# Clinical notice: link to the complete inline footer notice. #}
+  <section
+    class="home-content home-section home-clinical"
+    aria-labelledby="home-clinical-title"
+  >
+    <div class="clinical-banner">
+      <span class="clinical-icon" aria-hidden="true">
+        {{ pageContent.sections[6].labels[0] }}
+      </span>
+      <div>
+        <h2 id="home-clinical-title">
+          {{ pageContent.sections[6].headings[0] }}
+        </h2>
+        <p>{{ pageContent.sections[6].paragraphs[0] }}</p>
+        <a href="{{ pageContent.sections[6].attributes[0].value }}">
+          {{ pageContent.sections[6].labels[1] }}
+          <span aria-hidden="true">
+            {{ pageContent.sections[6].labels[2] }}
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

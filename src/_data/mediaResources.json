@@ -1,0 +1,441 @@
+{
+  "overview": {
+    "title": "Health knowledge, shared",
+    "description": "Explore the health library, broadcast ideas, youth resources and field reports.",
+    "url": "/media-and-resources/",
+    "sections": [
+      {
+        "heading": "Find your starting point",
+        "text": "Sample editorial content from the supplied reference.",
+        "cards": [
+          {
+            "title": "Health library",
+            "text": "Browse preventive health resource summaries.",
+            "url": "/media-and-resources/health-library/",
+            "label": "Explore"
+          },
+          {
+            "title": "Shows & podcast",
+            "text": "Explore episode concepts and discussion topics.",
+            "url": "/media-and-resources/shows-and-podcast/",
+            "label": "Explore"
+          },
+          {
+            "title": "Youth corner",
+            "text": "A welcoming space for youth health conversations.",
+            "url": "/media-and-resources/youth-corner/",
+            "label": "Explore"
+          },
+          {
+            "title": "Newsroom",
+            "text": "Illustrative field dispatches and media information.",
+            "url": "/media-and-resources/newsroom/",
+            "label": "Explore"
+          },
+          {
+            "title": "Publications & reports",
+            "text": "Browse the proposed reporting catalogue.",
+            "url": "/media-and-resources/publications/",
+            "label": "Explore"
+          }
+        ]
+      }
+    ]
+  },
+  "healthLibrary": {
+    "index": {
+      "title": "Health library",
+      "description": "Resource summaries for demonstrating the library. Full clinical guidance awaits review before publication.",
+      "url": "/media-and-resources/health-library/",
+      "sections": [
+        {
+          "heading": "Browse resource summaries",
+          "text": "These summaries describe proposed materials; they do not provide personalised medical advice.",
+          "directory": true
+        }
+      ]
+    },
+    "card": {
+      "label": "View resource summary",
+      "kicker": "{category}"
+    },
+    "items": [
+      {
+        "slug": "hr-hypertension-guide",
+        "title": "Understanding High Blood Pressure: The Silent Companion",
+        "description": "A clinical guide detailing what blood pressure readings mean (systolic vs diastolic), symptoms to watch for, and how traditional Tanzanian cooking can be adjusted with lower salt.",
+        "category": "Cardiovascular Health",
+        "readTime": "6 min read",
+        "sections": [
+          {
+            "heading": "About this resource",
+            "note": "The reference PDF was not supplied. There is no downloadable clinical document in this prototype."
+          },
+          {
+            "heading": "Discuss your questions",
+            "text": "Ask a qualified health professional about questions relating to your own health. This page does not replace an individual consultation."
+          }
+        ]
+      },
+      {
+        "slug": "hr-diabetes-diet",
+        "title": "Managing Blood Sugar in East Africa: Nutrition & Portions",
+        "description": "Practical dietary recommendations breaking down ugali, rice, sweet potatoes, and pulses with low-glycemic alternatives and physical activity targets.",
+        "category": "Metabolic & Diabetes",
+        "readTime": "5 min read",
+        "sections": [
+          {
+            "heading": "About this resource",
+            "note": "The reference PDF was not supplied. There is no downloadable clinical document in this prototype."
+          },
+          {
+            "heading": "Discuss your questions",
+            "text": "Ask a qualified health professional about questions relating to your own health. This page does not replace an individual consultation."
+          }
+        ]
+      },
+      {
+        "slug": "hr-cervical-cancer",
+        "title": "Cervical Cancer Prevention & Screening Checklist",
+        "description": "Crucial health guide explaining HPV immunization for young girls and the painless Visual Inspection with Acetic Acid (VIA) screening method.",
+        "category": "Women’s Health",
+        "readTime": "4 min read",
+        "sections": [
+          {
+            "heading": "About this resource",
+            "note": "The reference PDF was not supplied. There is no downloadable clinical document in this prototype."
+          },
+          {
+            "heading": "Discuss your questions",
+            "text": "Ask a qualified health professional about questions relating to your own health. This page does not replace an individual consultation."
+          }
+        ]
+      }
+    ],
+    "relatedHeading": "Keep exploring",
+    "metadataTemplate": "Topic: {category}. This is a proposed resource summary from the design reference, not a reviewed factsheet."
+  },
+  "podcasts": {
+    "index": {
+      "title": "AfyaCheck Sauti",
+      "description": "Proposed conversations about community health, clinical practice and everyday wellbeing.",
+      "url": "/media-and-resources/shows-and-podcast/",
+      "sections": [
+        {
+          "heading": "Episode concepts",
+          "text": "Titles, guests and durations are illustrative. Audio files were not included in the reference.",
+          "directory": true
+        }
+      ]
+    },
+    "card": {
+      "label": "View episode notes",
+      "kicker": "Episode {episodeNumber} · {duration}"
+    },
+    "items": [
+      {
+        "slug": "ep-08",
+        "title": "Breaking the Silence on Stroke in Young Adults",
+        "description": "Exploring why hypertension is striking East Africans under 40, how stress and energy drinks play a role, and the golden 4-hour window for medical intervention.",
+        "episodeNumber": 8,
+        "duration": "28 mins",
+        "guest": "Dr. Josephat Mmbando",
+        "topics": ["Stroke Prevention", "Hypertension", "Emergency Care"],
+        "sections": [
+          {
+            "heading": "Episode notes",
+            "note": "Audio is not available. This is an episode concept, not a published interview or verified guest appearance."
+          }
+        ]
+      },
+      {
+        "slug": "ep-07",
+        "title": "Myths vs Facts: Traditional Herbs and Chronic Diseases",
+        "description": "A respectful, science-grounded discussion on natural remedies, identifying harmful adulterated preparations, and how to safely navigate prescribed treatments.",
+        "episodeNumber": 7,
+        "duration": "34 mins",
+        "guest": "Dr. Neema Mushi & Prof. Hamisi Kibao",
+        "topics": ["Traditional Medicine", "Safety", "Pharmacology"],
+        "sections": [
+          {
+            "heading": "Episode notes",
+            "note": "Audio is not available. This is an episode concept, not a published interview or verified guest appearance."
+          }
+        ]
+      },
+      {
+        "slug": "ep-06",
+        "title": "Eye Health in the Digital Age: Screen Time & Presbyopia",
+        "description": "Practical guidance for students and office workers on the 20-20-20 rule, recognizing early signs of glaucoma, and correcting refractive errors.",
+        "episodeNumber": 6,
+        "duration": "22 mins",
+        "guest": "Dr. Sarah Temu",
+        "topics": ["Eye Health", "Ergonomics", "Pediatrics"],
+        "sections": [
+          {
+            "heading": "Episode notes",
+            "note": "Audio is not available. This is an episode concept, not a published interview or verified guest appearance."
+          }
+        ]
+      }
+    ],
+    "relatedHeading": "Keep exploring",
+    "metadataTemplate": "Demo episode {episodeNumber} · {duration}. Proposed guest: {guest}."
+  },
+  "newsroom": {
+    "index": {
+      "title": "Stories from the field",
+      "description": "Illustrative news from the supplied reference. Headlines and dates do not represent verified events.",
+      "url": "/media-and-resources/newsroom/",
+      "sections": [
+        {
+          "heading": "Demo dispatches",
+          "text": "Read the reference summaries as sample editorial content.",
+          "directory": true
+        },
+        {
+          "heading": "For journalists",
+          "text": "Find the brand asset and a media contact.",
+          "cards": [
+            {
+              "title": "Press kit",
+              "text": "Access the supplied logo and prototype media notes.",
+              "url": "/media-and-resources/newsroom/press-kit/",
+              "label": "Explore"
+            }
+          ]
+        }
+      ]
+    },
+    "card": {
+      "label": "Read demo report",
+      "kicker": "{date} · {category}"
+    },
+    "items": [
+      {
+        "slug": "kigoma-caravan-milestone-10k",
+        "title": "AfyaCheck Surpasses 10,000 Screenings in Kigoma Expedition",
+        "description": "With support from regional authorities and local health posts, mobile units reached hard-to-access hamlets along Lake Tanganyika.",
+        "date": "October 24, 2026",
+        "category": "Field Report",
+        "author": "AfyaCheck Communications Desk",
+        "readTime": "3 min read",
+        "sections": [
+          {
+            "heading": "Demo field report",
+            "note": "Only this summary was supplied. It is illustrative and has not been verified as a real event."
+          },
+          {
+            "heading": "Related programme context",
+            "text": "Explore how the prototype connects outreach campaigns with ongoing community services.",
+            "cards": [
+              {
+                "title": "Campaigns",
+                "text": "Browse the example outreach drives.",
+                "url": "/campaigns/",
+                "label": "Explore"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "clinical-memorandum-muhas-partnership",
+        "title": "Signing of Strategic Research MoU with MUHAS Public Health Faculty",
+        "description": "Formal multi-year partnership enabling joint epidemiological investigations into rural non-communicable disease prevalence across 8 councils.",
+        "date": "September 18, 2026",
+        "category": "Clinical Announcement",
+        "author": "Office of the Chief Medical Director",
+        "readTime": "4 min read",
+        "sections": [
+          {
+            "heading": "Demo field report",
+            "note": "Only this summary was supplied. It is illustrative and has not been verified as a real event."
+          },
+          {
+            "heading": "Related programme context",
+            "text": "Explore how the prototype connects outreach campaigns with ongoing community services.",
+            "cards": [
+              {
+                "title": "Campaigns",
+                "text": "Browse the example outreach drives.",
+                "url": "/campaigns/",
+                "label": "Explore"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "press-release-mobile-diagnostic-fleet-expansion",
+        "title": "Press Release: Deployment of Two New Custom Solar-Powered Clinic Vans",
+        "description": "Equipped with cold-chain storage and automated cardiac telemetry, the new fleet doubles field diagnostic capacity in Central Zone.",
+        "date": "August 12, 2026",
+        "category": "Press Release",
+        "author": "AfyaCheck Secretariat",
+        "readTime": "2 min read",
+        "sections": [
+          {
+            "heading": "Demo field report",
+            "note": "Only this summary was supplied. It is illustrative and has not been verified as a real event."
+          },
+          {
+            "heading": "Related programme context",
+            "text": "Explore how the prototype connects outreach campaigns with ongoing community services.",
+            "cards": [
+              {
+                "title": "Campaigns",
+                "text": "Browse the example outreach drives.",
+                "url": "/campaigns/",
+                "label": "Explore"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "metadataTemplate": "{date} · {category} · {author}.",
+    "pressKit": {
+      "title": "Press kit & media enquiries",
+      "description": "A small set of supplied assets and clear information for reviewing this prototype.",
+      "url": "/media-and-resources/newsroom/press-kit/",
+      "sections": [
+        {
+          "heading": "Brand asset",
+          "text": "The supplied primary AfyaCheck logo is available below. Confirm permission and current usage guidance before publication.",
+          "download": {
+            "url": "/assets/images/brand/ac-logo-primary.png",
+            "label": "Download supplied logo (PNG)"
+          }
+        },
+        {
+          "heading": "Media contact",
+          "text": "For a media enquiry, use the email shown in the site footer. No spokesperson credentials or institutional endorsements have been verified.",
+          "cards": [
+            {
+              "title": "Contact AfyaCheck",
+              "text": "Discuss an interview or request approved information.",
+              "url": "/contact/",
+              "label": "Explore"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "publications": {
+    "index": {
+      "title": "Publications & reports",
+      "description": "A proposed reporting catalogue. Titles, results and publication details are demo content.",
+      "url": "/media-and-resources/publications/",
+      "sections": [
+        {
+          "heading": "Report catalogue",
+          "text": "The reference supplied summaries only. No report PDFs are available.",
+          "directory": true
+        }
+      ]
+    },
+    "card": {
+      "label": "View report summary",
+      "kicker": "{year} · {type}"
+    },
+    "items": [
+      {
+        "slug": "pub-annual-impact-2025",
+        "title": "AfyaCheck Annual Clinical Impact & Governance Report 2025/2026",
+        "description": "Comprehensive audited report covering 184,000 patient interactions, clinical referral cascades, financial audited statements, and clinical governance protocols.",
+        "year": 2026,
+        "type": "Annual Audit Report",
+        "pages": 64,
+        "fileSize": "4.2 MB PDF",
+        "sections": [
+          {
+            "heading": "Publication summary",
+            "note": "This report has not been supplied, published or independently audited. No PDF download is available."
+          }
+        ]
+      },
+      {
+        "slug": "pub-ncd-lake-zone-brief",
+        "title": "Policy Brief: Non-Communicable Disease Prevalence in Rural Fishing Wards",
+        "description": "Epidemiological brief presented to the Ministry of Health evaluating blood pressure and proteinuria trends across 14,000 lakefront residents.",
+        "year": 2025,
+        "type": "Policy Brief",
+        "pages": 18,
+        "fileSize": "1.9 MB PDF",
+        "sections": [
+          {
+            "heading": "Publication summary",
+            "note": "This report has not been supplied, published or independently audited. No PDF download is available."
+          }
+        ]
+      },
+      {
+        "slug": "pub-chw-curriculum-2025",
+        "title": "Community Health Worker Field Reference & Clinical Triage Handbook",
+        "description": "Step-by-step Swahili and English clinical protocol manual for community health workers operating portable diagnostic kits.",
+        "year": 2025,
+        "type": "Clinical Manual",
+        "pages": 42,
+        "fileSize": "3.1 MB PDF",
+        "sections": [
+          {
+            "heading": "Publication summary",
+            "note": "This report has not been supplied, published or independently audited. No PDF download is available."
+          }
+        ]
+      }
+    ],
+    "relatedHeading": "Keep exploring",
+    "metadataTemplate": "{year} · {type}. Reference format: {pages} pages, {fileSize}."
+  },
+  "youthCorner": {
+    "title": "Your health. Your questions. Your space.",
+    "description": "A proposed youth-friendly space for honest conversations and access to trusted support.",
+    "url": "/media-and-resources/youth-corner/",
+    "sections": [
+      {
+        "heading": "Start a conversation",
+        "text": "Schools and youth groups can use facilitated conversations to identify the topics that matter to young people.",
+        "image": {
+          "src": "/assets/images/home/youth-workshop-640.jpg",
+          "alt": "Illustrative youth health workshop",
+          "width": "640",
+          "height": "357",
+          "loading": "lazy",
+          "decoding": "async"
+        },
+        "cards": [
+          {
+            "title": "Mental wellbeing",
+            "text": "Create room for questions about stress, relationships and asking for support.",
+            "label": "Explore"
+          },
+          {
+            "title": "Everyday health",
+            "text": "Explore proposed sessions on movement, nutrition and preventive care.",
+            "label": "Explore"
+          },
+          {
+            "title": "Peer educators",
+            "text": "Help youth leaders share reviewed, age-appropriate information.",
+            "label": "Explore"
+          }
+        ]
+      },
+      {
+        "heading": "Bring a session to your school or group",
+        "text": "Discuss the audience, accessibility needs and topics with the team. Do not share private health details through this prototype.",
+        "cards": [
+          {
+            "title": "School programme enquiry",
+            "text": "Explore a proposed school or youth-group session.",
+            "url": "/contact/",
+            "label": "Explore"
+          }
+        ]
+      }
+    ]
+  }
+}

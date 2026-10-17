@@ -1,0 +1,300 @@
+// Keep the footer palette stable in both page themes.
+.site-footer {
+  --ac-footer-text: #{$border-color};
+  --ac-footer-muted: #{$input-border-color};
+  --ac-footer-border: #{$body-secondary-color};
+  background: $dark;
+  color: var(--ac-footer-text);
+  padding-block: clamp(3rem, 5vw, 4rem) 2rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+
+  // Keep footer headings legible against the dark surface.
+  h2 {
+    color: $input-bg;
+  }
+  // Use readable footer links with clear underline spacing.
+  a {
+    color: var(--ac-footer-text);
+    text-underline-offset: 0.2rem;
+  }
+  // Brighten interactive links on pointer hover.
+  a:hover {
+    color: $input-bg;
+    text-decoration: underline;
+  }
+  // Keep keyboard focus visible against the surrounding surface.
+  :focus-visible {
+    outline-color: $secondary !important;
+  }
+  // Group the mission and newsletter above the directory.
+  .footer-top {
+    @extend .row, .align-items-center, .g-5;
+    @extend .pb-5;
+    border-bottom: 1px solid var(--ac-footer-border);
+  }
+  // Bootstrap handles mission and newsletter column widths.
+  .footer-mission {
+    @extend .col-12, .col-lg-5;
+  }
+  .footer-newsletter-column {
+    @extend .col-12, .col-lg-7;
+  }
+  // Protect the original logo with a white backing.
+  .footer-brand {
+    display: inline-block;
+    padding: 0.75rem;
+    @extend .rounded-1;
+    margin-bottom: 1.25rem;
+    // Preserve the supplied logo's aspect ratio within its backing.
+    img {
+      @extend .d-block;
+      width: 10rem;
+      height: auto;
+    }
+  }
+  // Keep the mission paragraph short enough to scan.
+  .footer-mission-copy {
+    max-width: 48ch;
+    @extend .mb-3;
+  }
+  // Highlight key footer destinations with touch-friendly links.
+  .footer-about-link,
+  .footer-contact-link {
+    color: $primary;
+    @extend .fw-semibold;
+    @extend .d-inline-flex, .align-items-center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+  }
+  // Separate the local newsletter demo from the mission text.
+  .footer-newsletter {
+    min-width: 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    background: $dark;
+    border: 1px solid var(--ac-footer-border);
+    @extend .rounded-3;
+    // Keep newsletter paragraphs compact within their panel.
+    p {
+      margin-bottom: 0.75rem;
+    }
+  }
+  // Identify the newsletter with the lime brand accent.
+  .footer-kicker {
+    color: $secondary;
+    font-size: 0.75rem;
+    @extend .fw-bold;
+    letter-spacing: 0.08em;
+    @extend .text-uppercase;
+  }
+  // Keep the no-subscription explanation visible beside the form.
+  .newsletter-demo {
+    font-size: 0.75rem;
+    color: var(--ac-footer-text);
+  }
+  // Stack newsletter controls on the narrowest screens.
+  .newsletter-controls {
+    @extend .d-flex, .flex-column, .flex-sm-row;
+    gap: 0.75rem;
+    // Keep newsletter input readable on the dark panel.
+    .form-control {
+      min-width: 0;
+      background: $dark;
+      color: $input-bg;
+      border-color: $input-border-color;
+      // Keep example input text distinct and readable.
+      &::placeholder {
+        color: $input-border-color;
+        opacity: 1;
+      }
+      // Keep the focused input boundary visible on charcoal.
+      &:focus {
+        border-color: $primary;
+      }
+    }
+    // Keep the newsletter action wide enough for its label.
+    .btn {
+      @extend .flex-shrink-0;
+    }
+  }
+  // Make the local demo result visible without implying subscription.
+  .newsletter-feedback {
+    color: $secondary;
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0 !important;
+  }
+  // Avoid extra spacing when no result content exists.
+  .newsletter-feedback:empty {
+    margin-top: 0;
+  }
+  // Start the footer directory with two flexible columns.
+  .footer-directory {
+    @extend .row, .g-4;
+    @extend .py-5;
+  }
+  // Directory columns share available space with Contact on wide screens.
+  .footer-column {
+    @extend .col-6, .col-lg-3, .col-xl;
+  }
+  // Use compact labels for footer navigation groups.
+  .footer-column h2,
+  .footer-contact h2 {
+    @extend .mb-3;
+    font-family: $font-family-sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  // Remove default list decoration while retaining list semantics.
+  .footer-links {
+    @extend .list-unstyled;
+    @extend .p-0;
+    @extend .m-0;
+  }
+  // Separate directory entries without spacing the first item.
+  .footer-links li + li {
+    margin-top: 0.375rem;
+  }
+  // Give available footer destinations generous touch targets.
+  .footer-links a {
+    @extend .d-flex, .align-items-center;
+    min-height: 2.75rem;
+    padding-block: 0.375rem;
+  }
+  // Distinguish unavailable destinations with a secondary label.
+  .footer-future {
+    @extend .d-flex, .flex-column;
+    padding-block: 0.375rem;
+    color: var(--ac-footer-muted);
+    // Separate availability labels from their surrounding item names.
+    small {
+      font-size: 0.625rem;
+      color: var(--ac-footer-muted);
+    }
+  }
+  // Let contact details span the directory on smaller screens.
+  .footer-contact {
+    @extend .col-12, .col-xl;
+    // Keep contact details upright rather than browser-default italics.
+    address {
+      @extend .fst-normal;
+      margin-bottom: 0.75rem;
+    }
+    // Keep the location close to its contact address.
+    address p {
+      margin-bottom: 0.25rem;
+    }
+    // Keep the email address easy to activate.
+    address a {
+      @extend .d-inline-flex, .align-items-center;
+      min-height: 2.75rem;
+    }
+  }
+  // Separate the static notice and offset its anchor below navigation.
+  .footer-medical-notice {
+    @extend .d-flex, .align-items-start, .gap-3;
+    padding: 1.25rem;
+    background: $dark;
+    border: 1px solid var(--ac-footer-border);
+    @extend .rounded;
+    font-size: 0.75rem;
+    scroll-margin-top: 8rem;
+    // Separate the notice heading from its explanatory text.
+    h2 {
+      @extend .mb-2;
+    }
+  }
+  // Mark the medical notice without relying on an icon font.
+  .medical-notice-icon {
+    @extend .d-inline-flex,
+      .justify-content-center,
+      .align-items-center,
+      .flex-shrink-0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid $warning;
+    @extend .rounded-circle;
+    @extend .fw-bold;
+    color: $warning;
+  }
+  // Separate copyright and policy destinations from the main directory.
+  .footer-bottom {
+    @extend .row;
+    border-top: 1px solid var(--ac-footer-border);
+    margin-top: 2rem;
+    @extend .pt-4;
+    font-size: 0.75rem;
+
+    // Keep copyright readable but secondary to navigation.
+    .footer-copyright {
+      @extend .col-12, .col-lg-4, .col-xl-5;
+      @extend .m-0;
+      color: var(--ac-footer-muted);
+
+      // Center copyright on smaller screens and align it to the start from lg.
+      .text-copyright {
+        @extend .text-center, .text-md-start;
+      }
+    }
+
+    // Preserve column gutters so legal links align with the shared footer inset.
+    .footer-legal {
+      @extend .col-12, .col-lg-8, .col-xl-7;
+      @extend .align-items-start;
+
+      .list-legal {
+        @extend .d-flex,
+          .flex-wrap,
+          .flex-lg-nowrap,
+          .row-gap-3,
+          .column-gap-lg-4,
+          .justify-content-lg-end,
+          .align-items-start,
+          .list-unstyled,
+          .p-0,
+          .m-0;
+
+        // Two items per row become natural-width items on the desktop row.
+        li {
+          @extend .col-6, .col-md-4, .col-lg-auto;
+
+          // Keep legal links free of padding.
+          a {
+            @extend .d-flex, .align-items-center, .p-0;
+          }
+        }
+      }
+    }
+  }
+
+  // Align footer sections with the page's content width.
+  .footer-inner {
+    @extend .container;
+  }
+  // Provide an accessible name without a duplicate visible heading.
+  .footer-accessible-title {
+    @extend .visually-hidden;
+  }
+  // Use the shared heading scale for the newsletter.
+  .newsletter-title {
+    @extend .h4;
+  }
+  // Keep supporting footer descriptions secondary.
+  .footer-description {
+    @extend .small;
+  }
+  // Keep the no-JavaScript explanation compact.
+  .newsletter-fallback {
+    @extend .small, .mb-0;
+  }
+  // Use a consistent scale for directory and notice headings.
+  .footer-group-title {
+    @extend .h6;
+  }
+  // Avoid trailing paragraph space inside the notice panel.
+  .medical-notice-copy {
+    @extend .mb-0;
+  }
+}

@@ -1,0 +1,24 @@
+// Expose existing Bootstrap values responsively for navigation cards and mobile separators.
+@each $utility
+  in (
+    "shadow",
+    "rounded",
+    "background-color",
+    "font-size",
+    "font-weight",
+    "border",
+    "border-bottom"
+  )
+{
+  $utilities: map-merge(
+    $utilities,
+    (
+      $utility: map-merge(
+          map-get($utilities, $utility),
+          (
+            responsive: true,
+          )
+        ),
+    )
+  );
+}

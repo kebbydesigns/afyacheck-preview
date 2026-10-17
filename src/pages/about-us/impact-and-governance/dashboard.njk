@@ -1,0 +1,96 @@
+---
+layout: layouts/content.njk
+dataSource: about.impact.dashboard
+dataView: page
+permalink: /about/impact-and-governance/dashboard/
+tags:
+  - contentPage
+eleventyComputed:
+  title: '{{ about.impact.dashboard.title | safe }}'
+  description: '{{ about.impact.dashboard.description | safe }}'
+  breadcrumbs:
+    - url: /about/
+      title: '{{ (about.overview).title | safe }}'
+    - url: /about/impact-and-governance/
+      title: '{{ (about.impact.overview).title | safe }}'
+---
+
+{% set pageContent = about.impact.dashboard %}
+
+{# Regional screening records: layout belongs here; copy comes from the section JSON. #}
+<section
+  class="content-section"
+  aria-labelledby="section-1"
+  x-data="impactDashboard"
+>
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ pageContent.sections[0].headings[0] }}</h2>
+        <p>{{ pageContent.sections[0].paragraphs[0] }}</p>
+      </div>
+    </div>
+    {% include "partials/impact-controls.njk" %}
+    <div
+      class="report-table"
+      role="region"
+      aria-label="{{ pageContent.sections[0].attributes[0].value }}"
+      tabindex="0"
+    >
+      <table class="table table-striped">
+        <caption>{{ pageContent.sections[0].captions[0] }}</caption>
+        <thead>
+          <tr>
+            <th scope="col">{{ pageContent.sections[0].columns[0] }}</th>
+            <th scope="col">{{ pageContent.sections[0].columns[1] }}</th>
+            <th scope="col">{{ pageContent.sections[0].columns[2] }}</th>
+            <th scope="col">{{ pageContent.sections[0].columns[3] }}</th>
+            <th scope="col">{{ pageContent.sections[0].columns[4] }}</th>
+            <th scope="col">{{ pageContent.sections[0].columns[5] }}</th>
+            <th scope="col">{{ pageContent.sections[0].columns[6] }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in about.impact.records %}
+            <tr
+              data-year="{{ record.year }}"
+              data-region="{{ record.region }}"
+              data-topic="{{ record.topic }}"
+              x-show="matches($el.dataset)"
+            >
+              <th scope="row">{{ record.year }}</th>
+              <td>{{ record.region }}</td>
+              <td>{{ record.topic }}</td>
+              <td>{{ record.screened | formatNumber }}</td>
+              <td>{{ record.referrals | formatNumber }}</td>
+              <td>{{ record.workshops }}</td>
+              <td>{{ record.councilsReached }}</td>
+            </tr>
+          {% endfor %}
+          <tr x-cloak x-show="ready && selected.length === 0">
+            <td colspan="7">{{ pageContent.sections[0].cells[0] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{# How to read this dataset: layout belongs here; copy comes from the section JSON. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">{{ pageContent.sections[1].headings[0] }}</h2>
+        <p>{{ pageContent.sections[1].paragraphs[0] }}</p>
+        <ul class="section-list">
+          {% for item in pageContent.sections[1].lists[0] %}
+            <li>
+              {{ item }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

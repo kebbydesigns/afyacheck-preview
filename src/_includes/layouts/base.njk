@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  {# Shared document head: page front matter overrides site title and description. #}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% if title %}
+        {{ title }} |
+      {% endif %}
+      {{ site.title }}
+    </title>
+    <meta name="description" content="{{ description or site.description }}" />
+    {# Preview metadata: absolute share URLs, supplied brand asset and no indexing. #}
+    <link
+      rel="canonical"
+      href="{{ page.url | absoluteUrl(deployment.origin) }}"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{{ title or site.title }}" />
+    <meta
+      property="og:description"
+      content="{{ description or site.description }}"
+    />
+    <meta
+      property="og:url"
+      content="{{ page.url | absoluteUrl(deployment.origin) }}"
+    />
+    <meta
+      property="og:image"
+      content="{{ site.brandLogo | absoluteUrl(deployment.origin) }}"
+    />
+    <meta property="og:image:alt" content="AfyaCheck logo" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Font used by $font-family-sans-serif in _variables.scss -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+
+    <!-- Your compiled Bootstrap theme -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <!-- Your Alpine components first, then Alpine itself (order matters) -->
+    <script defer src="/assets/js/app.js"></script>
+    <script defer src="/assets/js/navigation.js"></script>
+    <script defer src="/assets/vendor/alpine.min.js"></script>
+  </head>
+  <body class="site-body">
+    {# One safely encoded dictionary serves header and footer navigation labels. #}
+    <script
+      id="navigation-translations"
+      type="application/json"
+    >{{ navigationTranslations | jsonScript | safe }}</script>
+
+    {# Shared header appears on every page using this layout. #}
+    {% include "partials/header.njk" %}
+
+    {# Page content slot and keyboard skip-link destination; keep this ID stable. #}
+    <main id="main-content" class="site-main" tabindex="-1">
+      {{ content | safe }}
+    </main>
+
+    {# Shared footer carries the newsletter demo and inline medical-notice anchor. #}
+    {% include "partials/footer.njk" %}
+
+    <!-- Bootstrap JS: mobile menu, dropdowns, modals, tooltips -->
+    <script src="/assets/vendor/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

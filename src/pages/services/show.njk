@@ -1,0 +1,102 @@
+---
+layout: layouts/content.njk
+pagination:
+  data: services.items
+  size: 1
+  alias: service
+  addAllPagesToCollections: true
+permalink: "/services/{{ service.slug }}/"
+tags: [contentPage]
+eleventyComputed:
+  title: "{{ service.title | safe }}"
+  description: "{{ service.description | safe }}"
+  breadcrumbs:
+    - url: /services/
+      title: "{{ services.index.title | safe }}"
+  action:
+    url: "{{ services.detail.action.url }}"
+    label: "{{ services.detail.action.label | safe }}"
+---
+
+{# Clinical scope: the same list structure presents every service's proposed capabilities. #}
+<section class="content-section" aria-labelledby="section-1">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-1">{{ services.detail.scope.heading }}</h2>
+        <p>{{ services.detail.scope.description }}</p>
+        <ul class="section-list">
+          {% for item in service.scope %}
+            <li>
+              {{ item }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Audience: keep the service's intended communities in a dedicated readable block. #}
+<section class="content-section" aria-labelledby="section-2">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-2">{{ services.detail.audience.heading }}</h2>
+        <p>{{ service.audience }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Equipment: share the presentation while each record owns its illustrative inventory. #}
+<section class="content-section" aria-labelledby="section-3">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-3">{{ services.detail.equipment.heading }}</h2>
+        <p>{{ services.detail.equipment.description }}</p>
+        <ul class="section-list">
+          {% for item in service.equipment %}
+            <li>
+              {{ item }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Follow-up: service timing and the shared availability qualifier remain together. #}
+<section class="content-section" aria-labelledby="section-4">
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="section-4">{{ services.detail.turnaround.heading }}</h2>
+        <p>{{ service.turnaround }}</p>
+        <p class="section-note">{{ services.detail.turnaround.note }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Related services: derive the cards from the same records and omit the current service. #}
+<section
+  class="content-section related-section"
+  aria-labelledby="related-heading"
+>
+  <div class="content-inner">
+    <div class="section-introduction">
+      <div class="section-copy">
+        <h2 id="related-heading">{{ services.detail.relatedHeading }}</h2>
+      </div>
+    </div>
+    {% set cards = services.items | serviceCards(
+        service.slug,
+        services.detail.cardLabel
+      )
+    %}
+    {% include "partials/content-cards.njk" %}
+  </div>
+</section>

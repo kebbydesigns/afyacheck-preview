@@ -1,0 +1,16 @@
+// Give shared cards a subtle separation from the page.
+.card {
+  @extend .shadow-sm;
+}
+// Transition interactive card borders and shadows together.
+.card-hover {
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+  // Give pointer and keyboard users the same card emphasis.
+  &:hover,
+  &:focus-within {
+    border-color: var(--bs-primary);
+    @extend .shadow;
+  }
+}

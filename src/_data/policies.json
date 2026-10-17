@@ -1,0 +1,139 @@
+{
+  "items": [
+    {
+      "title": "Accessibility statement",
+      "description": "Draft prototype template for content review. This is not an approved organisational policy.",
+      "url": "/accessibility/",
+      "policy": true,
+      "slug": "accessibility",
+      "sections": [
+        {
+          "headings": ["Design approach"],
+          "paragraphs": [
+            "The prototype uses semantic headings, labelled form controls, keyboard focus styles and responsive layouts. Search has text-based results and recovery guidance. English and Kiswahili navigation labels are available; page content remains English."
+          ]
+        },
+        {
+          "headings": ["Known limitations"],
+          "paragraphs": [
+            "A complete assistive-technology audit has not been performed. External assets require a network connection, and reference report and audio files are unavailable."
+          ]
+        },
+        {
+          "headings": ["Report a barrier"],
+          "paragraphs": [
+            "Use the contact page to describe the page, task and assistive technology involved. An approved accessibility statement and remediation process are required before launch."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Medical information disclaimer",
+      "description": "Draft prototype template for content review. This is not an approved organisational policy.",
+      "url": "/medical-information-disclaimer/",
+      "policy": true,
+      "slug": "medical-information-disclaimer",
+      "sections": [
+        {
+          "headings": ["Information & individual care"],
+          "paragraphs": [
+            "This prototype presents proposed service and resource content. It does not diagnose a condition or replace an individual assessment by a qualified health professional."
+          ]
+        },
+        {
+          "headings": ["Service information"],
+          "paragraphs": [
+            "Confirm available services, eligibility, dates and referral arrangements directly with the clinical team. Demo campaign registration does not reserve an appointment."
+          ]
+        },
+        {
+          "headings": ["Clinical review before publication"],
+          "paragraphs": [
+            "Resource summaries, service claims and clinical material require review and approval before a public launch."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Privacy policy",
+      "description": "Draft prototype template for content review. This is not an approved organisational policy.",
+      "url": "/privacy-policy/",
+      "policy": true,
+      "slug": "privacy-policy",
+      "sections": [
+        {
+          "headings": ["Prototype data handling"],
+          "paragraphs": [
+            "The demo enquiry and newsletter forms do not transmit or save their entries. Theme and navigation-language preferences may be stored in your browser. Search terms appear in the page address and browser history. External font providers receive normal web requests when fonts load."
+          ]
+        },
+        {
+          "headings": ["Before a public launch"],
+          "paragraphs": [
+            "Replace this draft with an approved policy identifying the responsible organisation, purposes of processing, lawful grounds, retention periods, recipients, rights and a privacy contact."
+          ]
+        },
+        {
+          "headings": ["Your questions"],
+          "paragraphs": [
+            "Use the contact page to ask about the prototype. Do not submit patient information."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Safeguarding policy",
+      "description": "Draft prototype template for content review. This is not an approved organisational policy.",
+      "url": "/safeguarding-policy/",
+      "policy": true,
+      "slug": "safeguarding-policy",
+      "sections": [
+        {
+          "headings": ["Proposed commitment"],
+          "paragraphs": [
+            "Community health activities should treat children, young people and adults with dignity, respect and appropriate protection from harm."
+          ]
+        },
+        {
+          "headings": ["Before activities begin"],
+          "paragraphs": [
+            "An approved policy must define reporting channels, designated safeguarding responsibilities, consent, conduct, supervision and escalation arrangements."
+          ]
+        },
+        {
+          "headings": ["This prototype is not a reporting channel"],
+          "paragraphs": [
+            "Do not enter safeguarding reports or identifying details into the demo forms. Reporting contacts must be confirmed and published before launch."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Terms of use",
+      "description": "Draft prototype template for content review. This is not an approved organisational policy.",
+      "url": "/terms-of-use/",
+      "policy": true,
+      "slug": "terms-of-use",
+      "sections": [
+        {
+          "headings": ["Using this prototype"],
+          "paragraphs": [
+            "Pages, figures, profiles, schedules and editorial material demonstrate a proposed website. They do not confirm service availability, appointments, qualifications or partnerships."
+          ]
+        },
+        {
+          "headings": ["Materials & attribution"],
+          "paragraphs": [
+            "The logo and reference materials are supplied for this prototype. Publication permissions and ownership statements need confirmation before launch."
+          ]
+        },
+        {
+          "headings": ["Before a public launch"],
+          "paragraphs": [
+            "An approved version should identify the operator, acceptable use, content permissions, service limitations and how disputes or changes are handled."
+          ]
+        }
+      ]
+    }
+  ]
+}
