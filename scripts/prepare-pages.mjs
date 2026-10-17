@@ -17,6 +17,10 @@ assert.ok(
   fs.existsSync(path.join(source, "index.html")),
   "Run npm run build first",
 );
+// Resolve and constrain cleanup to this workspace's disposable deployment artifact.
+assert.equal(path.dirname(output), process.cwd());
+assert.equal(path.basename(output), "_pages");
+fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output, { recursive: true });
 
 // Only URL-bearing HTML attributes, search destinations and application imports need a base path.
@@ -40,6 +44,13 @@ for (const entry of fs.readdirSync(source, {
       /\b(href|src|action)=(['"])(\/[^'"<>]*)\2/g,
       (_, attr, quote, value) => `${attr}=${quote}${localUrl(value)}${quote}`,
     );
+    html = html.replace(/\bsrcset=(['"])([^'"<>]*)\1/g, (_, quote, value) => {
+      const candidates = value.split(",").map((candidate) => {
+        const [url, ...descriptor] = candidate.trim().split(/\s+/);
+        return [localUrl(url), ...descriptor].join(" ");
+      });
+      return `srcset=${quote}${candidates.join(", ")}${quote}`;
+    });
     // The normal build uses SITE_URL as an origin; Pages adds the repository path.
     html = html.replace(
       /\b(href|content)=(['"])(https?:\/\/[^'"<>]+)\2/g,
@@ -99,6 +110,10 @@ for (const file of pageFiles) {
   const document = parseDocument(fs.readFileSync(file, "utf8"));
   const nodes = findAll((node) => Boolean(node.attribs), document.children);
   for (const node of nodes) {
+    for (const candidate of (node.attribs.srcset || "")
+      .split(",")
+      .filter(Boolean))
+      verifyUrl(candidate.trim().split(/\s+/)[0], file);
     for (const attr of ["href", "src", "action"]) {
       const value = node.attribs[attr];
       if (value?.startsWith("/") || value?.startsWith(site.origin + "/"))
